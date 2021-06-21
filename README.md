@@ -21,19 +21,19 @@ The tool has been designed to help SOC team and students in finding system vulne
 # How to use it:
 projectHULK.py
 
- • git clone https://github.com/0xBlackBunnies/projectHulk
+ > git clone https://github.com/0xBlackBunnies/projectHulk
  
- • cd projectHULK && chmod 777 projectHULK.py
+ > cd projectHULK && chmod 777 projectHULK.py
  
- • python projectHULK.py
+ > python projectHULK.py
 
 projectHULK.sh
 
- • git clone https://github.com/0xBlackBunnies/projectHulk
+ > git clone https://github.com/0xBlackBunnies/projectHulk
  
- • cd projectHULK && chmod 777 projectHULK.sh
+ > cd projectHULK && chmod 777 projectHULK.sh
  
- • ./projectHULK.sh
+ > ./projectHULK.sh
 
 ⚠️ If you want to have a full view of everything its better to redirect the output to a file
 
