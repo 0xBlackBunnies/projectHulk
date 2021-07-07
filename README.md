@@ -1,48 +1,39 @@
 # projectHulk
-The tool has been designed to help SOC team and students in finding system vulnerability that me lead in privilage escalation along side showing how it is done and how to avoid it from happening. However, this I just a supporting tool, you need to give a close look on all the output and make google as your best friend.
-
-
+The script has been designed to help (SOC/Red Team) or can be used for educational purposes in finding system vulnerabilities that may lead to privilege escalation & it should be used in safe environment. The author is not responsible for any misuse of it. Therefor, by reading this, you take full responsibility of misusing it. However, this Is just a supporting tool, you need to give a close look on all the output and make Google as your best friend.
 
 
 # Project List:
 
- • ✔️ Linux System 
- 
- • 🔜 Windows System 
+—{ ✔️ Linux System }—
+
+—{ 🔜 Windows System }—
 
 # Released Details:
-- Version 1.0
- • Initial Lunch
 
-- Version 1.5
- • Fixing color issue
- • More listing commands & explanations 
+-{ Version 1.0
+- Initial Lunch
+
+-{ Version 2.0
+- Fixing color issue
+- More commands & explanations 
 
 # How to use it:
-projectHULK.py
 
- > git clone https://github.com/0xBlackBunnies/projectHulk
- 
- > cd projectHULK && chmod 777 projectHULK.py
- 
- > python projectHULK.py
+projectHULK.py
+- git clone https://github.com/0xBlackBunnies/projectHulk
+- cd projectHULK && chmod 777 projectHULK.py
+- python projectHULK.py
 
 projectHULK.sh
-
- > git clone https://github.com/0xBlackBunnies/projectHulk
- 
- > cd projectHULK && chmod 777 projectHULK.sh
- 
- > ./projectHULK.sh
+- git clone https://github.com/0xBlackBunnies/projectHulk
+- cd projectHULK && chmod 777 projectHULK.sh
+- ./projectHULK.sh
 
 ⚠️ If you want to have a full view of everything its better to redirect the output to a file
-
- • python projectHULK.py | tee report.txt
- 
- • ./projectHULK.sh | tee report.txt
+- python projectHULK.py > PE_Report.
+- ./projectHULK.sh > PE_Report.txt
 
 # Running OS:
-
  • Kali
  
  • Parrot
@@ -50,5 +41,4 @@ projectHULK.sh
  • Ubuntu
 
 # Suggestions/Feedback:
-
- • Please feel free to write us back on any facing issue or for any new idea that may help us in improving the script.
+ • Please feel free to write us back if you are facing any issue or for any new idea that may help us in improving the script.
