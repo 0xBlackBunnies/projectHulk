@@ -3,6 +3,7 @@ The script has been designed to help (SOC/Red Team) or can be used for education
 
 # Project List:
 —{ ✔️ Linux System }—
+
 —{ 🔜 Windows System }—
 
 # Released Details:
