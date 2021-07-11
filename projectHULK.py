@@ -10,7 +10,7 @@ import time
 #	\033[0;37;44m
 #	\033[01;32;40m
 
-#------------------> Clear Screen:
+#------------------> Clear Screen: 
 print("\n\n\033[01;31m╔════{Clearing Terminal\033[0m")
 time.sleep(0.5)
 os.system("clear")
