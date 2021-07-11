@@ -93,7 +93,7 @@ echo -e "\n${BLUE}[+] User ID:\033[0m"
 echo -e "\n${BLUE}[+] Who's logged in:\033[0m"
     w
 echo -e "\n${BLUE}[+] Login History:\033[0m"
-    ast -Faiw | last | grep still --color=always
+    last -Faiw | last | grep still --color=always
 echo -e "\n${BLUE}[+] Last Log In:\033[0m"
     lastlog | grep -v "**Never logged in**" 
 echo -e "\n${BLUE}[+] Root Users:\033[0m"
@@ -279,6 +279,9 @@ echo -e "\n${BLUE}[+] Password Files:\033[0m"
     find / -name passwd -type f 2>/dev/null | xargs ls -la 2>/dev/null --color=always
 echo -e "\n${BLUE}[+] apache2.conf:\033[0m"
     cat /etc/apache2/apache2.conf | grep -i "pass\|cred\|hash" --color=always
+        echo -e "\t  ╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║Read the full file for more inofrmation.                                                             ║"
+        echo -e "\t  ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝"
 echo -e "\n${BLUE}[+] smb.conf:\033[0m"
     cat /etc/samba/smb.conf | grep -i 'pass\|cred\|hash' --color=always
         echo -e "\t  ╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗"
@@ -286,17 +289,18 @@ echo -e "\n${BLUE}[+] smb.conf:\033[0m"
         echo -e '\t  ║grep -rn -i "pass\|cred\|hash" / --color=always > password.txt                                       ║'
         echo -e "\t  ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝"
         echo -e "\n${BLUE}[+] Dump cleartext Pre-Shared Wireless Keys:\033[0m"
-    cat /etc/NetworkManager/system-connections/* |grep -i "id\|psk"
+    cat /etc/NetworkManager/system-connections/* 2>/dev/null | grep -i "id\|psk"
 echo -e "\n${BLUE}[+] Configuration files that might contain sensitive information:\033[0m"
     grep "pass\|cred\|hash" /etc/*.conf 2>/dev/null --color=always
 echo -e "\n${BLUE}[+] Firefox credentials:\033[0m"
     ls -la /home/$USER/.mozilla/firefox 2>/dev/null
         echo -e "\t  ╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗"
-        echo -e "\t  ║Password files are in:                                                                               ║"
+        echo -e "\t  ║Password files are:                                                                                  ║"
         echo -e "\t  ║  key4.db                                                                                            ║"
+        echo -e "\t  ║  logins.json                                                                                        ║"
         echo -e "\t  ║Read more about where Firefox stores your bookmarks, passwords and other user data:                  ║"
         echo -e "\t  ║    https://support.mozilla.org/en-US/kb/profiles-where-firefox-stores-user-data                     ║"
-        echo -e "\t  ║You can use firefox_decrypt.py tool found in:                                                        ║"
+        echo -e "\t  ║You can use firefox_decrypt.py tool:                                                                 ║"
         echo -e '\t  ║    https://github.com/unode/firefox_decrypt                                                         ║'
         echo -e "\t  ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝"
 echo -e "\n"
@@ -592,7 +596,7 @@ echo -e "\t${RED} ╚═══════════════════�
 echo -e "\n"
 sleep 1
 echo -e "\n${BLUE}[+] Basic Network Details:\033[0m"
-    ip addr | sed -r ':a;N;$!ba;s/\n\s/ /g' | sed -r -n -e 's/^([0-9]+):\s(\w+).*(link\/(\w+))\s[a-f0-9:.]{,17}\sbrd\s[a-f0-9:.]{,17}\s*(inet\s([0-9]{1,3}(\.[0-9]{1,3}){3})).*/ \2 \6 \4/p' -e 's/^([0-9]+):\s(\w+).*(link\/(\w+))\s[a-f0-9:.]{,17}\sbrd\s[a-f0-9:.]{,17}.*/Gateway \2 0.0.0.0 \4/p'
+    ifconfig | grep -v "ether\|loop\|TX\|RX"
 echo -e "\n${BLUE}[+] Default Gatway:\033[0m"
     route 2>/dev/null
 echo -e "\n${BLUE}[+] Full Network Details:\033[0m"
@@ -663,19 +667,25 @@ echo -e "\n${BLUE}[+] id_rsa:\033[0m"
         echo -e "\t  ║  ${RED}chmod 0600 id_rsa\033[0m                                                                        ║"
         echo -e "\t  ║  ${RED}ssh -p 22 user-of-id_rsa@v.v.v.v -i id_rsa\033[0m                                               ║"
         echo -e "\t  ║Read More:                                                                                 ║"
-        echo -e "\t  ║https://matt.might.net/articles/ssh-hacks/                                                 ║"
-        echo -e "\t  ║https://book.hacktricks.xyz/pentesting/pentesting-ssh                                      ║"
+        echo -e "\t  ║  https://matt.might.net/articles/ssh-hacks/                                               ║"
+        echo -e "\t  ║  https://book.hacktricks.xyz/pentesting/pentesting-ssh                                    ║"
         echo -e "\t  ╚═══════════════════════════════════════════════════════════════════════════════════════════╝"
 echo -e "\n${BLUE}[+] id_dsa:\033[0m"
     find / -name id_dsa 2>/dev/null
 echo -e "\n${BLUE}[+] authorized_keys:\033[0m"
     find / -name authorized_keys 2>/dev/null
 echo -e "\n${BLUE}[+] ssh_config File:\033[0m"
-    ls -la /etc/ssh/ssh_config | grep config --color=always
-    ls -la /usr/share/openssh/sshd_config | grep config --color=always
+    ls -la /etc/ssh/ssh_config
 echo -e "\n${BLUE}[+] Reading ssh_config File:\033[0m"
     cat /etc/ssh/ssh_config
-    /usr/share/openssh/sshd_config
+echo -e "\n${BLUE}[+] sshd_config File:\033[0m"
+    ls -la /usr/share/openssh/sshd_config
+echo -e "\n${BLUE}[+] Reading sshd_config File:\033[0m"
+    cat /usr/share/openssh/sshd_config
+        echo -e "\t  ╔═══════════════════════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║Read more about sshd_config file:                                                              ║"
+        echo -e "\t  ║  https://www.ssh.com/academy/ssh/sshd_config                                                  ║"
+        echo -e "\t  ╚═══════════════════════════════════════════════════════════════════════════════════════════════╝"
 echo -e "\n${BLUE}[+] hosts.denied:\033[0m"
     ls -la /etc/hosts.denied --color=always 2>/dev/null 
 echo -e "\n${BLUE}[+] Reading hosts.denied:\033[0m"
