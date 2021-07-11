@@ -70,7 +70,7 @@ sleep 0.1
 echo -e "\n${BLUE}Scan Started At:\033[0m"
 echo -e "\t"; date
 sleep 5
-echo -e "\n\n${RED}\t\tEnumeration on progress ╔═.......................................(1%)...........................................\033[0m\n\n"
+echo -e "\n\n${RED}\t\tEnumeration on progress ╔═.......................................(1%)...........................................\033[0m\n"
 sleep 5
 echo -e "\t${RED} ╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗\033[0m"
 echo -e "\t${RED}  ════════════════════════════════════════════════════════════[ Current User Information ]════════════════════════════════════════════════════════ \033[0m"
@@ -286,14 +286,18 @@ echo -e "\n${BLUE}[+] smb.conf:\033[0m"
         echo -e '\t  ║grep -rn -i "pass\|cred\|hash" / --color=always > password.txt                                       ║'
         echo -e "\t  ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝"
         echo -e "\n${BLUE}[+] Dump cleartext Pre-Shared Wireless Keys:\033[0m"
-    cat /etc/NetworkManager/system-connections/* |grep -i "id\|psk" --color=always
+    cat /etc/NetworkManager/system-connections/* |grep -i "id\|psk"
 echo -e "\n${BLUE}[+] Configuration files that might contain sensitive information:\033[0m"
     grep "pass\|cred\|hash" /etc/*.conf 2>/dev/null --color=always
 echo -e "\n${BLUE}[+] Firefox credentials:\033[0m"
     ls -la /home/$USER/.mozilla/firefox 2>/dev/null
         echo -e "\t  ╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║Password files are in:                                                                               ║"
+        echo -e "\t  ║  key4.db                                                                                            ║"
+        echo -e "\t  ║Read more about where Firefox stores your bookmarks, passwords and other user data:                  ║"
+        echo -e "\t  ║    https://support.mozilla.org/en-US/kb/profiles-where-firefox-stores-user-data                     ║"
         echo -e "\t  ║You can use firefox_decrypt.py tool found in:                                                        ║"
-        echo -e '\t  ║https://github.com/unode/firefox_decrypt                                                             ║'
+        echo -e '\t  ║    https://github.com/unode/firefox_decrypt                                                         ║'
         echo -e "\t  ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝"
 echo -e "\n"
 echo -e "\t${RED} ╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗\033[0m"
@@ -305,8 +309,8 @@ echo -e "\n${BLUE}[+] System Name:\033[0m"
     uname -a 2>/dev/null
         echo -e "\t  ╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗"
         echo -e "\t  ║Useful tools to help you in finding kernel exploite:                                                 ║"
-        echo -e '\t  ║https://github.com/spencerdodd/kernelpop                                                             ║'
-        echo -e '\t  ║https://github.com/jondonas/linux-exploit-suggester-2                                                ║'
+        echo -e '\t  ║  https://github.com/spencerdodd/kernelpop                                                           ║'
+        echo -e '\t  ║  https://github.com/jondonas/linux-exploit-suggester-2                                              ║'
         echo -e "\t  ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝"
         echo -e "\n${BLUE}[+] System Release:\033[0m"
     lsb_release -a 2>/dev/null 
@@ -318,7 +322,7 @@ echo -e "\n${BLUE}[+] System Version:\033[0m"
         echo -e "\t  ║The version is not listed in our database. However, make sure to keep your    ║"
         echo -e "\t  ║system always up-to-date. Old version are always vulnerable. Visit the link   ║"
         echo -e "\t  ║bellow for more details:                                                      ║"
-        echo -e "\t  ║https://github.com/SecWiki/linux-kernel-exploits                              ║"
+        echo -e "\t  ║  https://github.com/SecWiki/linux-kernel-exploits                            ║"
         echo -e '\t  ║Or use:                                                                       ║'
         echo -e '\t  ║    searchsploit "Linux version"                                              ║'
         echo -e '\t  ║    https://github.com/InteliSecureLabs/Linux_Exploit_Suggester               ║'
@@ -393,7 +397,7 @@ echo -e "\n${BLUE}[+] ASLR Address Space:\033[0m"
     ldd /bin/bash
 echo -e "\n${BLUE}[+] SELinux status:\033[0m"
     sestatus 2>/dev/null
-echo -e "\n\n${RED}\t\tEnumeration on progress ╔══════════════════......................(20%)..........................................\033[0m\n\n"
+echo -e "\n\n${RED}\t\tEnumeration on progress ╔══════════════════......................(20%)..........................................\033[0m\n"
 sleep 5
 echo -e "\t${RED} ╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗\033[0m"
 echo -e "\t${RED}  ══════════════════════════════════════════════════════════════[ System Date/Time ]══════════════════════════════════════════════════════════════ \033[0m"
@@ -471,7 +475,7 @@ echo -e "\n${BLUE}[+] Find binaries that will execute as the group:\033[0m"
 echo -e "\n${BLUE}[+] Find sticky-bit binaries:\033[0m"
     find / -type d -perm -1000 -exec ls -ld --color=always {} \; 2>/dev/null
 echo -e "\n${BLUE}[+] World writable scripts invoked as root:\033[0m"
-echo -e "\n\033[0;37;41mRun this command manually: find / -writable -type f 2>/dev/null | xargs ls -la\033[0m"
+echo -e "\n\t\033[0;37;41mRun this command manually: find / -writable -type f 2>/dev/null | xargs ls -la\033[0m"
         echo -e "\t  ╔══════════════════════════════════════════════════════════════════════════════╗"
         echo -e "\t  ║If you find a script that is owned by root but is writable by anyone, you can ║"
         echo -e "\t  ║add your own malicious code into it and it will escalate your privileges when ║"
@@ -485,7 +489,7 @@ echo -e "\n${BLUE}[+] World writable directories:\033[0m"
 echo -e "\n${BLUE}[+] writable config files:\033[0m"
     find /etc/ -writable -type f 2>/dev/null | xargs ls -la --color=always 2>/dev/null
 echo -e "\n${BLUE}[+] How Files Can Be Upload/Download:\033[0m"
-    which wget nc netcat socat python python2 python3 ftp tftp ssh smb
+    which wget nc netcat socat python python2 python3 ftp tftp ssh smb | xargs ls -la --color=always
         echo -e "\t  ╔══════════════════════════════════════════════════════════════════════════════╗"
         echo -e "\t  ║Some of them my have file misconfiguration and my lead to user escalation.    ║"
         echo -e "\t  ║File Transfer Cheatsheet: Windows and Linux                                   ║"
@@ -514,7 +518,7 @@ echo -e "\n${BLUE}[+] Is the .bashrc file writable?\033[0m"
         echo -e "\t  ║If so, malicious commands can be written to it and will be executed when the  ║"
         echo -e "\t  ║user/root logs in.                                                            ║"
         echo -e "\t  ╚══════════════════════════════════════════════════════════════════════════════╝"
-echo -e "\n\n${RED}\t\tEnumeration on progress ╔════════════════════════════════════════(50%)..........................................\033[0m\n\n"
+echo -e "\n\n${RED}\t\tEnumeration on progress ╔════════════════════════════════════════(50%)..........................................\033[0m\n"
 sleep 5
 echo -e "\t${RED} ╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗\033[0m"
 echo -e "\t${RED}  ═════════════════════════════════════════════════════════[ System Process and Services ]════════════════════════════════════════════════════════ \033[0m"
@@ -588,7 +592,7 @@ echo -e "\t${RED} ╚═══════════════════�
 echo -e "\n"
 sleep 1
 echo -e "\n${BLUE}[+] Basic Network Details:\033[0m"
-    ip addr | sed -r ':a;N;$!ba;s/\n\s/ /g' | sed -r -n -e 's/^([0-9]+):\s(\w+).*(link\/(\w+))\s[a-f0-9:.]{,17}\sbrd\s[a-f0-9:.]{,17}\s*(inet\s([0-9]{1,3}(\.[0-9]{1,3}){3})).*/ \2 \6 \4/p' -e 's/^([0-9]+):\s(\w+).*(link\/(\w+))\s[a-f0-9:.]{,17}\sbrd\s[a-f0-9:.]{,17}.*/Gateway \2 0.0.0.0 \4/p' Default Gatway:
+    ip addr | sed -r ':a;N;$!ba;s/\n\s/ /g' | sed -r -n -e 's/^([0-9]+):\s(\w+).*(link\/(\w+))\s[a-f0-9:.]{,17}\sbrd\s[a-f0-9:.]{,17}\s*(inet\s([0-9]{1,3}(\.[0-9]{1,3}){3})).*/ \2 \6 \4/p' -e 's/^([0-9]+):\s(\w+).*(link\/(\w+))\s[a-f0-9:.]{,17}\sbrd\s[a-f0-9:.]{,17}.*/Gateway \2 0.0.0.0 \4/p'
 echo -e "\n${BLUE}[+] Default Gatway:\033[0m"
     route 2>/dev/null
 echo -e "\n${BLUE}[+] Full Network Details:\033[0m"
@@ -634,7 +638,7 @@ echo -e "\n${BLUE}[+] Outbound port connectivity:\033[0m"
         echo -e "\t  ║outbound connections to other systems we control for the purpose of maintaining║"
         echo -e "\t  ║access or exfiltrating data.                                                   ║"
         echo -e "\t  ╚═══════════════════════════════════════════════════════════════════════════════╝"
-echo -e "\n\n${RED}\t\tEnumeration on progress ╔════════════════════════════════════════(80%)═════════════════.........................\033[0m\n\n"
+echo -e "\n\n${RED}\t\tEnumeration on progress ╔════════════════════════════════════════(80%)═════════════════.........................\033[0m\n"
 sleep 5
 echo -e "\t${RED} ╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗\033[0m"
 echo -e "\t${RED}  ═══════════════════════════════════════════════════════════════[ Finding SSH Keys ]═════════════════════════════════════════════════════════════ \033[0m"
