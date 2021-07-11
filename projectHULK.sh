@@ -13,10 +13,10 @@ BLUE="\033[0;37;44m"
 GREEN="\033[01;32;40m"
 
 #------------------> Clear Screen:
-echo -e "\n\n${RED}╔════{Clearing Terminal\033[0m"
+echo -e "\n\n${RED}╚════{Clearing Terminal\033[0m"
 sleep 0.5
 clear 
-echo -e "\n\n${GREEN}╔════{Loading Script...\033[0m"
+echo -e "\n\n${GREEN}╚════{Loading Script...\033[0m"
 sleep 2
 clear
 
@@ -459,28 +459,24 @@ echo -e "\n${BLUE}[+] SUID not built-in (Supper Interesting :D)\033[0m"
     find / -perm -u=s 2>/dev/null | xargs ls -la --color=always | grep -v pppd | grep -v exim4 | grep -v ntfs-3g | grep -v chsh | grep -v su | grep -v chfn | grep -v mount | grep -v sudo | grep -v umount | grep -v pkexec | grep -v passwd | grep -v newgrp | grep -v gpasswd | grep -v fusermount | grep -v mount.nfs | grep -v mount.cifs | grep -v Xorg.wrap | grep -v ssh-keysign | grep -v chrome-sandbox | grep -v polkit-agent-helper-1 | grep -v vmware-user-suid-wrapper | grep -v dbus-daemon-launch-helper
         echo -e "\t  ╔══════════════════════════════════════════════════════════════════════════════╗"
         echo -e "\t  ║When extra bit “4” is set to user(Owner) it becomes SUID (Set user ID):       ║"
-        echo -e "\t  ║rw${RED}x\033[0m     rwx     rwx                                                           ║"
+        echo -e "\t  ║-rw${RED}x\033[0m     -rwx     -rwx                                                        ║"
         echo -e "\t  ║SUID                                                                          ║"
-        echo -e "\t  ║rw${RED}s\033[0m                                                                           ║"
+        echo -e "\t  ║-rw${RED}s\033[0m                                                                          ║"
         echo -e "\t  ║Visite:                                                                       ║"
         echo -e "\t  ║https://gtfobins.github.io/                                                   ║"
         echo -e "\t  ║https://mil0.io/linux-privesc/                                                ║"
         echo -e "\t  ╚══════════════════════════════════════════════════════════════════════════════╝"
-echo -e "\n${BLUE}[+] Finding System GUID:\033[0m"
+echo -e "\n${BLUE}[+] Finding System GUID (execute as the group):\033[0m"
     find / -perm -g=s -type f 2>/dev/null | xargs ls -la --color=always
         echo -e "\t  ╔══════════════════════════════════════════════════════════════════════════════╗"
         echo -e "\t  ║When bit “2” is set to group it becomes SGID (Set Group ID):                  ║"
-        echo -e "\t  ║rwx     rw${RED}x\033[0m     rwx                                                           ║"
-        echo -e "\t  ║        SGID                                                                  ║"
-        echo -e "\t  ║        rw${RED}s\033[0m                                                                   ║"
+        echo -e "\t  ║-rwx     -rw${RED}x\033[0m     -rwx                                                        ║"
+        echo -e "\t  ║         SGID                                                                 ║"
+        echo -e "\t  ║         -rw${RED}s\033[0m                                                                 ║"
         echo -e "\t  ║Visite:                                                                       ║"
         echo -e "\t  ║https://gtfobins.github.io/                                                   ║"
         echo -e "\t  ║https://mil0.io/linux-privesc/                                                ║"
         echo -e "\t  ╚══════════════════════════════════════════════════════════════════════════════╝"
-echo -e "\n${BLUE}[+] Find Binaries that will execute as the owner:\033[0m"
-    find / -perm -u=s -type f 2>/dev/null | xargs ls -la --color=always
-echo -e "\n${BLUE}[+] Find binaries that will execute as the group:\033[0m"
-    find / -perm -g=s -type f 2>/dev/null | xargs ls -la --color=always
 echo -e "\n${BLUE}[+] Find sticky-bit binaries:\033[0m"
     find / -type d -perm -1000 -exec ls -ld --color=always {} \; 2>/dev/null
 echo -e "\n${BLUE}[+] World writable scripts invoked as root:\033[0m"
