@@ -1,17 +1,14 @@
 #!/bin/bash
 
-#------------------> NOTE:
 # If you have redirected the output to a file, please search and delete the following words to have a proper report:
 #	\033[0m
 #	\033[01;31m
 #	\033[0;37;44m
 #	\033[01;32;40m
-
 #------------------> Color Code:
 RED="\033[01;31m"
 BLUE="\033[0;37;44m"
 GREEN="\033[01;32;40m"
-
 #------------------> Clear Screen:
 echo -e "\n\n${RED}╚════{Clearing Terminal\033[0m"
 sleep 0.5
@@ -19,54 +16,48 @@ clear
 echo -e "\n\n${GREEN}╚════{Loading Script...\033[0m"
 sleep 2
 clear
-
-#------------------> Banner:
+#------------------> Banner: 
 echo -e "\n"
 echo -e "\n"
-echo -e "\t\t\t╔════════════════════════════════════════════════════════════════════════════════════════════════╗"
-echo -e "\t\t\t║██████╗ ██████╗ █████╗       ██╗███████╗ █████╗ ████████╗      ██╗  ██╗██╗   ██╗██╗     ██╗  ██╗║"
-echo -e "\t\t\t║██╔══██╗██╔══██╗██╔══██╗     ██║██╔════╝██╔══██╗╚══██╔══╝      ██║  ██║██║   ██║██║     ██║ ██╔╝║"
-echo -e "\t\t\t║██████╔╝██████╔╝██║  ██║     ██║█████╗  ██║  ╚═╝   ██║         ███████║██║   ██║██║     █████═╝ ║"
-echo -e "\t\t\t║██╔═══╝ ██╔══██╗██║  ██║██╗  ██║██╔══╝  ██║  ██╗   ██║  █████  ██╔══██║██║   ██║██║     ██╔═██╗ ║"
-echo -e "\t\t\t║██║     ██║  ██║╚█████╔╝╚█████╔╝███████╗╚█████╔╝   ██║         ██║  ██║╚██████╔╝███████╗██║ ╚██╗║"
-echo -e "\t\t\t║╚═╝     ╚═╝  ╚═╝ ╚════╝  ╚════╝ ╚══════╝ ╚════╝    ╚═╝         ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝║"
-echo -e "\t\t\t╚═════════════════════════════════════════════════════════════{${RED}Privilege Escalation Script v2.0\033[0m}═╝"
+echo -e "
+         \t\t                ▄▄▄▄▄▄▄▄▄▄▄▄                ██████╗ ██████╗  █████╗      ██╗███████╗ █████╗ ████████╗      ██╗  ██╗██╗   ██╗██╗     ██╗  ██╗
+         \t\t              ████████████████              ██╔══██╗██╔══██╗██╔══██╗     ██║██╔════╝██╔══██╗╚══██╔══╝      ██║  ██║██║   ██║██║     ██║ ██╔╝
+         \t\t            ███████████████████▌            ██████╔╝██████╔╝██║  ██║     ██║█████╗  ██║  ╚═╝   ██║         ███████║██║   ██║██║     █████═╝ 
+         \t\t          ▐██████████████████████           ██╔═══╝ ██╔══██╗██║  ██║██╗  ██║██╔══╝  ██║  ██╗   ██║  █████  ██╔══██║██║   ██║██║     ██╔═██╗ 
+         \t\t            ▀▀▀▀████████████▀▀▀▀            ██║     ██║  ██║╚█████╔╝╚█████╔╝███████╗╚█████╔╝   ██║         ██║  ██║╚██████╔╝███████╗██║ ╚██╗
+         \t\t      ▄▄▄██                      ██▄▄▄      ╚═╝     ╚═╝  ╚═╝ ╚════╝  ╚════╝ ╚══════╝ ╚════╝    ╚═╝         ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝
+         \t\t  ██████████▄▄▄▄▄▄        ▄▄▄▄▄▄██████████  ══════════════════════════════════════════════════════════════{${RED}Privilege Escalation Script v2.0\033[0m}
+         \t\t        ▀▀▀██████████████████████▀▀▀        Tʜᴇ sᴄʀɪᴘᴛ ʜᴀs ʙᴇᴇɴ ᴅᴇsɪɢɴᴇᴅ ᴛᴏ ʜᴇʟᴘ (SOC & Rᴇᴅ Tᴇᴀᴍ) ᴏʀ ᴄᴀɴ ʙᴇ ᴜsᴇᴅ ғᴏʀ ᴇᴅᴜᴄᴀᴛɪᴏɴᴀʟ ᴘᴜʀᴘᴏsᴇs ɪɴ
+         \t\t                                            ғɪɴᴅɪɴɢ sʏsᴛᴇᴍ ᴠᴜʟɴᴇʀᴀʙɪʟɪᴛɪᴇs ᴛʜᴀᴛ ᴍᴀʏ ʟᴇᴀᴅ ᴛᴏ ᴘʀɪᴠɪʟᴇɢᴇ ᴇsᴄᴀʟᴀᴛɪᴏɴ & ᴇxᴘʟᴏɪᴛᴇ ɪᴛ. Tʜᴇ sᴄʀɪᴘᴛ 
+         \t\t                                            sʜᴏᴜʟᴅ ʙᴇ ᴜsᴇᴅ ɪɴ sᴀғᴇ ᴇɴᴠɪʀᴏɴᴍᴇɴᴛ. Tʜᴇ ᴀᴜᴛʜᴏʀ ɪs ɴᴏᴛ ʀᴇsᴘᴏɴsɪʙʟᴇ ғᴏʀ ᴀɴʏ ᴍɪsᴜsᴇ ᴏғ ɪᴛ. ʜᴇʀᴇғᴏʀ,
+         \t\t           ▓                  ▓             ʙʏ ʀᴇᴀᴅɪɴɢ ᴛʜɪs, ʏᴏᴜ ᴛᴀᴋᴇ ғᴜʟʟ ʀᴇsᴘᴏɴsɪʙɪʟɪᴛʏ ᴏғ ᴍɪsᴜsɪɴɢ ɪᴛ.
+         \t\t            ▓    ▓█▀▀▀▀█▓    ▓
+         \t\t             █  ▀        ▀  █
+         \t\t              █▓▄▓██████▓▄▓█
+         \t\t                ▀████████▀
+         \t\t                   ████"
 sleep 1
-echo -e "\n${BLUE}Declaration:\033[0m"
-sleep 0.1
-echo -e "\tThe script has been designed to help (SOC/Red Team) or can be used for educational purposes in finding system vulnerabilities that"
-echo -e "\tmay lead to privilege escalation & exploit it. The script should be used in safe environment. The author is not responsible for any"
-echo -e "\tmisuse of it. Therefor, by reading this, you take full responsibility of misusing it."
-sleep 0.1
 echo -e "\n${BLUE}Author:\033[0m"
 sleep 0.1
-echo -e "\t     Iron Hulk"
-echo -e "\tMan In A Black Tuxedo"
+echo -e "\t     Iʀᴏɴ Hᴜʟᴋ"
+echo -e "\tMᴀɴ Iɴ A Bʟᴀᴄᴋ Tᴜxᴇᴅᴏ"
 sleep 0.1
 echo -e "\n${BLUE}Tweet Me:\033[0m"
 sleep 0.1
-echo -e "\tironhulk_x69"
+echo -e "\tɪʀᴏɴʜᴜʟᴋ_x69"
 sleep 0.1
 echo -e "\n${BLUE}Message:\033[0m"
 sleep 0.1
-echo -e "\tAll the exploits have been listed based on the author's opinion, you may use any of your choice. Rememebr, SKY HAS NO LIMITS :)"
+echo -e "\tAʟʟ ᴛʜᴇ ᴇxᴘʟᴏɪᴛs ʜᴀᴠᴇ ʙᴇᴇɴ ʟɪsᴛᴇᴅ ʙᴀsᴇᴅ ᴏɴ ᴛʜᴇ ᴀᴜᴛʜᴏʀ's ᴏᴘɪɴɪᴏɴ, ʏᴏᴜ ᴍᴀʏ ᴜsᴇ ᴀɴʏ ᴏғ ʏᴏᴜʀ ᴄʜᴏɪᴄᴇ. Rᴇᴍᴇᴍᴇʙʀ, SKY HAS NO LIMITS :)"
 sleep 0.1
 echo -e "\n${BLUE}Recommendation:\033[0m"
 sleep 0.1
-echo -e "\tFor a better view of the report is it recommended redirecting the output to a file: ./projectHULK.sh > PE_report.txt"
-echo -e "\tNever relay on a single tool, do manual enumeration and try to use many tools as much as you can, here are some good tools:-"
-echo -e "\t╚════{ LinEnum: git clone https://github.com/rebootuser/LinEnum.git"
-echo -e "\t╚════{ SUID3NUM: git clone https://github.com/Anon-exploit r/SUID3NUM.git"
-echo -e "\t╚════{ LinPeas: git clone https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite.git"
-echo -e "\t╚════{ Linux-Exploit-Suggester: git clone https://github.com/jondonas/linux-exploit-suggester-2.git"
-sleep 0.1
-echo -e "\n${BLUE}Send a report:\033[0m"
-sleep 0.1
-echo -e "\tIf you are working remotely, you can send the report by one of the following:"
-    which wget netcat nc ssh ftp tftp python python2.7 python3 smb
-echo -e "\n\tFile Transfer Cheatsheet:"
-echo -e "\thttps://infinitelogins.com/2020/09/04/windows-file-transfer-cheatsheet/ "
-sleep 0.1
+echo -e "\tFᴏʀ ᴀ ʙᴇᴛᴛᴇʀ ᴠɪᴇᴡ ᴏғ ᴛʜᴇ ʀᴇᴘᴏʀᴛ ɪs ɪᴛ ʀᴇᴄᴏᴍᴍᴇɴᴅᴇᴅ ʀᴇᴅɪʀᴇᴄᴛɪɴɢ ᴛʜᴇ ᴏᴜᴛᴘᴜᴛ ᴛᴏ ᴀ ғɪʟᴇ: ./ᴘʀᴏᴊᴇᴄᴛHULK.sʜ > PE_ʀᴇᴘᴏʀᴛ.ᴛxᴛ"
+echo -e "\tNᴇᴠᴇʀ ʀᴇʟᴀʏ ᴏɴ ᴀ sɪɴɢʟᴇ ᴛᴏᴏʟ, ᴅᴏ ᴍᴀɴᴜᴀʟ ᴇɴᴜᴍᴇʀᴀᴛɪᴏɴ ᴀɴᴅ ᴛʀʏ ᴛᴏ ᴜsᴇ ᴍᴀɴʏ ᴛᴏᴏʟs ᴀs ᴍᴜᴄʜ ᴀs ʏᴏᴜ ᴄᴀɴ, ʜᴇʀᴇ ᴀʀᴇ sᴏᴍᴇ ɢᴏᴏᴅ ᴛᴏᴏʟs:-"
+echo -e "\t════{ LɪɴEɴᴜᴍ: ɢɪᴛ ᴄʟᴏɴᴇ ʜᴛᴛᴘs://ɢɪᴛʜᴜʙ.ᴄᴏᴍ/ʀᴇʙᴏᴏᴛᴜsᴇʀ/LɪɴEɴᴜᴍ.ɢɪᴛ"
+echo -e "\t════{ SUID3NUM: ɢɪᴛ ᴄʟᴏɴᴇ ʜᴛᴛᴘs://ɢɪᴛʜᴜʙ.ᴄᴏᴍ/Aɴᴏɴ-ᴇxᴘʟᴏɪᴛ ʀ/SUID3NUM.ɢɪᴛ"
+echo -e "\t════{ LɪɴPᴇᴀs: ɢɪᴛ ᴄʟᴏɴᴇ ʜᴛᴛᴘs://ɢɪᴛʜᴜʙ.ᴄᴏᴍ/ᴄᴀʀʟᴏsᴘᴏʟᴏᴘ/ᴘʀɪᴠɪʟᴇɢᴇ-ᴇsᴄᴀʟᴀᴛɪᴏɴ-ᴀᴡᴇsᴏᴍᴇ-sᴄʀɪᴘᴛs-sᴜɪᴛᴇ.ɢɪᴛ"
+echo -e "\t════{ Lɪɴᴜx-Exᴘʟᴏɪᴛ-Sᴜɢɢᴇsᴛᴇʀ: ɢɪᴛ ᴄʟᴏɴᴇ ʜᴛᴛᴘs://ɢɪᴛʜᴜʙ.ᴄᴏᴍ/ᴊᴏɴᴅᴏɴᴀs/ʟɪɴᴜx-ᴇxᴘʟᴏɪᴛ-sᴜɢɢᴇsᴛᴇʀ-2.ɢɪᴛ"
 echo -e "\n${BLUE}Scan Started At:\033[0m"
 echo -e "\t"; date
 sleep 5
