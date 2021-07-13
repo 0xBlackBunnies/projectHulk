@@ -17,52 +17,50 @@ print("\n\n\033[01;32;40m╚════{Loading Script...\033[0m")
 time.sleep(2)
 os.system("clear")
 
-#------------------>Banner:
+#------------------>Banner:  
 print("\n")
 print("\n")
-print("\t\t\t╔════════════════════════════════════════════════════════════════════════════════════════════════╗")
-print("\t\t\t║██████╗ ██████╗ █████╗       ██╗███████╗ █████╗ ████████╗      ██╗  ██╗██╗   ██╗██╗     ██╗  ██╗║")
-print("\t\t\t║██╔══██╗██╔══██╗██╔══██╗     ██║██╔════╝██╔══██╗╚══██╔══╝      ██║  ██║██║   ██║██║     ██║ ██╔╝║")
-print("\t\t\t║██████╔╝██████╔╝██║  ██║     ██║█████╗  ██║  ╚═╝   ██║         ███████║██║   ██║██║     █████═╝ ║")
-print("\t\t\t║██╔═══╝ ██╔══██╗██║  ██║██╗  ██║██╔══╝  ██║  ██╗   ██║  █████  ██╔══██║██║   ██║██║     ██╔═██╗ ║")
-print("\t\t\t║██║     ██║  ██║╚█████╔╝╚█████╔╝███████╗╚█████╔╝   ██║         ██║  ██║╚██████╔╝███████╗██║ ╚██╗║")
-print("\t\t\t║╚═╝     ╚═╝  ╚═╝ ╚════╝  ╚════╝ ╚══════╝ ╚════╝    ╚═╝         ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝║")
-print("\t\t\t╚═════════════════════════════════════════════════════════════{\033[01;31mPrivilege Escalation Script v2.0\033[0m}═╝")
-time.sleep(0.2)
-print("\n\033[0;37;44mDeclaration:\033[0m")
+banner ="""
+         \t\t                ▄▄▄▄▄▄▄▄▄▄▄▄                ██████╗ ██████╗  █████╗      ██╗███████╗ █████╗ ████████╗      ██╗  ██╗██╗   ██╗██╗     ██╗  ██╗
+         \t\t              ████████████████              ██╔══██╗██╔══██╗██╔══██╗     ██║██╔════╝██╔══██╗╚══██╔══╝      ██║  ██║██║   ██║██║     ██║ ██╔╝ 
+         \t\t            ███████████████████▌            ██████╔╝██████╔╝██║  ██║     ██║█████╗  ██║  ╚═╝   ██║         ███████║██║   ██║██║     █████═╝ 
+         \t\t          ▐██████████████████████           ██╔═══╝ ██╔══██╗██║  ██║██╗  ██║██╔══╝  ██║  ██╗   ██║  █████  ██╔══██║██║   ██║██║     ██╔═██╗ 
+         \t\t            ▀▀▀▀████████████▀▀▀▀            ██║     ██║  ██║╚█████╔╝╚█████╔╝███████╗╚█████╔╝   ██║         ██║  ██║╚██████╔╝███████╗██║ ╚██╗
+         \t\t      ▄▄▄██                      ██▄▄▄      ╚═╝     ╚═╝  ╚═╝ ╚════╝  ╚════╝ ╚══════╝ ╚════╝    ╚═╝         ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝
+         \t\t  ██████████▄▄▄▄▄▄        ▄▄▄▄▄▄██████████  ══════════════════════════════════════════════════════════════{\033[01;31mPrivilege Escalation Script v2.0\033[0m}
+         \t\t        ▀▀▀██████████████████████▀▀▀        Tʜᴇ sᴄʀɪᴘᴛ ʜᴀs ʙᴇᴇɴ ᴅᴇsɪɢɴᴇᴅ ᴛᴏ ʜᴇʟᴘ (SOC & Rᴇᴅ Tᴇᴀᴍ) ᴏʀ ᴄᴀɴ ʙᴇ ᴜsᴇᴅ ғᴏʀ ᴇᴅᴜᴄᴀᴛɪᴏɴᴀʟ ᴘᴜʀᴘᴏsᴇs ɪɴ  
+         \t\t                                            ғɪɴᴅɪɴɢ sʏsᴛᴇᴍ ᴠᴜʟɴᴇʀᴀʙɪʟɪᴛɪᴇs ᴛʜᴀᴛ ᴍᴀʏ ʟᴇᴀᴅ ᴛᴏ ᴘʀɪᴠɪʟᴇɢᴇ ᴇsᴄᴀʟᴀᴛɪᴏɴ & ᴇxᴘʟᴏɪᴛᴇ ɪᴛ. Tʜᴇ sᴄʀɪᴘᴛ 
+         \t\t                                            sʜᴏᴜʟᴅ ʙᴇ ᴜsᴇᴅ ɪɴ sᴀғᴇ ᴇɴᴠɪʀᴏɴᴍᴇɴᴛ. Tʜᴇ ᴀᴜᴛʜᴏʀ ɪs ɴᴏᴛ ʀᴇsᴘᴏɴsɪʙʟᴇ ғᴏʀ ᴀɴʏ ᴍɪsᴜsᴇ ᴏғ ɪᴛ. ʜᴇʀᴇғᴏʀ,
+         \t\t           ▓                  ▓             ʙʏ ʀᴇᴀᴅɪɴɢ ᴛʜɪs, ʏᴏᴜ ᴛᴀᴋᴇ ғᴜʟʟ ʀᴇsᴘᴏɴsɪʙɪʟɪᴛʏ ᴏғ ᴍɪsᴜsɪɴɢ ɪᴛ.
+         \t\t            ▓    ▓█▀▀▀▀█▓    ▓
+         \t\t             █  ▀        ▀  █
+         \t\t              █▓▄▓██████▓▄▓█
+         \t\t                ▀████████▀
+         \t\t                   ████
+"""
+print(banner)
+time.sleep(1)
+print("\033[0;37;44mAuthor:\033[0m")
 time.sleep(0.1)
-print("\tThe script has been designed to help (SOC/Red Team) or can be used for educational purposes in finding system vulnerabilities that")
-print("\tmay lead to privilege escalation & exploit it. The script should be used in safe environment. The author is not responsible for any")
-print("\tmisuse of it. Therefor, by reading this, you take full responsibility of misusing it.")
-time.sleep(0.1)
-print("\n\033[0;37;44mAuthor:\033[0m")
-time.sleep(0.1)
-print("\t     Iron Hulk")
-print("\tMan In A Black Tuxedo")
+print("\t     Iʀᴏɴ Hᴜʟᴋ")
+print("\tMᴀɴ Iɴ A Bʟᴀᴄᴋ Tᴜxᴇᴅᴏ")
 time.sleep(0.1)
 print("\n\033[0;37;44mTweet Me:\033[0m")
 time.sleep(0.1)
-print("\tironhulk_x69")
+print("\tɪʀᴏɴʜᴜʟᴋ_x69")
 time.sleep(0.1)
 print("\n\033[0;37;44mMessage:\033[0m")
 time.sleep(0.1)
-print("\tAll the exploits have been listed based on the author's opinion, you may use any of your choice. Rememebr, SKY HAS NO LIMITS :)")
+print("\tAʟʟ ᴛʜᴇ ᴇxᴘʟᴏɪᴛs ʜᴀᴠᴇ ʙᴇᴇɴ ʟɪsᴛᴇᴅ ʙᴀsᴇᴅ ᴏɴ ᴛʜᴇ ᴀᴜᴛʜᴏʀ's ᴏᴘɪɴɪᴏɴ, ʏᴏᴜ ᴍᴀʏ ᴜsᴇ ᴀɴʏ ᴏғ ʏᴏᴜʀ ᴄʜᴏɪᴄᴇ. Rᴇᴍᴇᴍᴇʙʀ, SKY HAS NO LIMITS :)")
 time.sleep(0.1)
 print("\n\033[0;37;44mRecommendation:\033[0m")
 time.sleep(0.1)
-print("\tFor a better view of the report is it recommended redirecting the output to a file: ./projectHULK.sh > PE_report.txt")
-print("\tNever relay on a single tool, do manual enumeration and try to use many tools as much as you can, here are some good tools:-")
-print("\t╚════{ LinEnum: git clone https://github.com/rebootuser/LinEnum.git")
-print("\t╚════{ SUID3NUM: git clone https://github.com/Anon-exploit r/SUID3NUM.git")
-print("\t╚════{ LinPeas: git clone https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite.git")
-print("\t╚════{ Linux-Exploit-Suggester: git clone https://github.com/jondonas/linux-exploit-suggester-2.git")
-time.sleep(0.1)
-print("\n\033[0;37;44mSend a report:\033[0m")
-time.sleep(0.1)
-print("\tIf you are working remotely, you can send the report by one of the following:")
-os.system ('which wget netcat nc ssh ftp tftp python python2.7 python3 smb')
-print("\n\tFile Transfer Cheatsheet:")
-print("\thttps://infinitelogins.com/2020/09/04/windows-file-transfer-cheatsheet/ ")
+print("\tFᴏʀ ᴀ ʙᴇᴛᴛᴇʀ ᴠɪᴇᴡ ᴏғ ᴛʜᴇ ʀᴇᴘᴏʀᴛ ɪs ɪᴛ ʀᴇᴄᴏᴍᴍᴇɴᴅᴇᴅ ʀᴇᴅɪʀᴇᴄᴛɪɴɢ ᴛʜᴇ ᴏᴜᴛᴘᴜᴛ ᴛᴏ ᴀ ғɪʟᴇ: ./ᴘʀᴏᴊᴇᴄᴛHULK.sʜ > PE_ʀᴇᴘᴏʀᴛ.ᴛxᴛ")
+print("\tNᴇᴠᴇʀ ʀᴇʟᴀʏ ᴏɴ ᴀ sɪɴɢʟᴇ ᴛᴏᴏʟ, ᴅᴏ ᴍᴀɴᴜᴀʟ ᴇɴᴜᴍᴇʀᴀᴛɪᴏɴ ᴀɴᴅ ᴛʀʏ ᴛᴏ ᴜsᴇ ᴍᴀɴʏ ᴛᴏᴏʟs ᴀs ᴍᴜᴄʜ ᴀs ʏᴏᴜ ᴄᴀɴ, ʜᴇʀᴇ ᴀʀᴇ sᴏᴍᴇ ɢᴏᴏᴅ ᴛᴏᴏʟs:-")
+print("\t════{ LɪɴEɴᴜᴍ: ɢɪᴛ ᴄʟᴏɴᴇ ʜᴛᴛᴘs://ɢɪᴛʜᴜʙ.ᴄᴏᴍ/ʀᴇʙᴏᴏᴛᴜsᴇʀ/LɪɴEɴᴜᴍ.ɢɪᴛ")
+print("\t════{ SUID3NUM: ɢɪᴛ ᴄʟᴏɴᴇ ʜᴛᴛᴘs://ɢɪᴛʜᴜʙ.ᴄᴏᴍ/Aɴᴏɴ-ᴇxᴘʟᴏɪᴛ ʀ/SUID3NUM.ɢɪᴛ")
+print("\t════{ LɪɴPᴇᴀs: ɢɪᴛ ᴄʟᴏɴᴇ ʜᴛᴛᴘs://ɢɪᴛʜᴜʙ.ᴄᴏᴍ/ᴄᴀʀʟᴏsᴘᴏʟᴏᴘ/ᴘʀɪᴠɪʟᴇɢᴇ-ᴇsᴄᴀʟᴀᴛɪᴏɴ-ᴀᴡᴇsᴏᴍᴇ-sᴄʀɪᴘᴛs-sᴜɪᴛᴇ.ɢɪᴛ")
+print("\t════{ Lɪɴᴜx-Exᴘʟᴏɪᴛ-Sᴜɢɢᴇsᴛᴇʀ: ɢɪᴛ ᴄʟᴏɴᴇ ʜᴛᴛᴘs://ɢɪᴛʜᴜʙ.ᴄᴏᴍ/ᴊᴏɴᴅᴏɴᴀs/ʟɪɴᴜx-ᴇxᴘʟᴏɪᴛ-sᴜɢɢᴇsᴛᴇʀ-2.ɢɪᴛ")
 time.sleep(0.1)
 print("\n\033[0;37;44mScan Started At:\033[0m")
 os.system("date")
