@@ -6,14 +6,6 @@ The script has been designed to help (SOC/Red Team) or can be used for education
 
 —{ 🔜 Windows System }—
 
-# Released Details:
--{ Version 1.0
-- Initial Lunch
-
--{ Version 2.0
-- Fixing color issue
-- More commands & explanations 
-
 # How to use it:
 projectHULK.py
 - git clone https://github.com/0xBlackBunnies/projectHulk
