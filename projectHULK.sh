@@ -26,7 +26,7 @@ echo -e "
          \t\t          ▐██████████████████████           ██╔═══╝ ██╔══██╗██║  ██║██╗  ██║██╔══╝  ██║  ██╗   ██║  █████  ██╔══██║██║   ██║██║     ██╔═██╗ 
          \t\t            ▀▀▀▀████████████▀▀▀▀            ██║     ██║  ██║╚█████╔╝╚█████╔╝███████╗╚█████╔╝   ██║         ██║  ██║╚██████╔╝███████╗██║ ╚██╗
          \t\t      ▄▄▄██                      ██▄▄▄      ╚═╝     ╚═╝  ╚═╝ ╚════╝  ╚════╝ ╚══════╝ ╚════╝    ╚═╝         ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝
-         \t\t  ██████████▄▄▄▄▄▄        ▄▄▄▄▄▄██████████  ══════════════════════════════════════════════════════════════{${RED}Privilege Escalation Script v2.0\033[0m}
+         \t\t  ██████████▄▄▄▄▄▄        ▄▄▄▄▄▄██████████  ══════════════════════════════════════════════════════════════{${RED}Privilege Escalation Script v2.5\033[0m}
          \t\t        ▀▀▀██████████████████████▀▀▀        Tʜᴇ sᴄʀɪᴘᴛ ʜᴀs ʙᴇᴇɴ ᴅᴇsɪɢɴᴇᴅ ᴛᴏ ʜᴇʟᴘ (SOC & Rᴇᴅ Tᴇᴀᴍ) ᴏʀ ᴄᴀɴ ʙᴇ ᴜsᴇᴅ ғᴏʀ ᴇᴅᴜᴄᴀᴛɪᴏɴᴀʟ ᴘᴜʀᴘᴏsᴇs ɪɴ
          \t\t                                            ғɪɴᴅɪɴɢ sʏsᴛᴇᴍ ᴠᴜʟɴᴇʀᴀʙɪʟɪᴛɪᴇs ᴛʜᴀᴛ ᴍᴀʏ ʟᴇᴀᴅ ᴛᴏ ᴘʀɪᴠɪʟᴇɢᴇ ᴇsᴄᴀʟᴀᴛɪᴏɴ & ᴇxᴘʟᴏɪᴛᴇ ɪᴛ. Tʜᴇ sᴄʀɪᴘᴛ 
          \t\t                                            sʜᴏᴜʟᴅ ʙᴇ ᴜsᴇᴅ ɪɴ sᴀғᴇ ᴇɴᴠɪʀᴏɴᴍᴇɴᴛ. Tʜᴇ ᴀᴜᴛʜᴏʀ ɪs ɴᴏᴛ ʀᴇsᴘᴏɴsɪʙʟᴇ ғᴏʀ ᴀɴʏ ᴍɪsᴜsᴇ ᴏғ ɪᴛ. ʜᴇʀᴇғᴏʀ,
@@ -67,15 +67,9 @@ sleep 1
 echo -e "\n${BLUE}[+] Current user is:\033[0m"
     whoami 2>/dev/null 
 echo -e "\n${BLUE}[+] Sudo privileged access:\033[0m"
-    sudo -ln
+    sudo -ln | grep -E --color=auto 'NOPASSWD|ALL|$'
         echo -e "\t  ╔══════════════════════════════════════════════════════════════════════════════╗"
         echo -e "\t  ║Incase you have the password, run: sudo -l and find a way to exploit that file║"
-        echo -e "\t  ╚══════════════════════════════════════════════════════════════════════════════╝"
-echo -e "\n${BLUE}[+] User ID:\033[0m"
-    id 2>/dev/null 
-        echo -e "\t  ╔══════════════════════════════════════════════════════════════════════════════╗"
-        echo -e "\t  ║Sometimes, the user may be a part of a vulnerable group such as: lxd/lxc,     ║"
-        echo -e "\t  ║Docker, Wheel, Shadow, Disk, Video. Every group worths Googling for exploit.  ║"
         echo -e "\t  ╚══════════════════════════════════════════════════════════════════════════════╝"
 echo -e "\n${BLUE}[+] Who's logged in:\033[0m"
     w
@@ -97,6 +91,12 @@ echo -e "\n${BLUE}[+] Are we in a restricted shell?\033[0m"
         echo -e "\t  ║Bypass Restricted Shell:                                                              ║"
         echo -e "\t  ║https://www.exploit-db.com/docs/english/44592-linux-restricted-shell-bypass-guide.pdf ║"
         echo -e "\t  ╚══════════════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] User ID:\033[0m"
+    id 2>/dev/null 
+        echo -e "\t  ╔══════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║Sometimes, the user may be a part of a vulnerable group such as: lxd/lxc,     ║"
+        echo -e "\t  ║Docker, Wheel, Shadow, Disk, Video. Every group worths Googling for exploit.  ║"
+        echo -e "\t  ╚══════════════════════════════════════════════════════════════════════════════╝"
 echo -e "\n${BLUE}[+] User Group & possible escap:\033[0m"
     id | grep --color=always -i "docker\|lxd\|sambashare\|lpadmin\|adm\|sudo\|video\|disk\|disk\|shadow" 2>/dev/null
         echo -e "\t  ╔═════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗"
@@ -785,5 +785,15 @@ echo -e "\n${BLUE}[+] Current user trash files:\033[0m"
     ls -la ~/.local/share/Trash/ 2>/dev/null
         echo -e "\t  ╔═══════════════════════════════════════════════════════════════════════════════╗"
         echo -e "\t  ║Have a look at the trash files and see if you can find any useful information. ║"
+        echo -e "\t  ╚═══════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] Wireshark files:\033[0m"
+    find / -name *.pcapng -type f 2>/dev/null --color=always
+    find / -name *.libpcap -type f 2>/dev/null --color=always
+echo -e "\n${BLUE}[+] RDP Profiles:\033[0m"
+    find / -name *.RDP -type f 2>/dev/null --color=always
+    find / -name *.rdp -type f 2>/dev/null --color=always
+        echo -e "\t  ╔═══════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║Decode the RDP Password using Cain & Abel. So, open Cain & Adel the go to      ║"
+        echo -e "\t  ║Tools > Remote Desktop Password Decoder $ then load the RDP profile to decode. ║"
         echo -e "\t  ╚═══════════════════════════════════════════════════════════════════════════════╝"
 echo -e "\n\n${RED}\t\t\tEnumeration is completed ╔════════════════════════════════════════(100%)════════════════════════════════════════╗\033[0m\n\n"
