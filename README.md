@@ -7,14 +7,9 @@ The script has been designed to help (SOC/Red Team) or can be used for education
 —{ 🔜 Windows System }—
 
 # How to use it:
-projectHULK.py
 - git clone https://github.com/0xBlackBunnies/projectHulk
-- cd projectHULK && chmod 777 projectHULK.py
+- cd projectHULK && chmod 777 projectHULK.*
 - python projectHULK.py
-
-projectHULK.sh
-- git clone https://github.com/0xBlackBunnies/projectHulk
-- cd projectHULK && chmod 777 projectHULK.sh
 - ./projectHULK.sh
 
 ⚠️ If you want to have a full view of everything its better to redirect the output to a file
