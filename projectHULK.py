@@ -21,19 +21,19 @@ os.system("clear")
 print("\n")
 print("\n")
 banner ="""
-         \t\t                ▄▄▄▄▄▄▄▄▄▄▄▄                ██████╗ ██████╗  █████╗      ██╗███████╗ █████╗ ████████╗      ██╗  ██╗██╗   ██╗██╗     ██╗  ██╗
-         \t\t              ████████████████              ██╔══██╗██╔══██╗██╔══██╗     ██║██╔════╝██╔══██╗╚══██╔══╝      ██║  ██║██║   ██║██║     ██║ ██╔╝ 
-         \t\t            ███████████████████▌            ██████╔╝██████╔╝██║  ██║     ██║█████╗  ██║  ╚═╝   ██║         ███████║██║   ██║██║     █████═╝ 
-         \t\t          ▐██████████████████████           ██╔═══╝ ██╔══██╗██║  ██║██╗  ██║██╔══╝  ██║  ██╗   ██║  █████  ██╔══██║██║   ██║██║     ██╔═██╗ 
-         \t\t            ▀▀▀▀████████████▀▀▀▀            ██║     ██║  ██║╚█████╔╝╚█████╔╝███████╗╚█████╔╝   ██║         ██║  ██║╚██████╔╝███████╗██║ ╚██╗
-         \t\t      ▄▄▄██                      ██▄▄▄      ╚═╝     ╚═╝  ╚═╝ ╚════╝  ╚════╝ ╚══════╝ ╚════╝    ╚═╝         ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝
-         \t\t  ██████████▄▄▄▄▄▄        ▄▄▄▄▄▄██████████  ══════════════════════════════════════════════════════════════{\033[01;31mPrivilege Escalation Script v2.5\033[0m}
-         \t\t        ▀▀▀██████████████████████▀▀▀        Tʜᴇ sᴄʀɪᴘᴛ ʜᴀs ʙᴇᴇɴ ᴅᴇsɪɢɴᴇᴅ ᴛᴏ ʜᴇʟᴘ (SOC & Rᴇᴅ Tᴇᴀᴍ) ᴏʀ ᴄᴀɴ ʙᴇ ᴜsᴇᴅ ғᴏʀ ᴇᴅᴜᴄᴀᴛɪᴏɴᴀʟ ᴘᴜʀᴘᴏsᴇs ɪɴ  
-         \t\t                                            ғɪɴᴅɪɴɢ sʏsᴛᴇᴍ ᴠᴜʟɴᴇʀᴀʙɪʟɪᴛɪᴇs ᴛʜᴀᴛ ᴍᴀʏ ʟᴇᴀᴅ ᴛᴏ ᴘʀɪᴠɪʟᴇɢᴇ ᴇsᴄᴀʟᴀᴛɪᴏɴ & ᴇxᴘʟᴏɪᴛᴇ ɪᴛ. Tʜᴇ sᴄʀɪᴘᴛ 
-         \t\t                                            sʜᴏᴜʟᴅ ʙᴇ ᴜsᴇᴅ ɪɴ sᴀғᴇ ᴇɴᴠɪʀᴏɴᴍᴇɴᴛ. Tʜᴇ ᴀᴜᴛʜᴏʀ ɪs ɴᴏᴛ ʀᴇsᴘᴏɴsɪʙʟᴇ ғᴏʀ ᴀɴʏ ᴍɪsᴜsᴇ ᴏғ ɪᴛ. ʜᴇʀᴇғᴏʀ,
-         \t\t           ▓                  ▓             ʙʏ ʀᴇᴀᴅɪɴɢ ᴛʜɪs, ʏᴏᴜ ᴛᴀᴋᴇ ғᴜʟʟ ʀᴇsᴘᴏɴsɪʙɪʟɪᴛʏ ᴏғ ᴍɪsᴜsɪɴɢ ɪᴛ.
-         \t\t            ▓    ▓█▀▀▀▀█▓    ▓
-         \t\t             █  ▀        ▀  █
+         \t\t                ▄▄▄▄▄▄▄▄▄▄▄▄                
+         \t\t              ████████████████              
+         \t\t            ███████████████████▌            ██████╗ ██████╗  █████╗      ██╗███████╗ █████╗ ████████╗      ██╗  ██╗██╗   ██╗██╗     ██╗  ██╗
+         \t\t          ▐██████████████████████           ██╔══██╗██╔══██╗██╔══██╗     ██║██╔════╝██╔══██╗╚══██╔══╝      ██║  ██║██║   ██║██║     ██║ ██╔╝
+         \t\t            ▀▀▀▀████████████▀▀▀▀            ██████╔╝██████╔╝██║  ██║     ██║█████╗  ██║  ╚═╝   ██║         ███████║██║   ██║██║     █████═╝ 
+         \t\t      ▄▄▄██                      ██▄▄▄      ██╔═══╝ ██╔══██╗██║  ██║██╗  ██║██╔══╝  ██║  ██╗   ██║  █████  ██╔══██║██║   ██║██║     ██╔═██╗ 
+         \t\t  ██████████▄▄▄▄▄▄        ▄▄▄▄▄▄██████████  ██║     ██║  ██║╚█████╔╝╚█████╔╝███████╗╚█████╔╝   ██║         ██║  ██║╚██████╔╝███████╗██║ ╚██╗
+         \t\t        ▀▀▀██████████████████████▀▀▀        ╚═╝     ╚═╝  ╚═╝ ╚════╝  ╚════╝ ╚══════╝ ╚════╝    ╚═╝         ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝
+         \t\t                                            ══════════════════════════════════════════════════════════════{\033[01;31mPrivilege Escalation Script v2.5\033[0m}
+         \t\t                                            Tʜᴇ sᴄʀɪᴘᴛ ʜᴀs ʙᴇᴇɴ ᴅᴇsɪɢɴᴇᴅ ᴛᴏ ʜᴇʟᴘ (SOC & Rᴇᴅ Tᴇᴀᴍ) ᴏʀ ᴄᴀɴ ʙᴇ ᴜsᴇᴅ ғᴏʀ ᴇᴅᴜᴄᴀᴛɪᴏɴᴀʟ ᴘᴜʀᴘᴏsᴇs ɪɴ
+         \t\t           ▓                  ▓             ғɪɴᴅɪɴɢ sʏsᴛᴇᴍ ᴠᴜʟɴᴇʀᴀʙɪʟɪᴛɪᴇs ᴛʜᴀᴛ ᴍᴀʏ ʟᴇᴀᴅ ᴛᴏ ᴘʀɪᴠɪʟᴇɢᴇ ᴇsᴄᴀʟᴀᴛɪᴏɴ & ᴇxᴘʟᴏɪᴛᴇ ɪᴛ. Tʜᴇ sᴄʀɪᴘᴛ 
+         \t\t            ▓    ▓█▀▀▀▀█▓    ▓              sʜᴏᴜʟᴅ ʙᴇ ᴜsᴇᴅ ɪɴ sᴀғᴇ ᴇɴᴠɪʀᴏɴᴍᴇɴᴛ. Tʜᴇ ᴀᴜᴛʜᴏʀ ɪs ɴᴏᴛ ʀᴇsᴘᴏɴsɪʙʟᴇ ғᴏʀ ᴀɴʏ ᴍɪsᴜsᴇ ᴏғ ɪᴛ. ʜᴇʀᴇғᴏʀ,
+         \t\t             █  ▀        ▀  █               ʙʏ ʀᴇᴀᴅɪɴɢ ᴛʜɪs, ʏᴏᴜ ᴛᴀᴋᴇ ғᴜʟʟ ʀᴇsᴘᴏɴsɪʙɪʟɪᴛʏ ᴏғ ᴍɪsᴜsɪɴɢ ɪᴛ.
          \t\t              █▓▄▓██████▓▄▓█
          \t\t                ▀████████▀
          \t\t                   ████
@@ -71,7 +71,7 @@ time.sleep(1)
 print("\n\033[0;37;44m[+] Current user is:\033[0m")
 os.system ('whoami')
 print("\n\033[0;37;44m[+] Sudo privileged access:\033[0m")
-os.system("sudo -ln | grep -E --color=auto 'NOPASSWD|ALL|$'")
+os.system("sudo -ln | grep -E --color=always 'NOPASSWD|ALL|$'")
 print("\t  ╔══════════════════════════════════════════════════════════════════════════════╗")
 print("\t  ║Incase you have the password, run: sudo -l and find a way to exploit that file║")
 print("\t  ╚══════════════════════════════════════════════════════════════════════════════╝")
@@ -230,7 +230,7 @@ print("\t  ║Read more:                                                        
 print("\t  ║https://medium.com/schkn/linux-privilege-escalation-using-text-editors-and-files-part-1-a8373396708d ║")
 print("\t  ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝")
 print("\n\033[0;37;44m[+] Reading Sudoers File:\033[0m")
-os.system ('cat /etc/sudoers')
+os.system ("cat /etc/sudoers | grep -E --color=always 'ALL|$'")
 print("\t  ╔══════════════════════════════════════════════════════════════════════════════════════════════════════╗")
 print("\t  ║The file shows a fully detailed about what the current user my run as root. If the running file or the║")
 print("\t  ║application has a global vulnerability, the attacker may google it and abuse it for user escalation.  ║")
@@ -534,7 +534,7 @@ os.system ('ps aux | grep --color=always $USER')
 print("\n\033[0;37;44m[+] Process binaries and associated permissions:\033[0m")
 os.system ("ps aux 2>/dev/null | awk '{print $11}'|xargs -r ls -la 2>/dev/null | awk '!x[$0]++' 2>/dev/null")
 print("\n\033[0;37;44m[+] Are service config files readable/wreitable by current user:\033[0m")
-os.system ("find /etc/init.d/ ! -uid 0 -type f 2>/dev/null |xargs ls -la --color=always 2>/dev/null")
+os.system ("find /etc/init.d/ -uid 0 -type f 2>/dev/null | xargs ls -la --color=always 2>/dev/null")
 print("\n\033[0;37;44m[+] Shared object libraries (GOOD FOR BACKDOOR):\033[0m")
 os.system ("ldd /usr/local/bin/program 2>/dev/null")
 print("\n\033[0;37;44m[+] Is the executable compiled with RPATH or RUNPATH (GOOD FOR BACKDOOR):\033[0m")
@@ -593,7 +593,7 @@ os.system ('route 2>/dev/null')
 print("\n\033[0;37;44m[+] Full Network Details:\033[0m")
 os.system ('ifconfig')
 print("\n\033[0;37;44m[+] Firewall Rulls:\033[0m")
-os.system ('iptables -nvL')
+os.system ('iptables -nvL 2>/dev/null')
 print("\n\033[0;37;44m[+] Open Ports:\033[0m")
 os.system ('netstat -tulpna')
 print("\t  ╔══════════════════════════════════════════════════════════════════════════════╗")
@@ -670,9 +670,9 @@ os.system("ls -la /etc/ssh/ssh_config --color=always")
 print("\n\033[0;37;44m[+] Reading ssh_config File:\033[0m")
 os.system("cat /etc/ssh/ssh_config")
 print("\n\033[0;37;44m[+] sshd_config File:\033[0m")
-os.system("ls -la /usr/share/openssh/sshd_config --color=always")
+os.system("ls -la /usr/share/openssh/sshd_config --color=always 2>/dev/null")
 print("\n\033[0;37;44m[+] Reading sshd_config File:\033[0m")
-os.system("cat /usr/share/openssh/sshd_config")
+os.system("cat /usr/share/openssh/sshd_config 2>/dev/null")
 print("\t  ╔═══════════════════════════════════════════════════════════════════════════════════════════════╗")
 print("\t  ║Read more about sshd_config file:                                                              ║")
 print("\t  ║  https://www.ssh.com/academy/ssh/sshd_config                                                  ║")
@@ -733,6 +733,12 @@ print("\n\033[0;37;44m[+] MySQL:\033[0m")
 os.system ('ls -la /var/lib/mysql 2>/dev/null --color=always')
 print("\n\033[0;37;44m[+] Log File:\033[0m")
 os.system ('ls -la /var/log 2>/dev/null --color=always')
+print("\t  ╔══════════════════════════════════════════════════════════════════════════════════╗")
+print("\t  ║Do the following and see if there is any password:-                               ║")
+print("\t  ║  grep -r passw . 2>/dev/null                                                     ║")
+print("\t  ╚══════════════════════════════════════════════════════════════════════════════════╝")
+print("\n\033[0;37;44m[+] .config file in /var/www:\033[0m")
+os.system ('ls -la /var/www --color=always 2>/dev/null')
 print("\n\033[0;37;44m[+] Spool File:\033[0m")
 os.system ('ls -la /var/spool 2>/dev/null --color=always')
 print("\t  ╔══════════════════════════════════════════════════════════════════════════════════╗")
@@ -760,6 +766,34 @@ print("\n\033[0;37;44m[+] Config Files:\033[0m")
 os.system ("find / -name *.config -type f 2>/dev/null | xargs ls -la 2>/dev/null --color=always")
 print("\n\033[0;37;44m[+] Bash Files:\033[0m")
 os.system ('find / -name *.sh -type f 2>/dev/null | xargs ls -la 2>/dev/null --color=always | grep -v "/usr/\|/opt/firmware-mod-kit/"')
+print("\t  ╔═══════════════════════════════════════════════════════════════════════════════╗")
+print("\t  ║projectHULK search has excluded the following directory:-                      ║")
+print("\t  ║  /usr/*       |  /opt/firmware-mod-kit/*                                      ║")
+print("\t  ╚═══════════════════════════════════════════════════════════════════════════════╝")
+print("\n\033[0;37;44m[+] Python Files:\033[0m")
+os.system ('find / -name *.py -type f 2>/dev/null | xargs ls -la 2>/dev/null --color=always | grep -v "/usr/\|/opt/firmware-mod-kit/\|/opt/xplico/"')
+print("\t  ╔═══════════════════════════════════════════════════════════════════════════════╗")
+print("\t  ║projectHULK search has excluded the following directory:-                      ║")
+print("\t  ║  /usr/*       |  /opt/firmware-mod-kit/*       |  /opt/xplico/*               ║")
+print("\t  ╚═══════════════════════════════════════════════════════════════════════════════╝")
+print("\n\033[0;37;44m[+] PHP Files:\033[0m")
+os.system ('find / -name *.php -type f 2>/dev/null | xargs ls -la 2>/dev/null --color=always | grep -v "/usr/share\|/opt/xplico"')
+print("\t  ╔═══════════════════════════════════════════════════════════════════════════════╗")
+print("\t  ║projectHULK search has excluded the following directory:-                      ║")
+print("\t  ║  /usr/*       |  /opt/xplico/*                                                ║")
+print("\t  ╚═══════════════════════════════════════════════════════════════════════════════╝")
+print("\n\033[0;37;44m[+] Text Files:\033[0m")
+os.system ('find / -name *.txt 2>/dev/null | grep -v "/usr/\|/opt/\|/etc/\|/root/.*" | xargs ls -la --color=always 2>/dev/null')
+print("\t  ╔═══════════════════════════════════════════════════════════════════════════════╗")
+print("\t  ║projectHULK search has excluded the following directory:-                      ║")
+print("\t  ║  /usr/*       |  /opt/       |  /etc/       |  /root/.*                       ║")
+print("\t  ╚═══════════════════════════════════════════════════════════════════════════════╝")
+print("\n\033[0;37;44m[+] HTML Files:\033[0m")
+os.system ('find / -name *.html 2>/dev/null | grep -v "/usr/" | xargs ls -la --color=always 2>/dev/null')
+print("\t  ╔═══════════════════════════════════════════════════════════════════════════════╗")
+print("\t  ║projectHULK search has excluded the following directory:-                      ║")
+print("\t  ║  /usr/*       |  /opt/       |  /etc/       |  /root/.*                       ║")
+print("\t  ╚═══════════════════════════════════════════════════════════════════════════════╝")
 print("\n\033[0;37;44m[+] .gpg Files:\033[0m")
 os.system ("find / -name *.gpg -type f 2>/dev/null | xargs ls -la 2>/dev/null --color=always")
 print("\t  ╔═══════════════════════════════════════════════════════════════════════════════╗")
@@ -768,8 +802,6 @@ print("\t  ║Privacy Guard (GnuPG), a file encryption program. The secure forma
 print("\t  ║the OpenPGP standard defined by RFC2440,the same standard Pretty Good Privacy  ║")
 print("\t  ║(.PGP) files use.                                                              ║")
 print("\t  ╚═══════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] Python Files:\033[0m")
-os.system ('find / -name *.py -type f 2>/dev/null | xargs ls -la 2>/dev/null --color=always | grep -v "/usr/\|/opt/firmware-mod-kit/\|/opt/xplico/"')
 print("\n\033[0;37;44m[+] KeePass database file:\033[0m")
 print("[*] .kdbx files:")
 os.system ("find / -name *.kdbx -type f 2>/dev/null --color=always")
