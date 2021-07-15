@@ -16,7 +16,9 @@ The script has been designed to help (SOC/Red Team) or can be used for education
 
 # Running OS:
  ✔ Kali
+ 
  ✔ Parrot
+ 
  ✔ Ubuntu
 
 # Suggestions/Feedback:
