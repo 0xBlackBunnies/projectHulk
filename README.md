@@ -15,9 +15,9 @@ The script has been designed to help (SOC/Red Team) or can be used for education
 - ./projectHULK.sh > PE_Report.txt
 
 # Running OS:
- • Kali
- • Parrot
- • Ubuntu
+ ✔ Kali
+ ✔ Parrot
+ ✔ Ubuntu
 
 # Suggestions/Feedback:
  • Please feel free to write us back if you are facing any issue or for any new idea that may help us in improving the script.
