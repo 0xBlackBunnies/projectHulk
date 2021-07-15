@@ -20,19 +20,19 @@ clear
 echo -e "\n"
 echo -e "\n"
 echo -e "
-         \t\t                ▄▄▄▄▄▄▄▄▄▄▄▄                ██████╗ ██████╗  █████╗      ██╗███████╗ █████╗ ████████╗      ██╗  ██╗██╗   ██╗██╗     ██╗  ██╗
-         \t\t              ████████████████              ██╔══██╗██╔══██╗██╔══██╗     ██║██╔════╝██╔══██╗╚══██╔══╝      ██║  ██║██║   ██║██║     ██║ ██╔╝
-         \t\t            ███████████████████▌            ██████╔╝██████╔╝██║  ██║     ██║█████╗  ██║  ╚═╝   ██║         ███████║██║   ██║██║     █████═╝ 
-         \t\t          ▐██████████████████████           ██╔═══╝ ██╔══██╗██║  ██║██╗  ██║██╔══╝  ██║  ██╗   ██║  █████  ██╔══██║██║   ██║██║     ██╔═██╗ 
-         \t\t            ▀▀▀▀████████████▀▀▀▀            ██║     ██║  ██║╚█████╔╝╚█████╔╝███████╗╚█████╔╝   ██║         ██║  ██║╚██████╔╝███████╗██║ ╚██╗
-         \t\t      ▄▄▄██                      ██▄▄▄      ╚═╝     ╚═╝  ╚═╝ ╚════╝  ╚════╝ ╚══════╝ ╚════╝    ╚═╝         ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝
-         \t\t  ██████████▄▄▄▄▄▄        ▄▄▄▄▄▄██████████  ══════════════════════════════════════════════════════════════{${RED}Privilege Escalation Script v2.5\033[0m}
-         \t\t        ▀▀▀██████████████████████▀▀▀        Tʜᴇ sᴄʀɪᴘᴛ ʜᴀs ʙᴇᴇɴ ᴅᴇsɪɢɴᴇᴅ ᴛᴏ ʜᴇʟᴘ (SOC & Rᴇᴅ Tᴇᴀᴍ) ᴏʀ ᴄᴀɴ ʙᴇ ᴜsᴇᴅ ғᴏʀ ᴇᴅᴜᴄᴀᴛɪᴏɴᴀʟ ᴘᴜʀᴘᴏsᴇs ɪɴ
-         \t\t                                            ғɪɴᴅɪɴɢ sʏsᴛᴇᴍ ᴠᴜʟɴᴇʀᴀʙɪʟɪᴛɪᴇs ᴛʜᴀᴛ ᴍᴀʏ ʟᴇᴀᴅ ᴛᴏ ᴘʀɪᴠɪʟᴇɢᴇ ᴇsᴄᴀʟᴀᴛɪᴏɴ & ᴇxᴘʟᴏɪᴛᴇ ɪᴛ. Tʜᴇ sᴄʀɪᴘᴛ 
-         \t\t                                            sʜᴏᴜʟᴅ ʙᴇ ᴜsᴇᴅ ɪɴ sᴀғᴇ ᴇɴᴠɪʀᴏɴᴍᴇɴᴛ. Tʜᴇ ᴀᴜᴛʜᴏʀ ɪs ɴᴏᴛ ʀᴇsᴘᴏɴsɪʙʟᴇ ғᴏʀ ᴀɴʏ ᴍɪsᴜsᴇ ᴏғ ɪᴛ. ʜᴇʀᴇғᴏʀ,
-         \t\t           ▓                  ▓             ʙʏ ʀᴇᴀᴅɪɴɢ ᴛʜɪs, ʏᴏᴜ ᴛᴀᴋᴇ ғᴜʟʟ ʀᴇsᴘᴏɴsɪʙɪʟɪᴛʏ ᴏғ ᴍɪsᴜsɪɴɢ ɪᴛ.
-         \t\t            ▓    ▓█▀▀▀▀█▓    ▓
-         \t\t             █  ▀        ▀  █
+         \t\t                ▄▄▄▄▄▄▄▄▄▄▄▄                
+         \t\t              ████████████████              
+         \t\t            ███████████████████▌            ██████╗ ██████╗  █████╗      ██╗███████╗ █████╗ ████████╗      ██╗  ██╗██╗   ██╗██╗     ██╗  ██╗
+         \t\t          ▐██████████████████████           ██╔══██╗██╔══██╗██╔══██╗     ██║██╔════╝██╔══██╗╚══██╔══╝      ██║  ██║██║   ██║██║     ██║ ██╔╝
+         \t\t            ▀▀▀▀████████████▀▀▀▀            ██████╔╝██████╔╝██║  ██║     ██║█████╗  ██║  ╚═╝   ██║         ███████║██║   ██║██║     █████═╝ 
+         \t\t      ▄▄▄██                      ██▄▄▄      ██╔═══╝ ██╔══██╗██║  ██║██╗  ██║██╔══╝  ██║  ██╗   ██║  █████  ██╔══██║██║   ██║██║     ██╔═██╗ 
+         \t\t  ██████████▄▄▄▄▄▄        ▄▄▄▄▄▄██████████  ██║     ██║  ██║╚█████╔╝╚█████╔╝███████╗╚█████╔╝   ██║         ██║  ██║╚██████╔╝███████╗██║ ╚██╗
+         \t\t        ▀▀▀██████████████████████▀▀▀        ╚═╝     ╚═╝  ╚═╝ ╚════╝  ╚════╝ ╚══════╝ ╚════╝    ╚═╝         ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝
+         \t\t                                            ══════════════════════════════════════════════════════════════{${RED}Privilege Escalation Script v2.5\033[0m}
+         \t\t                                            Tʜᴇ sᴄʀɪᴘᴛ ʜᴀs ʙᴇᴇɴ ᴅᴇsɪɢɴᴇᴅ ᴛᴏ ʜᴇʟᴘ (SOC & Rᴇᴅ Tᴇᴀᴍ) ᴏʀ ᴄᴀɴ ʙᴇ ᴜsᴇᴅ ғᴏʀ ᴇᴅᴜᴄᴀᴛɪᴏɴᴀʟ ᴘᴜʀᴘᴏsᴇs ɪɴ
+         \t\t           ▓                  ▓             ғɪɴᴅɪɴɢ sʏsᴛᴇᴍ ᴠᴜʟɴᴇʀᴀʙɪʟɪᴛɪᴇs ᴛʜᴀᴛ ᴍᴀʏ ʟᴇᴀᴅ ᴛᴏ ᴘʀɪᴠɪʟᴇɢᴇ ᴇsᴄᴀʟᴀᴛɪᴏɴ & ᴇxᴘʟᴏɪᴛᴇ ɪᴛ. Tʜᴇ sᴄʀɪᴘᴛ 
+         \t\t            ▓    ▓█▀▀▀▀█▓    ▓              sʜᴏᴜʟᴅ ʙᴇ ᴜsᴇᴅ ɪɴ sᴀғᴇ ᴇɴᴠɪʀᴏɴᴍᴇɴᴛ. Tʜᴇ ᴀᴜᴛʜᴏʀ ɪs ɴᴏᴛ ʀᴇsᴘᴏɴsɪʙʟᴇ ғᴏʀ ᴀɴʏ ᴍɪsᴜsᴇ ᴏғ ɪᴛ. ʜᴇʀᴇғᴏʀ,
+         \t\t             █  ▀        ▀  █               ʙʏ ʀᴇᴀᴅɪɴɢ ᴛʜɪs, ʏᴏᴜ ᴛᴀᴋᴇ ғᴜʟʟ ʀᴇsᴘᴏɴsɪʙɪʟɪᴛʏ ᴏғ ᴍɪsᴜsɪɴɢ ɪᴛ.
          \t\t              █▓▄▓██████▓▄▓█
          \t\t                ▀████████▀
          \t\t                   ████"
@@ -67,7 +67,7 @@ sleep 1
 echo -e "\n${BLUE}[+] Current user is:\033[0m"
     whoami 2>/dev/null 
 echo -e "\n${BLUE}[+] Sudo privileged access:\033[0m"
-    sudo -ln | grep -E --color=auto 'NOPASSWD|ALL|$'
+    sudo -ln | grep -E --color=always 'NOPASSWD|ALL|$'
         echo -e "\t  ╔══════════════════════════════════════════════════════════════════════════════╗"
         echo -e "\t  ║Incase you have the password, run: sudo -l and find a way to exploit that file║"
         echo -e "\t  ╚══════════════════════════════════════════════════════════════════════════════╝"
@@ -225,7 +225,7 @@ echo -e "\n${BLUE}[+] Sudoers File:\033[0m"
         echo -e "\t  ║https://medium.com/schkn/linux-privilege-escalation-using-text-editors-and-files-part-1-a8373396708d ║"
         echo -e "\t  ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝"
 echo -e "\n${BLUE}[+] Reading Sudoers File:\033[0m"
-    cat /etc/sudoers 
+    cat /etc/sudoers | grep -E --color=always 'ALL|$'
         echo -e "\t  ╔══════════════════════════════════════════════════════════════════════════════════════════════════════╗"
         echo -e "\t  ║The file shows a fully detailed about what the current user my run as root. If the running file or the║"
         echo -e "\t  ║application has a global vulnerability, the attacker may google it and abuse it for user escalation.  ║"
@@ -531,7 +531,7 @@ echo -e "\n${BLUE}[+] Running Proccess as current user:\033[0m"
 echo -e "\n${BLUE}[+] Process binaries and associated permissions:\033[0m"
     ps aux 2>/dev/null | awk '{print $11}'|xargs -r ls -la 2>/dev/null |awk '!x[$0]++' 2>/dev/null
 echo -e "\n${BLUE}[+] Are service config files readable/wreitable by current user:\033[0m"
-    find /etc/init.d/ ! -uid 0 -type f 2>/dev/null |xargs ls -la --color=always 2>/dev/null
+    find /etc/init.d/ -uid 0 -type f 2>/dev/null | xargs ls -la --color=always 2>/dev/null
 echo -e "\n${BLUE}[+] Shared object libraries (GOOD FOR BACKDOOR):\033[0m"
     ldd /usr/local/bin/program 2>/dev/null
 echo -e "\n${BLUE}[+] Is the executable compiled with RPATH or RUNPATH (GOOD FOR BACKDOOR):\033[0m"
@@ -590,7 +590,7 @@ echo -e "\n${BLUE}[+] Default Gatway:\033[0m"
 echo -e "\n${BLUE}[+] Full Network Details:\033[0m"
     ifconfig
 echo -e "\n${BLUE}[+] Firewall Rulls:\033[0m"
-    iptables -nvL
+    iptables -nvL 2>/dev/null
 echo -e "\n${BLUE}[+] Open Ports:\033[0m"
     netstat -tulpna
         echo -e "\t  ╔══════════════════════════════════════════════════════════════════════════════╗"
@@ -667,9 +667,9 @@ echo -e "\n${BLUE}[+] ssh_config File:\033[0m"
 echo -e "\n${BLUE}[+] Reading ssh_config File:\033[0m"
     cat /etc/ssh/ssh_config
 echo -e "\n${BLUE}[+] sshd_config File:\033[0m"
-    ls -la /usr/share/openssh/sshd_config --color=always
+    ls -la /usr/share/openssh/sshd_config --color=always 2>/dev/null
 echo -e "\n${BLUE}[+] Reading sshd_config File:\033[0m"
-    cat /usr/share/openssh/sshd_config
+    cat /usr/share/openssh/sshd_config 2>/dev/null
         echo -e "\t  ╔═══════════════════════════════════════════════════════════════════════════════════════════════╗"
         echo -e "\t  ║Read more about sshd_config file:                                                              ║"
         echo -e "\t  ║  https://www.ssh.com/academy/ssh/sshd_config                                                  ║"
@@ -730,6 +730,12 @@ echo -e "\n${BLUE}[+] MySQL:\033[0m"
     ls -la /var/lib/mysql 2>/dev/null --color=always
 echo -e "\n${BLUE}[+] Log File:\033[0m"
     ls -la /var/log 2>/dev/null --color=always
+        echo -e "\t  ╔══════════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║Do the following and see if there is any password:-                               ║"
+        echo -e "\t  ║  grep -r passw . 2>/dev/null                                                     ║"
+        echo -e "\t  ╚══════════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] .config file in /var/www:\033[0m"
+    ls -la /var/www --color=always 2>/dev/null
 echo -e "\n${BLUE}[+] Spool File:\033[0m"
     ls -la /var/spool 2>/dev/null --color=always
         echo -e "\t  ╔══════════════════════════════════════════════════════════════════════════════════╗"
@@ -757,6 +763,34 @@ echo -e "\n${BLUE}[+] Config Files:\033[0m"
     find / -name *.config -type f 2>/dev/null | xargs ls -la 2>/dev/null --color=always
 echo -e "\n${BLUE}[+] Bash Files:\033[0m"
     find / -name *.sh -type f 2>/dev/null | xargs ls -la 2>/dev/null --color=always | grep -v "/usr/\|/opt/firmware-mod-kit/"
+        echo -e "\t  ╔═══════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║projectHULK search has excluded the following directory:-                      ║"
+        echo -e "\t  ║  /usr/*       |  /opt/firmware-mod-kit/*                                      ║"
+        echo -e "\t  ╚═══════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] Python Files:\033[0m"
+    find / -name *.py -type f 2>/dev/null | xargs ls -la 2>/dev/null --color=always | grep -v "/usr/\|/opt/firmware-mod-kit/\|/opt/xplico/"
+        echo -e "\t  ╔═══════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║projectHULK search has excluded the following directory:-                      ║"
+        echo -e "\t  ║  /usr/*       |  /opt/firmware-mod-kit/*       |  /opt/xplico/*               ║"
+        echo -e "\t  ╚═══════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] PHP Files:\033[0m"
+    find / -name *.php -type f 2>/dev/null | xargs ls -la 2>/dev/null --color=always | grep -v "/usr/share\|/opt/xplico"
+        echo -e "\t  ╔═══════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║projectHULK search has excluded the following directory:-                      ║"
+        echo -e "\t  ║  /usr/*       |  /opt/xplico/*                                                ║"
+        echo -e "\t  ╚═══════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] Text Files:\033[0m"
+    find / -name *.txt 2>/dev/null | grep -v "/usr/\|/opt/\|/etc/\|/root/.*" | xargs ls -la --color=always 2>/dev/null
+        echo -e "\t  ╔═══════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║projectHULK search has excluded the following directory:-                      ║"
+        echo -e "\t  ║  /usr/*       |  /opt/       |  /etc/       |  /root/.*                       ║"
+        echo -e "\t  ╚═══════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] HTML Files:\033[0m"
+    find / -name *.html 2>/dev/null | grep -v "/usr/" | xargs ls -la --color=always 2>/dev/null 
+        echo -e "\t  ╔═══════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║projectHULK search has excluded the following directory:-                      ║"
+        echo -e "\t  ║  /usr/*                                                                       ║"
+        echo -e "\t  ╚═══════════════════════════════════════════════════════════════════════════════╝"
 echo -e "\n${BLUE}[+] .GPG Files:\033[0m"
     find / -name *.gpg -type f 2>/dev/null | xargs ls -la 2>/dev/null --color=always
         echo -e "\t  ╔═══════════════════════════════════════════════════════════════════════════════╗"
@@ -765,8 +799,6 @@ echo -e "\n${BLUE}[+] .GPG Files:\033[0m"
         echo -e "\t  ║the OpenPGP standard defined by RFC2440,the same standard Pretty Good Privacy  ║"
         echo -e "\t  ║(.PGP) files use.                                                              ║"
         echo -e "\t  ╚═══════════════════════════════════════════════════════════════════════════════╝"
-echo -e "\n${BLUE}[+] Python Files:\033[0m"
-    find / -name *.py -type f 2>/dev/null | xargs ls -la 2>/dev/null --color=always | grep -v "/usr/\|/opt/firmware-mod-kit/\|/opt/xplico/"
 echo -e "\n${BLUE}[+] KeePass database file:\033[0m"
 echo -e "[*] .kdbx files:"
     find / -name *.kdbx -type f 2>/dev/null
