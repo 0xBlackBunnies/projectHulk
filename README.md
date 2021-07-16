@@ -5,7 +5,7 @@ The script has been designed to help (SOC/Red Team) or can be used for education
 * source_list:-
 If you are facing an issue while updating your host, the script will overwrite your source list with kali offical repository
 
-# Project OS:
+# Running OS:
 ✔ Linux System
 
 # How to use it:
