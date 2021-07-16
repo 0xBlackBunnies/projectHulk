@@ -15,8 +15,8 @@ echo -e "
     \t\t      ▄▄▄██                      ██▄▄▄      ██╔═══╝ ██╔══██╗██║  ██║██╗  ██║██╔══╝  ██║  ██╗   ██║  █████  ██╔══██║██║   ██║██║     ██╔═██╗ 
     \t\t  ██████████▄▄▄▄▄▄        ▄▄▄▄▄▄██████████  ██║     ██║  ██║╚█████╔╝╚█████╔╝███████╗╚█████╔╝   ██║         ██║  ██║╚██████╔╝███████╗██║ ╚██╗
     \t\t        ▀▀▀██████████████████████▀▀▀        ╚═╝     ╚═╝  ╚═╝ ╚════╝  ╚════╝ ╚══════╝ ╚════╝    ╚═╝         ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝
-    \t\t                                            ══════════════════════════════════════════════════════════════{${RED}Fixing Kali Sources List Issue\033[0m}
-    \t\t                                            {${RED}Make sure you are running this script with root privilege\033[0m}
+    \t\t                                            ════════════════════════════════════════════════════════════════{${RED}Fixing Kali Sources List Issue\033[0m}
+    \t\t                                            {Make sure you are running this script with root privilege}
     \t\t           █                  █              
     \t\t            █    ██▀▀▀▀██    █              
     \t\t             █  ▀        ▀  █               
@@ -24,7 +24,7 @@ echo -e "
     \t\t                ▀████████▀
     \t\t                   ████"
 sleep 1
-echo -e ("\n")
+echo -e "\n"
 echo -e "\t${RED} ╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗\033[0m"
 echo -e "\t${RED}  ════════════════════════════════════════════════════════════[ Editing Sources.list ]════════════════════════════════════════════════════════ \033[0m"
 echo -e "\t${RED} ╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝\033[0m"
@@ -34,16 +34,6 @@ echo -e "\n\n${RED}\t\tOn progress ╔═.......................................
     echo "deb http://http.kali.org/kali kali-rolling main non-free contrib" | sudo tee /etc/apt/sources.list
     echo "deb http://http.kali.org/kali kali-last-snapshot main non-free contrib" | sudo tee -a /etc/apt/sources.list
 sleep 2
-echo -e "\n\n${RED}\t\tOn progress ╔══════════════════......................(20%)..........................................\033[0m\n"
-echo -e "\n${BLUE}[+] Creating updateme aliases:\033[0m"
-    echo "alias updateme='apt-get update -y && apt-get upgrade -y &&  apt-get autoremove &&  apt-get dist-upgrade -y &&  apt-get autoremove && apt-get full-upgrade -y && apt-get autoremove && apt-get clean'" | sudo tee -a /etc/zsh/zshrc
-    source /etc/zsh/zshrc
-        echo -e "\t  ╔═══════════════════════════════════════════════════════════════════════════════╗"
-        echo -e "\t  ║Type updateme on your terminal and your system will be fully updated :)        ║"
-        echo -e "\t  ╚═══════════════════════════════════════════════════════════════════════════════╝"
-sleep 2
-echo -e "\n\n${RED}\t\tOn progress ╔════════════════════════════════════════(80%)═════════════════.........................\033[0m\n"
 echo -e "\n${BLUE}[+] Updating your Kali\033[0m"
-    updateme
-echo -e "\n\n${RED}\t\tMession completed ╔════════════════════════════════════════(100%)════════════════════════════════════════╗\033[0m\n\n"
-
+    apt-get update -y && apt-get upgrade -y && apt-get autoremove && apt-get dist-upgrade -y &&  apt-get autoremove && apt-get full-upgrade -y && apt-get autoremove && apt-get clean
+echo -e "\n\n${RED}\t\tUpdate completed ╔════════════════════════════════════════(100%)════════════════════════════════════════╗\033[0m\n\n"
