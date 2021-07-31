@@ -77,9 +77,10 @@ if SCAN=='Y' or SCAN=='y':
             print(RED+"[+] Please be patiente while we enumerate the ports"+XX)
             os.system("nmap -sU -sV -p {} --reason --script vuln | tee -a Nmap_UDP_Result.txt".format(PORT, IP))
     else:
-        print("\n"+RED+"Scanning completed ╔═══════════════════════════════════(100%)═══════════════════════════════════╗"+XX)
+        print("\n\t Scanning completed ╔═══════════════════════════════════(100%)═══════════════════════════════════")
 else:
     print("\n")
+print("\n\n")
 print(RED+" \t\t╔════════════════════════════════════════════════════════════════════════════════════════════════════════╗"+XX)
 print(RED+" \t\t ════════════════════════════════════════[ What Do you want to scan ]════════════════════════════════════ "+XX)
 print(RED+" \t\t╚════════════════════════════════════════════════════════════════════════════════════════════════════════╝"+XX)
