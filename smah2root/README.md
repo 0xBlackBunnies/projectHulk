@@ -6,7 +6,7 @@ A writen script to help (SOC/Red Team) or can be used for educational purposes i
 > git clone https://github.com/0xBlackBunnies/projectHulk
 
 # How to use it:
-> cd projectHulk/smah2root
+> cd projectHulk/smash2root
 
 
 > 
