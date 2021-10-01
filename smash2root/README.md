@@ -8,4 +8,4 @@ git clone https://github.com/0xBlackBunnies/projectHulk
 cd projectHulk/smash2root && chmod 777 *
 
 # Suggestions/Feedback:
- • Please feel free to write us back if you are facing any issue or for any new idea that may help us in improving the script.
+Please feel free to write us back if you are facing any issue or for any new idea that may help us in improving the script.
