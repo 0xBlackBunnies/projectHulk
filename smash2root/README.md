@@ -7,9 +7,9 @@ A writen script to help (SOC/Red Team) or can be used for educational purposes i
 
 # How to use it:
 > cd projectHulk/smash2root
-
-
-> 
+> chmod 777 *
+> python3 smash2root.py
+> ./smash2root.sh
 
 # Suggestions/Feedback:
  • Please feel free to write us back if you are facing any issue or for any new idea that may help us in improving the script.
