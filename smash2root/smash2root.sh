@@ -60,6 +60,42 @@ sleep 5
 echo -e "\n\n${RED}\t\tEnumeration on progress ╔═..................................(1%)......................................${XX}\n"
 sleep 5
 echo -e "${RED} \t\t╔════════════════════════════════════════════════════════════════════════════════════════════════════════╗${XX}"
+echo -e "${RED} \t\t ════════════════════════════════════════[ Scanning Target Network ]═════════════════════════════════════ ${XX}"
+echo -e "${RED} \t\t╚════════════════════════════════════════════════════════════════════════════════════════════════════════╝${XX}"
+echo -e "\n"
+sleep 1
+echo -e "\n${BLUE}[+] Pivoting:${XX}"
+    echo -e "\t╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗"
+    echo -e "\t║Try to scan the host network and see if there is any other host online. However, we won't be able to access those   ║"
+    echo -e "\t║machine. Therefor, we have to do tunneling from the current machine to them.                                        ║"
+    echo -e "\t║Read More:                                                                                                          ║"
+    echo -e "\t║  https://nullsweep.com/pivot-cheatsheet-for-pentesters/                                                            ║"
+    echo -e "\t║  https://0xdf.gitlab.io/2019/01/28/pwk-notes-tunneling-update1.html                                                ║"
+    echo -e "\t║  https://pentest.blog/explore-hidden-networks-with-double-pivoting/                                                ║"
+    echo -e "\t║  https://www.offensive-security.com/metasploit-unleashed/pivoting/                                                 ║"
+    echo -e "\t║  https://ivanitlearning.wordpress.com/2019/03/08/client-side-exploitation-windows-pivoting-w-o-metasploit/         ║"
+    echo -e "\t╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝"
+    echo -e "\n"
+    read -p "[+] Do you want to scan target network? [Y/N]:" input
+        if [[ $input == "Y" || $input == "y" ]]; then
+            read -p "Enter 1st octic : " O1
+            read -p "Enter 2nd octic : " O2
+            read -p "Enter 3rd octic : " O3
+            echo -e "\t╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗"
+            echo -e "\t║This will scan all 255 IPs, and may take time based on the network range, please be patient.                        ║"
+            echo -e "\t╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝"
+            for i in {1..255}; do (ping $O1.$O2.$O3.$i -c 1 -w 5  >/dev/null && echo "Host $O1.$O2.$O3.$i is alive"); done
+        else
+            echo -e "\t╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗"
+            echo -e "\t║Please have a look at the host network & findout if there is any device that you may pivite to. You can do it by any║"
+            echo -e "\t║of the following loop commands:                                                                                     ║"
+            echo -e '\t║    for ip in $(seq 1 255); do ping -c 1 A.B.C.$ip | grep "bytes from"; done                                        ║'
+            echo -e '\t║    for i in {1..255}; do ping -c 1 A.B.C.$i | grep "bytes from"; done                                              ║'
+            echo -e '\t║    for i in {1..255}; do (ping A.B.C.$i -c 1 -w 5  >/dev/null && echo "Host with IP $i Is Alive"); done            ║'
+            echo -e "\t╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝"
+        fi
+echo -e "\n"
+echo -e "${RED} \t\t╔════════════════════════════════════════════════════════════════════════════════════════════════════════╗${XX}"
 echo -e "${RED} \t\t ════════════════════════════════════════[ Current User Information ]════════════════════════════════════ ${XX}"
 echo -e "${RED} \t\t╚════════════════════════════════════════════════════════════════════════════════════════════════════════╝${XX}"
 echo -e "\n"
@@ -661,20 +697,6 @@ echo -e "\n${BLUE}[+] Network Route & Neighbours:${XX}"
         echo -e "\t╚══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝"
 echo -e "\n${BLUE}[+] ARP Cashe:${XX}"
     arp; arp -en | grep -v Address
-echo -e "\n${BLUE}[+] Pivoting:${XX}"
-        echo -e "\t╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗"
-        echo -e "\t║Try to scan the host network and see if there is any other host online, use any of:                                 ║"
-        echo -e '\t║    for ip in $(seq 1 255); do ping -c 1 v.v.v.$ip | grep "bytes from"; done                                        ║'
-        echo -e '\t║    for i in {1..255}; do ping -c 1 v.v.v.$i | grep "bytes from" ; done                                             ║'
-        echo -e '\t║    for i in {1..255} ;do (ping v.v.v.$i -c 1 -w 5  >/dev/null && echo "v.v.v.$i Host Is Alive") ; done             ║'
-        echo -e "\t║We won't be able to access those machine, therefor, will have to do tunneling from the current machine to them.     ║"
-        echo -e "\t║Read More:                                                                                                          ║"
-        echo -e "\t║    https://nullsweep.com/pivot-cheatsheet-for-pentesters/                                                          ║"
-        echo -e "\t║    https://0xdf.gitlab.io/2019/01/28/pwk-notes-tunneling-update1.html                                              ║"
-        echo -e "\t║    https://pentest.blog/explore-hidden-networks-with-double-pivoting/                                              ║"
-        echo -e "\t║    https://www.offensive-security.com/metasploit-unleashed/pivoting/                                               ║"
-        echo -e "\t║    https://ivanitlearning.wordpress.com/2019/03/08/client-side-exploitation-windows-pivoting-w-o-metasploit/       ║"
-        echo -e "\t╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝"
 echo -e "\n${BLUE}[+] Hosts File:${XX}"
     cat /etc/hosts 
 echo -e "\n${BLUE}[+] DNS Server:${XX}"
